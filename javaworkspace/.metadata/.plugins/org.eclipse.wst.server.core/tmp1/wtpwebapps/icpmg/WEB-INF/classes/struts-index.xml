@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 云数据库 -->
+	<package name="homepage" namespace="/homepage" extends="struts-default">
+		<interceptors>
+			<!-- 定义系统的登录控制拦截器 -->
+			<interceptor name="nosessInterceptor" class="com.inspur.icpmg.interceptor.LoginInterceptor"></interceptor>
+			<!-- 定义系统日志拦截器 -->
+			<interceptor name="sysLogInterceptor" class="com.inspur.icpmg.interceptor.SysLogInterceptor"></interceptor>
+			<interceptor-stack name="uuStack">
+				<interceptor-ref name="paramsPrepareParamsStack">
+            		<param name="prepare.alwaysInvokePrepare">false</param>
+        		</interceptor-ref>
+				<!-- 引用登录控制拦截器 -->
+				<interceptor-ref name="nosessInterceptor"></interceptor-ref>
+				<!-- 引用系统日志拦截器 -->
+		      	<interceptor-ref name="sysLogInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 将自定义的拦截器uuStack定义成默认的拦截器栈 -->
+		<default-interceptor-ref name="uuStack"></default-interceptor-ref>
+		<global-results>
+			<result name="noSession">/login.jsp</result>
+			<result name="null">/login.jsp</result>
+		</global-results>
+		
+	    <action name="queryAlarm" class="com.inspur.icpmg.homepageMg.action.tabQueryAction" method="queryAlarm"></action>
+	   <!--  <action name="queryResource" class="com.inspur.icpmg.homepageMg.action.tabQueryAction" method="queryResource"></action> -->
+	    <action name="queryHighchartsOne" class="com.inspur.icpmg.homepageMg.action.tabQueryAction" method="queryHighchartsOne"></action>
+	    <action name="queryHighchartTwo" class="com.inspur.icpmg.homepageMg.action.tabQueryAction" method="queryHighchartTwo"></action>
+	    <action name="querySelectedMenu" class="com.inspur.icpmg.homepageMg.action.tabQueryAction" method="querySelectedMenu"></action>
+	   <!--  <action name="queryToDo" class="com.inspur.icpmg.homepageMg.action.WorkOrderAction" method="queryByPage"></action> -->
+	   <action name="queryToDo" class="com.inspur.icpmg.businessMg.workorder.action.WorkOrderAction" method="queryByPage"></action>
+	   <action name="queryOrder" class="com.inspur.icpmg.businessMg.workorder.action.OrderSearchAction" method="queryByPage"></action>
+	    <!-- 查询主页统计类信息（资源和top10） -->
+	    <action name="queryResource" class="com.inspur.icpmg.homepageMg.action.resourceQueryAction" method="queryResource"></action>
+	</package>
+	
+	
+</struts>    

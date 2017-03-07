@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <!-- 资源管理云服务器  -->
+    <package name="resourcepool" namespace="/resourcepool" extends="struts-default">
+        <interceptors>
+            <!-- 定义系统的登录控制拦截器 -->
+            <interceptor name="nosessInterceptor" class="com.inspur.icpmg.interceptor.LoginInterceptor"></interceptor>
+            <!-- 定义系统日志拦截器 -->
+            <interceptor name="sysLogInterceptor" class="com.inspur.icpmg.interceptor.SysLogInterceptor"></interceptor>
+            <interceptor-stack name="uuStack">
+                <interceptor-ref name="paramsPrepareParamsStack">
+                    <param name="prepare.alwaysInvokePrepare">false</param>
+                </interceptor-ref>
+                <!-- 引用登录控制拦截器 -->
+                <interceptor-ref name="nosessInterceptor"></interceptor-ref>
+                <!-- 引用系统日志拦截器 -->
+                <interceptor-ref name="sysLogInterceptor"></interceptor-ref>
+            </interceptor-stack>
+        </interceptors>
+        <!-- 将自定义的拦截器uuStack定义成默认的拦截器栈 -->
+        <default-interceptor-ref name="uuStack"></default-interceptor-ref>
+        <global-results>
+            <result name="noSession">/login.jsp</result>
+            <result name="null">/login.jsp</result>
+        </global-results>
+
+        <!-- 计算资源池、存储资源池关系管理  -->
+        <action name="queryComputeStorageList" class="com.inspur.icpmg.resourcepool.action.RmcComputeStorageAction" method="queryComputeStorageList"></action>
+        <action name="queryComputeStorage" class="com.inspur.icpmg.resourcepool.action.RmcComputeStorageAction" method="queryComputeStorage"></action>
+        <action name="createComputeStorage" class="com.inspur.icpmg.resourcepool.action.RmcComputeStorageAction" method="createComputeStorage"></action>
+        <action name="updateComputeStorage" class="com.inspur.icpmg.resourcepool.action.RmcComputeStorageAction" method="updateComputeStorage"></action>
+        <action name="deleteComputeStorage" class="com.inspur.icpmg.resourcepool.action.RmcComputeStorageAction" method="deleteComputeStorage"></action>
+    </package>
+
+</struts>

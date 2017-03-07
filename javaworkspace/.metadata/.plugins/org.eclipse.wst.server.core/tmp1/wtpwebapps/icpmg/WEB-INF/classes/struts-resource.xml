@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <!-- 资源管理云服务器  -->
+    <package name="vm" namespace="/vm" extends="struts-default">
+        <interceptors>
+            <!-- 定义系统的登录控制拦截器 -->
+            <interceptor name="nosessInterceptor" class="com.inspur.icpmg.interceptor.LoginInterceptor"></interceptor>
+            <!-- 定义系统日志拦截器 -->
+            <interceptor name="sysLogInterceptor" class="com.inspur.icpmg.interceptor.SysLogInterceptor"></interceptor>
+            <interceptor-stack name="uuStack">
+                <interceptor-ref name="paramsPrepareParamsStack">
+                    <param name="prepare.alwaysInvokePrepare">false</param>
+                </interceptor-ref>
+                <!-- 引用登录控制拦截器 -->
+                <interceptor-ref name="nosessInterceptor"></interceptor-ref>
+                <!-- 引用系统日志拦截器 -->
+                <interceptor-ref name="sysLogInterceptor"></interceptor-ref>
+            </interceptor-stack>
+        </interceptors>
+        <!-- 将自定义的拦截器uuStack定义成默认的拦截器栈 -->
+        <default-interceptor-ref name="uuStack"></default-interceptor-ref>
+        <global-results>
+            <result name="noSession">/login.jsp</result>
+            <result name="null">/login.jsp</result>
+        </global-results>
+
+        <action name="queryVmLogs" class="com.inspur.icpmg.resourceMg.action.VMMgrAction" method="queryVmLogs"></action>
+        <action name="queryVmObjects" class="com.inspur.icpmg.resourceMg.action.VMMgrAction"
+                method="queryVmObjects"></action>
+        <action name="queryVmById" class="com.inspur.icpmg.resourceMg.action.VMMgrAction"
+                method="queryVmById"></action>
+        <action name="queryVmsByUnitid" class="com.inspur.icpmg.resourceMg.action.VMMgrAction"
+                method="queryVmsByUnitid"></action>
+        <action name="queryVmDisks" class="com.inspur.icpmg.resourceMg.action.VMMgrAction"
+                method="queryVmDisks"></action>
+        <action name="operate" class="com.inspur.icpmg.resourceMg.action.VMMgrAction" method="operate"></action>
+        <action name="batchoperate" class="com.inspur.icpmg.resourceMg.action.VMMgrAction"
+                method="batchoperate"></action>
+        <action name="vmMigrate" class="com.inspur.icpmg.resourceMg.action.VMMgrAction" method="vmMigrate">
+            <result name="vmMigrate">/web/resourceMg/vm/vmmigrate.jsp</result>
+        </action>
+        <action name="changeMigrateOper" class="com.inspur.icpmg.resourceMg.action.VMMgrAction"
+                method="changeMigrateOper"></action>
+        <action name="snapoperate" class="com.inspur.icpmg.resourceMg.action.VMMgrAction" method="snapoperate"></action>
+        <action name="vmalarm" class="com.inspur.icpmg.resourceMg.action.VMMgrAction" method="vmalarm"></action>
+        <action name="getvms" class="com.inspur.icpmg.resourceMg.action.VMMgrAction" method="getvms"></action>
+        <action name="queryVmSnapshots" class="com.inspur.icpmg.resourceMg.action.VMMgrAction"
+                method="queryVmSnapshots"></action>
+        <action name="vmlist" class="com.inspur.icpmg.resourceMg.action.VMMgrAction" method="vmlist"></action>
+        <action name="saveNetInfoPre" class="com.inspur.icpmg.resourceMg.action.VMMgrAction"
+                method="saveNetInfoPre"></action>
+        <action name="getPreNetInfo" class="com.inspur.icpmg.resourceMg.action.VMMgrAction"
+                method="getPreNetInfo"></action>
+        <action name="getRmcVmPlatformVos" class="com.inspur.icpmg.resourceMg.action.VMMgrAction"
+                method="getRmcVmPlatformVos"></action>
+        <action name="getPlatformVo" class="com.inspur.icpmg.resourceMg.action.VMMgrAction"
+                method="getPlatformVo"></action>
+        <action name="getImageVo" class="com.inspur.icpmg.resourceMg.action.VMMgrAction" method="getImageVo"></action>
+        <action name="getdatacenter" class="com.inspur.icpmg.resourceMg.action.VMMgrAction"
+                method="getdatacenter"></action>
+        <action name="getcluster" class="com.inspur.icpmg.resourceMg.action.VMMgrAction" method="getcluster"></action>
+        <action name="gethost" class="com.inspur.icpmg.resourceMg.action.VMMgrAction" method="gethost"></action>
+        <action name="gettemplate" class="com.inspur.icpmg.resourceMg.action.VMMgrAction" method="gettemplate"></action>
+        <action name="getstorage" class="com.inspur.icpmg.resourceMg.action.VMMgrAction" method="getstorage"></action>
+        <action name="getNicDevicesName" class="com.inspur.icpmg.resourceMg.action.VMMgrAction"
+                method="getNicDevicesName"></action>
+        <action name="getnetwork" class="com.inspur.icpmg.resourceMg.action.VMMgrAction" method="getnetwork"></action>
+        <action name="saveVmFirst" class="com.inspur.icpmg.resourceMg.action.VMMgrAction" method="saveVmFirst"></action>
+         <action name="saveVmSecond" class="com.inspur.icpmg.resourceMg.action.VMMgrAction"
+                method="saveVmSecond"></action>
+        
+        <action name="saveVmOs" class="com.inspur.icpmg.resourceMg.action.VMMgrAction"
+                method="saveVmOs"></action>
+        <action name="changeVm" class="com.inspur.icpmg.resourceMg.action.VMMgrAction" method="changeVm"></action>
+        <action name="saveVmSnapshot" class="com.inspur.icpmg.resourceMg.action.VMMgrAction"
+                method="saveVmSnapshot"></action>
+        <action name="vmManageInit" class="com.inspur.icpmg.resourceMg.action.VMMgrAction" method="vmManageInit">
+            <result name="vmManageInit">/web/resourceMg/vm/vmobjectman.jsp</result>
+        </action>
+        <action name="vmDisk" class="com.inspur.icpmg.resourceMg.action.VMMgrAction" method="vmDisk">
+            <result name="vmDisk">/web/resourceMg/vm/vmDisk.jsp</result>
+        </action>
+        <action name="getConsoleURL" class="com.inspur.icpmg.resourceMg.action.VMMgrAction"
+                method="getConsoleURL"></action>
+        <action name="getStaticData4VM" class="com.inspur.icpmg.resourceMg.action.VMMgrAction"
+                method="getStaticData4VM"></action>
+        <action name="getStaticDataByDept" class="com.inspur.icpmg.resourceMg.action.VMMgrAction"
+                method="getStaticDataByDept"></action>
+        <action name="checkvmstatus" class="com.inspur.icpmg.resourceMg.action.VMMgrAction"
+                method="checkvmstatus"></action>
+		<!-- 资源变更实施（注销云服务器） -->
+        <action name="resourchangeOperDelVm" class="com.inspur.icpmg.resourceMg.action.VMMgrAction" method="resourchangeOperDelVm"></action>
+        <!-- 资源变更实施（变更云服务器） -->
+        <action name="resourchangeOperUpdateVm" class="com.inspur.icpmg.resourceMg.action.VMMgrAction" method="resourchangeOperUpdateVm"></action>
+    </package>
+
+    <package name="jsonvm" namespace="/jsonvm" extends="json-default">
+        <action name="vmOverview" class="com.inspur.icpmg.resourceMg.action.VMMgrAction" method="vmOverview">
+            <result type="json">
+                <param name="root">resultArray[0]</param>
+            </result>
+        </action>
+        <action name="vmalarmindex" class="com.inspur.icpmg.resourceMg.action.VMMgrAction" method="vmalarmindex">
+            <result type="json">
+                <param name="root">resultArray[0]</param>
+            </result>
+        </action>
+        <action name="getVmChanges" class="com.inspur.icpmg.resourceMg.action.VMMgrAction" method="getVmChanges">
+            <result type="json">
+                <param name="root">resultArray[0]</param>
+            </result>
+        </action>
+        <action name="confirmflow" class="com.inspur.icpmg.resourceMg.action.VMMgrAction" method="confirmflow">
+            <result type="json">
+                <param name="root">resultArray[0]</param>
+            </result>
+        </action>
+        <action name="befConfirmflow" class="com.inspur.icpmg.resourceMg.action.VMMgrAction" method="befConfirmflow">
+            <result type="json">
+                <param name="root">resultArray[0]</param>
+            </result>
+        </action>
+        <action name="getVmIntraip" class="com.inspur.icpmg.resourceMg.action.VMMgrAction" method="getVmIntraip">
+            <result type="json">
+                <param name="root">resultArray[0]</param>
+            </result>
+        </action>
+    </package>
+
+
+    <package name="host" namespace="/host" extends="struts-default">
+        <interceptors>
+            <!-- 定义系统的登录控制拦截器 -->
+            <interceptor name="nosessInterceptor" class="com.inspur.icpmg.interceptor.LoginInterceptor"></interceptor>
+            <interceptor-stack name="uuStack">
+                <interceptor-ref name="paramsPrepareParamsStack">
+                    <param name="prepare.alwaysInvokePrepare">false</param>
+                </interceptor-ref>
+                <!-- 引用登录控制拦截器 -->
+                <interceptor-ref name="nosessInterceptor"></interceptor-ref>
+            </interceptor-stack>
+        </interceptors>
+        <!-- 将自定义的拦截器uuStack定义成默认的拦截器栈 -->
+        <default-interceptor-ref name="uuStack"></default-interceptor-ref>
+        <global-results>
+            <result name="noSession">/login.jsp</result>
+            <result name="null">/login.jsp</result>
+        </global-results>
+        <action name="hostMgrAction" class="com.inspur.icpmg.resourceMg.action.HostMgrAction">
+        </action>
+
+        <action name="deleteHosts" class="com.inspur.icpmg.resourceMg.action.HostMgrAction" method="deleteHosts">
+        </action>
+        <action name="queryHosts" class="com.inspur.icpmg.resourceMg.action.HostMgrAction" method="queryHosts">
+        </action>
+        <action name="addHost" class="com.inspur.icpmg.resourceMg.action.HostMgrAction" method="addHost">
+        </action>
+        <action name="modifyHost" class="com.inspur.icpmg.resourceMg.action.HostMgrAction" method="modifyHost">
+        </action>
+        <action name="platform" class="com.inspur.icpmg.resourceMg.action.HostMgrAction" method="queryPlatformList">
+        </action>
+
+    </package>
+
+    <package name="storage" namespace="/storage" extends="struts-default">
+        <interceptors>
+            <!-- 定义系统的登录控制拦截器 -->
+            <interceptor name="nosessInterceptor" class="com.inspur.icpmg.interceptor.LoginInterceptor"></interceptor>
+            <interceptor-stack name="uuStack">
+                <interceptor-ref name="paramsPrepareParamsStack">
+                    <param name="prepare.alwaysInvokePrepare">false</param>
+                </interceptor-ref>
+                <!-- 引用登录控制拦截器 -->
+                <interceptor-ref name="nosessInterceptor"></interceptor-ref>
+            </interceptor-stack>
+        </interceptors>
+        <!-- 将自定义的拦截器uuStack定义成默认的拦截器栈 -->
+        <default-interceptor-ref name="uuStack"></default-interceptor-ref>
+        <global-results>
+            <result name="noSession">/login.jsp</result>
+            <result name="null">/login.jsp</result>
+        </global-results>
+        <action name="storageMgrAction" class="com.inspur.icpmg.resourceMg.action.StorageMgrAction">
+        </action>
+
+        <action name="deleteStorages" class="com.inspur.icpmg.resourceMg.action.StorageMgrAction"
+                method="deleteStorages">
+        </action>
+
+        <action name="queryStorage" class="com.inspur.icpmg.resourceMg.action.StorageMgrAction" method="queryStorage">
+        </action>
+        <action name="addStorage" class="com.inspur.icpmg.resourceMg.action.StorageMgrAction" method="addStorage">
+        </action>
+        <action name="modifyStorage" class="com.inspur.icpmg.resourceMg.action.StorageMgrAction" method="modifyStorage">
+        </action>
+    </package>
+    <package name="pool" namespace="/pool" extends="struts-default">
+        <interceptors>
+            <!-- 定义系统的登录控制拦截器 -->
+            <interceptor name="nosessInterceptor" class="com.inspur.icpmg.interceptor.LoginInterceptor"></interceptor>
+            <interceptor-stack name="uuStack">
+                <interceptor-ref name="paramsPrepareParamsStack">
+                    <param name="prepare.alwaysInvokePrepare">false</param>
+                </interceptor-ref>
+                <!-- 引用登录控制拦截器 -->
+                <interceptor-ref name="nosessInterceptor"></interceptor-ref>
+            </interceptor-stack>
+        </interceptors>
+        <!-- 将自定义的拦截器uuStack定义成默认的拦截器栈 -->
+        <default-interceptor-ref name="uuStack"></default-interceptor-ref>
+        <global-results>
+            <result name="noSession">/login.jsp</result>
+            <result name="null">/login.jsp</result>
+        </global-results>
+
+        <action name="getAllPool" class="com.inspur.icpmg.resourceMg.action.PoolMgrAction" method="getAllPool">
+        </action>
+
+        <action name="deletePool" class="com.inspur.icpmg.resourceMg.action.PoolMgrAction" method="deletePool">
+        </action>
+
+        <action name="queryPool" class="com.inspur.icpmg.resourceMg.action.PoolMgrAction" method="queryPool">
+        </action>
+        <action name="poolMgrAction" class="com.inspur.icpmg.resourceMg.action.PoolMgrAction">
+        </action>
+        <action name="addPool" class="com.inspur.icpmg.resourceMg.action.PoolMgrAction" method="addPool">
+        </action>
+        <action name="modifyPool" class="com.inspur.icpmg.resourceMg.action.PoolMgrAction" method="modifyPool">
+        </action>
+
+    </package>
+	<package name="vlan" namespace="/vlan" extends="struts-default">
+        <interceptors>
+            <!-- 定义系统的登录控制拦截器 -->
+            <interceptor name="nosessInterceptor" class="com.inspur.icpmg.interceptor.LoginInterceptor"></interceptor>
+            <interceptor-stack name="uuStack">
+                <interceptor-ref name="paramsPrepareParamsStack">
+                    <param name="prepare.alwaysInvokePrepare">false</param>
+                </interceptor-ref>
+                <!-- 引用登录控制拦截器 -->
+                <interceptor-ref name="nosessInterceptor"></interceptor-ref>
+            </interceptor-stack>
+        </interceptors>
+        <!-- 将自定义的拦截器uuStack定义成默认的拦截器栈 -->
+        <default-interceptor-ref name="uuStack"></default-interceptor-ref>
+        <global-results>
+            <result name="noSession">/login.jsp</result>
+            <result name="null">/login.jsp</result>
+        </global-results>
+        
+        <!-- vlan管理 -->
+		<action name="getVlanLists" class="com.inspur.icpmg.resourceMg.action.VlanMgAction" method="getVlanLists"></action>
+		<action name="deleteVlan" class="com.inspur.icpmg.resourceMg.action.VlanMgAction" method="deleteVlan"></action>
+        <action name="createVlan" class="com.inspur.icpmg.resourceMg.action.VlanMgAction" method="createVlan"></action>
+        <action name="updateVlan" class="com.inspur.icpmg.resourceMg.action.VlanMgAction" method="updateVlan"></action>
+    	
+    	<!-- 启用DHCP -->
+    	<action name="infoImportVlan" class="com.inspur.icpmg.resourceMg.action.VlanInfoImportAction" method="infoImportVlan"></action>
+    	<action name="downloadExcel" class="com.inspur.icpmg.resourceMg.action.VlanInfoImportAction" method="downloadExcel"></action>
+    	<action name="queryVlanname" class="com.inspur.icpmg.resourceMg.action.VlanInfoImportAction" method="queryVlanname"></action>
+    	<action name="startVlanDhcp" class="com.inspur.icpmg.resourceMg.action.VlanInfoImportAction" method="startVlanDhcp"></action>
+    	<action name="queryDvswitch" class="com.inspur.icpmg.resourceMg.action.VlanMgAction" method="queryDvswitch"></action>
+    </package>
+		<package name="poolmg" namespace="/poolmg" extends="struts-default">
+        <interceptors>
+            <!-- 定义系统的登录控制拦截器 -->
+            <interceptor name="nosessInterceptor" class="com.inspur.icpmg.interceptor.LoginInterceptor"></interceptor>
+            <interceptor-stack name="uuStack">
+                <interceptor-ref name="paramsPrepareParamsStack">
+                    <param name="prepare.alwaysInvokePrepare">false</param>
+                </interceptor-ref>
+                <!-- 引用登录控制拦截器 -->
+                <interceptor-ref name="nosessInterceptor"></interceptor-ref>
+            </interceptor-stack>
+        </interceptors>
+        <!-- 将自定义的拦截器uuStack定义成默认的拦截器栈 -->
+        <default-interceptor-ref name="uuStack"></default-interceptor-ref>
+        <global-results>
+            <result name="noSession">/login.jsp</result>
+            <result name="null">/login.jsp</result>
+        </global-results>
+        
+        <!-- 资源池管理 -->
+		<action name="getPoolLists" class="com.inspur.icpmg.resourceMg.action.PoolMgAction" method="getPoolLists"></action>
+		<action name="dropPool" class="com.inspur.icpmg.resourceMg.action.PoolMgAction" method="dropPool"></action>
+        <action name="createPool" class="com.inspur.icpmg.resourceMg.action.PoolMgAction" method="createPool"></action>
+        <action name="updatePool" class="com.inspur.icpmg.resourceMg.action.PoolMgAction" method="updatePool"></action>
+    	
+    </package>
+    <package name="resourceinfo" namespace="/resourceinfo" extends="struts-default">
+        <interceptors>
+            <!-- 定义系统的登录控制拦截器 -->
+            <interceptor name="nosessInterceptor" class="com.inspur.icpmg.interceptor.LoginInterceptor"></interceptor>
+            <!-- 定义系统日志拦截器 -->
+            <interceptor name="sysLogInterceptor" class="com.inspur.icpmg.interceptor.SysLogInterceptor"></interceptor>
+            <interceptor-stack name="uuStack">
+                <interceptor-ref name="paramsPrepareParamsStack">
+                    <param name="prepare.alwaysInvokePrepare">false</param>
+                </interceptor-ref>
+                <!-- 引用登录控制拦截器 -->
+                <interceptor-ref name="nosessInterceptor"></interceptor-ref>
+                <!-- 引用系统日志拦截器 -->
+                <interceptor-ref name="sysLogInterceptor"></interceptor-ref>
+            </interceptor-stack>
+        </interceptors>
+        <!-- 将自定义的拦截器uuStack定义成默认的拦截器栈 -->
+        <default-interceptor-ref name="uuStack"></default-interceptor-ref>
+        <global-results>
+            <result name="noSession">/login.jsp</result>
+            <result name="null">/login.jsp</result>
+        </global-results>
+
+
+        <action name="resourceInfo" class="com.inspur.icpmg.gov2.web.ResourceInfoAction">
+            <result name="listtj">/web/gov2/resourcemanage/resourceMgrTJ.jsp</result>
+            <result name="listjxw">/web/gov2/resourcemanage/resourceMgrJXW.jsp</result>
+            <!--<result name="success">/icp/resourceinfo/resourceInfo.jsp</result>-->
+            <result name="operate">/icp/resourceinfo/resourceOperate.jsp</result>
+            <result name="detail">/icp/resourceinfo/resourceConfigure.jsp</result>
+        </action>
+        
+        <action name="resourceinfoList" class="com.inspur.icpmg.gov2.web.ResourceInfoAction" method="resourceinfoList">
+        </action>
+        <action name="resourceinfoListProduct" class="com.inspur.icpmg.gov2.web.ResourceInfoAction" method="resourceinfoListProduct">
+        </action>
+        <!-- 基础信息-->
+        <action name="resourceBasicInfoProduct" class="com.inspur.icpmg.gov2.web.ResourceInfoAction" method="resourceBasicInfoProduct">
+        </action>
+        <!-- 服务列表 一级类型-->
+        <action name="getSevertypeList" class="com.inspur.icpmg.gov2.web.ResourceInfoAction" method="getSevertypeList">
+        </action>
+        <!-- 服务列表 二级类型-->
+        <action name="getSevertypeSecondList" class="com.inspur.icpmg.gov2.web.ResourceInfoAction" method="getSevertypeSecondList">
+        </action>
+        
+
+
+        <!-- 资源维护  云服务器 -->
+        <action name="resourceinfoListVM" class="com.inspur.icpmg.gov2.web.ResourceInfoVMAction" method="resourceinfoListVM"></action>
+        <action name="addResourceVM" class="com.inspur.icpmg.gov2.web.ResourceInfoVMAction" method="addResourceVM"></action>        
+        <action name="updateResourceVM" class="com.inspur.icpmg.gov2.web.ResourceInfoVMAction" method="updateResourceVM"></action>
+        <action name="deleteProject" class="com.inspur.icpmg.gov2.web.ResourceInfoVMAction" method="deleteProject"></action>
+        <!-- 资源申请及维护 -->
+        <action name="resourceApply" class="com.inspur.icpmg.gov2.web.ResourceApplyAction" method="resourceApply">
+        </action>
+        <action name="getOperateResource" class="com.inspur.icpmg.gov2.web.ResourceOperateAction" method="getOperateResource">
+        </action>
+        <action name="getApplyFiles" class="com.inspur.icpmg.gov2.web.ResourceApplyAction" method="getApplyFiles">
+        </action>
+        <action name="changeStatus" class="com.inspur.icpmg.gov2.web.ResourceOperateAction" method="changeStatus">
+        </action>     
+        <!-- 资源维护  应用服务 start-->
+        <action name="resourceinfoListApp" class="com.inspur.icpmg.gov2.web.ResourceInfoAppAction" method="resourceinfoListApp"></action>
+        <action name="addResourceApp" class="com.inspur.icpmg.gov2.web.ResourceInfoAppAction" method="addResourceApp"></action>
+        <action name="deleteResourceApp" class="com.inspur.icpmg.gov2.web.ResourceInfoAppAction" method="deleteResourceApp"></action>
+         <action name="updateResourceApp" class="com.inspur.icpmg.gov2.web.ResourceInfoAppAction" method="updateResourceApp"></action>
+           <!-- 服务列表一级 二级类型级联-->
+         <action name="getSevertypeSecond" class="com.inspur.icpmg.gov2.web.ResourceInfoAppAction" method="getSevertypeSecond"></action>
+         
+        <!-- 资源维护  应用服务 end-->
+        
+         <action name="getApplyFilesOfPass" class="com.inspur.icpmg.gov2.web.ResourceApplyAction" method="getApplyFilesOfPass">
+        </action>
+        <action name="resourceImplment" class="com.inspur.icpmg.gov2.web.ResourceImplementAction" method="resourceImplment">
+        </action>
+        <action name="getbefoStatus" class="com.inspur.icpmg.gov2.web.ResourceOperateAction" method="getbefoStatus">
+        </action>
+		
+    </package>
+
+
+  <package name="vmconfig" namespace="/vmconfig" extends="struts-default">
+        <interceptors>
+            <!-- 定义系统的登录控制拦截器 -->
+            <interceptor name="nosessInterceptor" class="com.inspur.icpmg.interceptor.LoginInterceptor"></interceptor>
+            <interceptor-stack name="uuStack">
+                <interceptor-ref name="paramsPrepareParamsStack">
+                    <param name="prepare.alwaysInvokePrepare">false</param>
+                </interceptor-ref>
+                <!-- 引用登录控制拦截器 -->
+                <interceptor-ref name="nosessInterceptor"></interceptor-ref>
+            </interceptor-stack>
+        </interceptors>
+        <!-- 将自定义的拦截器uuStack定义成默认的拦截器栈 -->
+        <default-interceptor-ref name="uuStack"></default-interceptor-ref>
+        <global-results>
+            <result name="noSession">/login.jsp</result>
+            <result name="null">/login.jsp</result>
+        </global-results>
+        <action name="queryCpu" class="com.inspur.icpmg.resourceMg.action.VMConfigAction" method="queryCpu">
+        </action>
+        <action name="queryMem" class="com.inspur.icpmg.resourceMg.action.VMConfigAction" method="queryMem">
+        </action>
+        <action name="queryTemplates" class="com.inspur.icpmg.resourceMg.action.VMConfigAction" method="queryTemplates">
+        </action>
+        <action name="queryResourcePool" class="com.inspur.icpmg.resourceMg.action.VMConfigAction" method="queryResourcePool">
+        </action>
+        <action name="queryVlan" class="com.inspur.icpmg.resourceMg.action.VMConfigAction" method="queryVlan">
+        </action>
+        <!-- 创建vlan -->
+        <!-- 获取平台 -->
+        <action name="queryPlatform" class="com.inspur.icpmg.resourceMg.action.VMConfigAction" method="queryPlatform">
+        </action>
+        <!-- 获取资源池 -->
+        <action name="queryResourcePoolVlan" class="com.inspur.icpmg.resourceMg.action.VMConfigAction" method="queryResourcePoolVlan">
+        </action>
+        <!-- 获取交换机列表 -->
+        <action name="queryDvswitch" class="com.inspur.icpmg.resourceMg.action.VMConfigAction" method="queryDvswitch">
+        </action>
+    </package>
+    <!--运营 防火墙创建 2016-8-15 10:26:53  -->
+    <package name="fwmanage" namespace="/fwmanage" extends="struts-default">
+    
+         <interceptors>
+            <!-- 定义系统的登录控制拦截器 -->
+            <interceptor name="nosessInterceptor" class="com.inspur.icpmg.interceptor.LoginInterceptor"></interceptor>
+            <interceptor-stack name="uuStack">
+                <interceptor-ref name="paramsPrepareParamsStack">
+                    <param name="prepare.alwaysInvokePrepare">false</param>
+                </interceptor-ref>
+                <!-- 引用登录控制拦截器 -->
+                <interceptor-ref name="nosessInterceptor"></interceptor-ref>
+            </interceptor-stack>
+        </interceptors>
+        <!-- 将自定义的拦截器uuStack定义成默认的拦截器栈 -->
+        <default-interceptor-ref name="uuStack"></default-interceptor-ref>
+        <global-results>
+            <result name="noSession">/login.jsp</result>
+            <result name="null">/login.jsp</result>
+        </global-results>
+         <action name="createFW" class="com.inspur.icpmg.resourceMg.action.FWCreate4GovAction" method="createFW">
+         </action>
+        
+    </package>
+
+</struts>

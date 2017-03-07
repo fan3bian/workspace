@@ -1,0 +1,727 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+             <meta name="description" content="" />
+             <meta name="keywords" content="" />
+            <title>关闭虚机 </title>
+	<link href="/icpmg/icp/portal/styles/web.css" rel="stylesheet"
+			type="text/css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/icpmg/icp/portal/styles/util.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/icpmg/icp/portal/styles/gather.css" />
+	<script type="text/javascript" src="/icpmg/icp/portal/scripts/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="/icpmg/icp/portal/scripts/slide.js"></script>
+	<script type="text/javascript" src="/icpmg/icp/portal/scripts/TweenMax.min.js"></script>
+	<script type="text/javascript" src="/icpmg/icp/portal/scripts/myScroll.js"></script>
+	<script type="text/javascript" src="/icpmg/icp/portal/scripts/util.js"></script>
+	<script type="text/javascript" src="/icpmg/icp/portal/scripts/gather.js"></script>
+</head>
+<body>
+	<div class="top-bg">
+			<div class="main">
+				<a href="/icpmg/icp/portal/home.html"><img class="logo"
+						src="/icpmg/icp/portal/images/logo/logo.png" /> </a>
+				<div class="menu">
+					<a href="/icpmg/icp/portal/product/00.html"
+						class="sub-menu"> 产品服务 </a>
+					<a href="/icpmg/icp/portal/notice/lst/notice/notice_1.html"
+						class="sub-menu"> 通知公告 </a>
+					<a href="/icpmg/icp/portal/news/lst/website_1.html"
+						class="sub-menu"> 新闻动态 </a>
+					<a href="/icpmg/icp/portal/case/lst/government_1.html"
+						class="sub-menu"> 解决方案 </a>
+					<a href="/icpmg/icp/portal/service/lst/lession/lession_1.html" class="sub-menu"> 服务社区 </a>
+
+					<div class="clear"></div>
+				</div>
+				<div class="top-right-wear">
+					<div class="top-right">
+						<a class="console" href="javascript:toHomeJsp();"> <i
+							class="icon-console"></i> 控制台 </a>
+						<div class="nologin">
+							<span class="user-name En" id="logoutDiv"></span>
+							<button
+								onclick="window.location.href=getRootPath()+'/userMgr/logout.do'"
+								class="button logout">
+								退出
+							</button>
+							
+
+						</div>
+
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+
+	<div class="container-wrap">
+		<div class="container">
+
+			<!-- 左侧 -->
+			<div class="container-left">
+				<div class="inside-menu">
+					<ul>
+						<li><a href="../../lst/lession/lession_1.html">新手课堂</a></li>
+						<li><a href="../../lst/qa/qa_1.html">技术问答</a></li>
+						<li><a href="../../lst/api/api_1.html" class='active'>API文档</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- 左侧 end -->
+			
+			<!-- 右侧  -->
+			<div class="container-right">
+				
+				<!-- 面包屑 -->
+				<div class="container-guid">
+					<div>
+						<span><img src="../../../images/n-06.jpg" alt=""></span>
+						<a href="../../../home.html">首页</a>
+						<a href="../../lst/lession/lession_1.html">服务社区</a>
+						<b>API文档</b>
+					</div>
+				</div>
+
+				<div class="container-cell">
+					
+					<div class="inner-service">
+					<div class="product-details">
+						<p><font size="5px">stopVirtualMachine</font></p>
+						<p><font style="font-weight:bold;" size="5px"> 关闭虚机 </font></p>
+						<p>
+	&nbsp;<span> </span><span style="font-family:&quot;微软雅黑&quot;,&quot;sans-serif&quot;;"><span></span></span> 
+</p>
+<p>
+	<span style="font-family:&quot;微软雅黑&quot;,&quot;sans-serif&quot;;"><span>请求参数</span></span> 
+</p>
+<p>
+	<span> <br />
+</span> 
+</p>
+<span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span> 
+<table style="margin:auto auto auto 19.6pt;border:currentColor;border-collapse:collapse;" border="1" cellspacing="0" cellpadding="0">
+	<tbody>
+		<tr>
+			<td width="143" valign="top" style="background:#FFDAA3;border:1pt solid windowtext;">
+				<span> </span> 
+				<p>
+					<b><span style="font-family:宋体;"><span>名称</span></span></b> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="81" valign="top" style="background:#FFDAA3;">
+				<span> </span> 
+				<p>
+					<b><span style="font-family:宋体;"><span>类型</span></span></b> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="58" valign="top" style="background:#FFDAA3;">
+				<span> </span> 
+				<p>
+					<b><span style="font-family:宋体;"><span>是否必须</span></span></b> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="260" valign="top" style="background:#FFDAA3;">
+				<span> </span> 
+				<p>
+					<b><span style="font-family:宋体;"><span>描述</span></span></b> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tbody>
+			<tr>
+				<td width="143" valign="top" style="background-color:transparent;">
+					<span> </span> 
+					<p>
+						<span><span>id</span></span> 
+					</p>
+<span> </span> 
+				</td>
+				<td width="81" valign="top" style="background-color:transparent;">
+					<span> </span> 
+					<p>
+						<span><span>String</span></span> 
+					</p>
+<span> </span> 
+				</td>
+				<td width="58" valign="top" style="background-color:transparent;">
+					<span> </span> 
+					<p>
+						<span style="font-family:宋体;"><span>是</span></span> 
+					</p>
+<span> </span> 
+				</td>
+				<td width="260" valign="top" style="background-color:transparent;">
+					<span> </span> 
+					<p>
+						<span><span style="font-family:宋体;">要关闭的虚机</span><span><span>ID</span></span></span> 
+					</p>
+<span> </span> 
+				</td>
+			</tr>
+			<tr>
+				<td width="143" valign="top" style="background-color:transparent;">
+					<span> </span> 
+					<p>
+						<span><span>forced</span></span> 
+					</p>
+<span> </span> 
+				</td>
+				<td width="81" valign="top" style="background-color:transparent;">
+					<span> </span> 
+					<p>
+						<span><span>bool</span></span> 
+					</p>
+<span> </span> 
+				</td>
+				<td width="58" valign="top" style="background-color:transparent;">
+					<span> </span> 
+					<p>
+						<span style="font-family:宋体;"><span>否</span></span> 
+					</p>
+<span> </span> 
+				</td>
+				<td width="260" valign="top" style="background-color:transparent;">
+					<span> </span> 
+					<p>
+						<span style="font-family:宋体;"><span>强制关闭虚机，即使消息发送失败，虚机也被置为关闭态，展示给用户的也为关闭态</span></span> 
+					</p>
+<span> </span> 
+				</td>
+			</tr>
+		</tbody>
+			</table>
+			<p>
+				<span><br />
+</span> 
+			</p>
+			<h4>
+				<span style="font-family:&quot;微软雅黑&quot;,&quot;sans-serif&quot;;"><span>响应参数</span></span> 
+			</h4>
+			<h4>
+				<span style="font-family:&quot;微软雅黑&quot;,&quot;sans-serif&quot;;"><span></span></span><span><br />
+</span> 
+			</h4>
+			<p>
+				<span style="font-family:宋体;"><span>与重启虚机响应参数相同</span></span> 
+			</p>
+			<p>
+				<span><br />
+</span> 
+			</p>
+			<h4>
+				<span style="font-family:&quot;微软雅黑&quot;,&quot;sans-serif&quot;;"><span>请求举例</span></span> <span><br />
+</span> 
+			</h4>
+<span> </span><span> </span><span> </span><span> </span> 
+			<table style="border:currentColor;border-collapse:collapse;" border="1" cellspacing="0" cellpadding="0">
+				<tbody>
+					<tr>
+						<td width="568" valign="top" style="border:1pt solid gray;background-color:transparent;">
+<pre><span style="font-family:&quot;Courier New&quot;;font-size:9pt;">http://localhost:8080/client/api</span></pre>
+<pre><span style="font-family:&quot;Courier New&quot;;font-size:9pt;">?command=stopVirtualMachine</span></pre>
+<pre><span style="font-family:&quot;Courier New&quot;;font-size:9pt;">&amp;id=ccd3ebc6-b3b9-4718-bf0c-6f7b323f6fef</span></pre>
+<pre><span style="font-family:&quot;Courier New&quot;;font-size:9pt;">&amp;response=json</span></pre>
+<pre><span style="font-family:&quot;Courier New&quot;;font-size:9pt;">&amp;apikey=_JYLLJY-Rfhkg8pQ-A8E2Dr-XXEBwj_QNzf7NWSrTtVuGqvQff2rdz6EHEyma_omGzlDMGKzmCq70m37P0rHbw</span></pre>
+<pre><span style="font-family:&quot;Courier New&quot;;font-size:9pt;">&amp;signature=GlRibFgAGe58f1NhNDHjvSl2Fp0%3D</span></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>
+				<span> <br />
+</span> 
+			</p>
+			<h4>
+				<span style="font-family:&quot;微软雅黑&quot;,&quot;sans-serif&quot;;"><span>响应举例</span></span> 
+			</h4>
+			<p>
+				<span> <br />
+</span> 
+			</p>
+<span> </span><span> </span><span> </span><span> </span> 
+			<table style="border:currentColor;border-collapse:collapse;" border="1" cellspacing="0" cellpadding="0">
+				<tbody>
+					<tr>
+						<td width="568" valign="top" style="border:1pt solid gray;background-color:transparent;">
+<pre><a name="OLE_LINK12"></a><a name="OLE_LINK11"></a><span><span style="font-family:&quot;Courier New&quot;;font-size:9pt;">{ </span></span></pre>
+<pre><span><span><span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"stopvirtualmachineresponse":</span></span></span></pre>
+<pre><span><span><span style="font-family:&quot;Courier New&quot;;font-size:9pt;">{</span></span></span></pre>
+<pre><span><span><span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"jobid":"cf73c419-997d-463e-9b4d-aa2686210e5b"</span></span></span></pre>
+<pre><span><span><span style="font-family:&quot;Courier New&quot;;font-size:9pt;">} </span></span></span></pre>
+<pre><span><span><span style="font-family:&quot;Courier New&quot;;font-size:9pt;">}</span></span></span></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>
+				&nbsp;<span> </span><span><br />
+</span> 
+			</p>
+			<h4>
+				<span style="font-family:&quot;微软雅黑&quot;,&quot;sans-serif&quot;;"><span>任务完成响应</span></span> <span><br />
+</span> 
+			</h4>
+<span> </span><span> </span><span> </span><span> </span> 
+			<table style="border:currentColor;border-collapse:collapse;" border="1" cellspacing="0" cellpadding="0">
+				<tbody>
+					<tr>
+						<td width="568" valign="top" style="border:1pt solid gray;background-color:transparent;">
+<pre><span style="font-family:&quot;Courier New&quot;;font-size:9pt;">{ </span></pre>
+<pre><span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"queryasyncjobresultresponse":</span></pre>
+<pre><span style="font-family:&quot;Courier New&quot;;font-size:9pt;">{</span></pre>
+<pre><span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"accountid":"fea93bd6-2c48-11e4-aadd-448a5b98db6e",</span></pre>
+<pre><span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"userid":"feabb778-2c48-11e4-aadd-448a5b98db6e",</span></pre>
+<pre><span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"cmd":"org.apache.cloudstack.api.command.user.vm.StopVMCmd",</span></pre>
+<pre><span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"jobstatus":1,</span></pre>
+<pre><span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"jobprocstatus":0,</span></pre>
+<pre><span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"jobresultcode":0,</span></pre>
+<pre><span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"jobresulttype":"object",</span></pre>
+<pre><span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"jobresult":</span></pre>
+<pre><span style="font-family:&quot;Courier New&quot;;font-size:9pt;">{</span></pre>
+<pre><span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"virtualmachine":</span></pre>
+<pre><span style="font-family:&quot;Courier New&quot;;font-size:9pt;">{</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"id":"a814bbd1-bbc8-484c-acfc-6976476533b7",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"name":"VM-a814bbd1-bbc8-484c-acfc-6976476533b7",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"account":"admin",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"domainid":"fea671b2-2c48-11e4-aadd-448a5b98db6e",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"domain":"ROOT",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"created":"2014-08-27T14:45:47+0800",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"state":"Stopped",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"haenable":false,</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"zoneid":"abd6c119-6fd4-4633-8e95-4fd3d9b7420c",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"zonename":"testzone",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"templateid":"f7bbdcbe-2c48-11e4-aadd-448a5b98db6e",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"templatename":"tiny Linux",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"templatedisplaytext":"tinyLinux",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"passwordenabled":false,</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"serviceofferingid":"4ee869e4-2c49-11e4-aadd-448a5b98db6e",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"serviceofferingname":"tinyOffering",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"cpunumber":1,</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"cpuspeed":100,</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"memory":100,</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"cpuused":"0.02%",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"networkkbsread":13,</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"networkkbswrite":5,</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"diskkbsread":0,</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"diskkbswrite":0,</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"diskioread":0,</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"diskiowrite":0,</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"guestosid":"f7c08ea1-2c48-11e4-aadd-448a5b98db6e",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"rootdeviceid":0,</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"rootdevicetype":"ROOT",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"securitygroup":[],</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"nic":</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">[</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">{</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"id":"54712e7b-4f22-47d8-bed0-f313e1c67211",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"networkid":"64529e81-fa82-41ba-b4c8-d0d4316cde59",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"networkname":"admin-network",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"netmask":"255.255.255.0",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"gateway":"10.1.1.1",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"ipaddress":"10.1.1.73",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"traffictype":"Guest",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"type":"Isolated",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"isdefault":true,</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"macaddress":"02:00:50:8e:00:0d"</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">}</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">],</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"hypervisor":"XenServer",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"instancename":"i-2-15-VM",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"tags":[],</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"affinitygroup":[],</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"displayvm":true,</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"isdynamicallyscalable":true,</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"jobid":"bb13d0bc-1f18-4f7d-9cb6-9cd6d18fc074",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;Courier New&quot;;font-size:9pt;">"jobstatus":0</span></pre>
+<pre><span style="font-family:&quot;Courier New&quot;;font-size:9pt;">}},</span></pre>
+<pre><span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"created":"2014-08-27T17:24:48+0800",</span></pre>
+<pre><span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"jobid":"bb13d0bc-1f18-4f7d-9cb6-9cd6d18fc074"</span></pre>
+<pre><span style="font-family:&quot;Courier New&quot;;font-size:9pt;">} </span></pre>
+<pre><span style="font-family:&quot;Courier New&quot;;font-size:9pt;">}</span></pre>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>
+				&nbsp;&nbsp;&nbsp;&nbsp;<span> </span><span><br />
+</span> 
+			</p>
+			<h4>
+				<a name="_Toc396937240"></a><span style="font-family:&quot;微软雅黑&quot;,&quot;sans-serif&quot;;"><span>任务执行异常情况</span></span> 
+			</h4>
+			<p>
+				<span> <br />
+</span> 
+			</p>
+			<p>
+				<span style="font-family:&quot;微软雅黑&quot;,&quot;sans-serif&quot;;"><span>若任务执行失败，则返回的响应中<span>jobstatus</span>值为<span>2</span>。通过解析<span>u'jobresultcode'</span>判断错误类型</span></span> 
+			</p>
+			<p>
+				<span> <br />
+</span> 
+			</p>
+			<p>
+				<b><span style="color:#00B0F0;font-family:&quot;微软雅黑&quot;,&quot;sans-serif&quot;;font-size:12pt;">请求举例</span></b> 
+			</p>
+			<p>
+				<span> <br />
+</span> 
+			</p>
+<span> </span><span> </span><span> </span><span> </span> 
+			<table style="border:currentColor;border-collapse:collapse;" border="1" cellspacing="0" cellpadding="0">
+				<tbody>
+					<tr>
+						<td width="568" valign="top" style="border:1pt solid gray;background-color:transparent;">
+							<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;"><a href="http://localhost:8080/client/api"><span>http://localhost:8080/client/api</span></a></span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">?sessionkey=k7V7SOm3yKHj4irvnX9YRJEbpPU%3D</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">&amp;command=stopVirtualMachine</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">&amp;id=c81c075b-cd26-45cd-814d-0808a813fee5</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">&amp;response=json</span> 
+							</p>
+<span> </span> 
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>
+				<span> <br />
+</span> 
+			</p>
+			<p>
+				<b><span style="color:#00B0F0;font-family:&quot;微软雅黑&quot;,&quot;sans-serif&quot;;font-size:12pt;">响应举例</span></b> 
+			</p>
+			<p>
+				<span> <br />
+</span> 
+			</p>
+<span> </span><span> </span><span> </span><span> </span> 
+			<table style="border:currentColor;border-collapse:collapse;" border="1" cellspacing="0" cellpadding="0">
+				<tbody>
+					<tr>
+						<td width="568" valign="top" style="border:1pt solid gray;background-color:transparent;">
+							<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">{ "queryasyncjobresultresponse"
+  : {"accountid":"b696c6cc-2f48-11e4-b200-448a5b98db6e",</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"userid":"b69da6e6-2f48-11e4-b200-448a5b98db6e",</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"cmd":"org.apache.cloudstack.api.command.user.vm.StopVMCmd",</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"jobstatus":1,</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"jobprocstatus":0,</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"jobresultcode":0,</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"jobresulttype":"object",</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"jobresult":{"virtualmachine":{</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"id":"c81c075b-cd26-45cd-814d-0808a813fee5",</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"name":"vm-1",</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"displayname":"vm-1",</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"account":"admin",</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"domainid":"b696b49c-2f48-11e4-b200-448a5b98db6e",</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"domain":"ROOT",</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"created":"2014-08-29T15:01:37+0800",</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"state":"Stopped",</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"haenable":false,</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"zoneid":"d4781e20-baa2-4b2b-8d05-cd0c863e31b4",</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"zonename":"DevCloud0",</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"templateid":"ae15a8e6-2f48-11e4-b200-448a5b98db6e",</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"templatename":"tiny
+  Linux",</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"templatedisplaytext":"tiny
+  Linux",</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"passwordenabled":false,</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"serviceofferingid":"dfddb133-2f48-11e4-b200-448a5b98db6e",</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"serviceofferingname":"tinyOffering",</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"cpunumber":1,</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"cpuspeed":100,</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"memory":100,</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"cpuused":"0.04%",</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"networkkbsread":13421773,</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"networkkbswrite":13421773,</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"diskkbsread":0,</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"diskkbswrite":0,</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"diskioread":0,</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"diskiowrite":0,</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"guestosid":"ae1620f7-2f48-11e4-b200-448a5b98db6e",</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"rootdeviceid":0,</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"rootdevicetype":"ROOT",</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"securitygroup":[{</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"id":"ec518393-2f48-11e4-b200-448a5b98db6e",</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"name":"default",</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"description":"Default
+  Security Group",</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"account":"admin",</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"ingressrule":[],</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"egressrule":[],</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"tags":[]}],</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"nic":[{</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"id":"25e411e1-f09c-45dd-b9eb-6f8b3baf0e05",</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"networkid":"0247ee76-bed8-4651-9485-8a1ef189265f",</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"networkname":"guestNetworkForBasicZone",</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"netmask":"255.255.255.0",</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"gateway":"192.168.56.1",</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"ipaddress":"192.168.56.102",</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"isolationuri":"ec2://untagged",</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"broadcasturi":"vlan://untagged",</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"traffictype":"Guest",</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"type":"Shared",</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"isdefault":true,</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"macaddress":"06:ff:10:00:00:18"}],</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"hypervisor":"XenServer",</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"instancename":"i-2-3-VM",</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"tags":[],</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"affinitygroup":[],</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"displayvm":true,</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"isdynamicallyscalable":true,</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"jobid":"9b9bb122-a285-4322-95c9-556e1ddbd746",</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"jobstatus":0}},</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"created":"2014-08-29T16:13:42+0800",</span> 
+							</p>
+<span> </span> 
+							<p align="left" style="text-align:left;">
+								<span style="font-family:&quot;Courier New&quot;;font-size:9pt;">"jobid":"9b9bb122-a285-4322-95c9-556e1ddbd746"}
+  }</span> 
+							</p>
+<span> </span> 
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>
+				<span> <br />
+</span> 
+			</p>
+					</div>
+					</div>
+				</div>
+
+			</div>
+			<!-- 右侧 end -->
+			<div class="clear"></div>
+
+		</div>
+	</div>
+
+	<div class="page-footer-copyright">
+			<span> <small>技术支持：浪潮云服务信息科技有限公司</small> </span>&nbsp;&nbsp;&nbsp;&nbsp;
+			<span><small>©浪潮集团版权所有</small> </span>
+			<span><small>ICP备案号：鲁ICP备05019369号</small> </span>
+		</div>
+</body>

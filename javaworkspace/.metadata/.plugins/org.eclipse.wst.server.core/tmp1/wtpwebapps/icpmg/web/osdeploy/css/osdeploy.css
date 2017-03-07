@@ -1,0 +1,125 @@
+@CHARSET "UTF-8";
+.input-group{margin:15px 15%;overflow: hidden;}
+.control-label{float:left;text-align:left;font-size:12px;width:60px}
+.control-input{width:148px;float:left;}
+/* .input-group{height:30px;box-sizing:border-box;}
+.control-label{display:inline-block;width:180px;}
+.control-input{float:left;width:240px;} */
+.env-content{margin:0 15px;width:100%;height:auto;}
+.card{margin:10px;border:1px #c9ccd0 solid;width:28%;height:160px;cursor:pointer;border-radius:8px;background-color:white;display:inline-block;color:#666;float:left;}
+.card-top{height:48px;border-bottom:1px #c9ccd0 solid;margin:0 10px;}
+.card-top h4{color:#009fe9;font-size:18px;padding-left:20px;line-height:3em;}
+.card-bottom{height:120px;}
+.card-bottom .cell{float:left;width:24.5%;height:80px;border-right:1px #ccc solid;margin:18px 0;}
+.card-bottom .cell:last-child{border:none;}
+.card:hover{border:1px solid rgba(12,148,222,0.8);box-shadow:0 0 4px rgba(12,148,222,0.5);background-color:#fcfcfc;}
+.card-bottom .cell span.value{height:20px;}
+.card-bottom .cell span.item{height:30px;margin:20px 0 0 0;color:#888;}
+.card-bottom .cell span{display:inline-block;text-align:center;width:100%;}
+.card-bottom em{font-style:normal;font-size:26px;}
+.new-card{margin:10px;border:1px #c9ccd0 solid;width:28%;height:160px;cursor:pointer;border-radius:8px;background-color:white;display:inline-block;color:#666;text-align:center;color:#aaa;}
+.new-card:hover{color:rgba(12,148,222,0.8);box-shadow:0 0 4px rgba(12,148,222,0.5);background-color:#fcfcfc;}
+.new-card:hover .plus{border-color:rgba(12,148,222,0.3);color:rgba(12,148,222,0.5);}
+.plus{line-height:100px;margin-bottom:10px;border:3px solid #ddd;padding:5px;border-radius:50px;width:80px;margin:0 auto;height:80px;margin-top:20px;color:#ccc;}
+.plus span{font-size:110px;margin-top:-18px;display:block;}
+.word{margin-top:8px;font-size:16px;}
+/*产品  20161014 kvm优化版*/
+.kvm-layout-left{width:244px;float:left;height:275px;border-radius:3px;font-family:微软雅黑;}
+.kvm-layout-right{overflow:hidden;margin-left:254px;height:275px;border:1px solid #ddd;color:#666;background-color:#fff;border-radius:3px;font-family:微软雅黑;}
+.kvm-layout-left .header{width:224px;height:55px;line-height:55px;background:url(../image/osdeploy.png) 0 0 no-repeat;color:#fff;padding:0 10px 11px;position:relative;z-index:1}
+.kvm-layout-left .title{font-size:18px;display:inline-block;}
+.kvm-layout-left .date{float:right;}
+.kvm-layout-left .body{font-size:14px;color:#666;border:1px solid #ddd;border-top:none;margin:-12px 10px 0 10px;background:#fff;}
+.kvm-layout-left .body li{line-height:6em;padding:0 20px;border-top:1px solid #e5e5e5;}
+.kvm-layout-left .body em{font-style:normal;font-size:18px;float:right;}
+.kvm-layout-left .body .kvm-icon{display:inline-block;width:35px;height:35px;border-radius:20px;background:url(../image/osdeploy.png) 0 0 no-repeat;vertical-align:middle;margin-right:10px;color:#999;}
+.kvm-layout-left .body .icon-kz{background-position:-2px -64px;background-color:#ffb53d;}
+.kvm-layout-left .body .icon-js{background-position:-74px -63px;background-color:#00b7ee;}
+.kvm-layout-left .body .icon-cc{background-position:-148px -64px;background-color:#1dbfaf;}
+.kvm-step{width:210px;float:left;border-right:1px solid #ddd;height:100%}
+.kvm-step li{    /*overflow: hidden;*/
+height:60px;border-bottom:1px solid #dddddd;}
+.kvm-step li.active .title{background-color:#00b7ee;}
+.kvm-step .title{width:70px;height:60px;float:left;text-align:center;position:relative;background:#e5e5e5;}
+.kvm-step .title:after{content:"";background:url(../image/osdeploy.png) -269px -5px no-repeat;width:100%;height:13px;position:absolute;bottom:-13px;left:0;}
+.kvm-step li.active .title:after{content:"";background:url(../image/osdeploy.png) -269px -25px no-repeat;width:100%;height:13px;position:absolute;bottom:-13px;left:0;}
+.kvm-step  .step1{position:relative;z-index:4;}
+.kvm-step  .step2{position:relative;z-index:3;}
+.kvm-step  .step3{position:relative;z-index:2;}
+.kvm-step  .step4{position:relative;z-index:1;overflow:hidden;}
+.kvm-step .title .quan{display:inline-block;text-align:center;width:20px;height:20px;line-height:20px;background:#fff;border-radius:10px;color:#999;margin:20px;}
+.kvm-step .text{height:60px;line-height:60px;padding-left:80px;color:#999;background:#f6f6f6;}
+.kvm-step li.active .text{color:#00b7ee;}
+/*右侧*/
+.kvm-layout-right .body{margin-left:210px;}
+.kvm-layout-right .body .title{color:#333;line-height:60px;height:60px;padding-left:10px;}
+.body .content{min-width:600px;height:184px;overflow: auto;}
+
+/*点击按钮*/
+.kvm-btn-box{padding-top:30px;width:28%;margin:0 2%;display:inline-block;}
+.kvm-btn{height:55px;width:100%;color:#fff;border:1px solid #ddd;border-radius:3px;font-size:14px;  outline: none}
+.select{height:25px;width:100%;color:#666;background:#fff;outline:none;border:1px solid #ddd;border-radius:0 0 3px 3px;font-size:14px;border-top:none;box-shadow:2px 2px 4px #eee;}
+.kvm-btn:hover{opacity:.9;filter:alpha(opacity=90%);}
+.kvm-btn  .kvm-btn-icon{background:url(../image/osdeploy.png) no-repeat;width:30px;height:30px;border-radius:15px;background-color:#fff;display:inline-block;vertical-align:middle;margin-right:10px}
+.icon-btn-kz{background:#ffb53d;}
+.icon-btn-js{background:#00b7ee;}
+.icon-btn-cc{background:#1dbfaf;}
+.icon-btn-kz .kvm-btn-icon{background-position:-4px -108px;}
+.icon-btn-js .kvm-btn-icon{background-position:-77px -108px;}
+.icon-btn-cc .kvm-btn-icon{background-position:-150px -108px;}
+.body .kvm-footer{padding-left:10px;color:#056ab8;padding-top:3px;padding-right:20px;border-top:1px solid #ddd;text-align:right;}
+#step1 .content{margin:0 30px;}
+.kvm-ts{color:#ff4949;float:left;}
+/*检查配置*/
+.kvm-pzjc .content{margin:0 70px;}
+.icon-btn-wlpz{background:#00b7ee;}
+.icon-btn-fwqpz{background:#ffb53d;}
+.icon-btn-wlpz .kvm-btn-icon{background-position:-5px -155px;}
+.icon-btn-fwqpz .kvm-btn-icon{background-position:-78px -157px;}
+.kvm-pzjc .kvm-btn-box{padding-top:30px;width:30%;margin:0 6%;display:inline-block; opacity: .5;
+filter: alpha(opacity=50);  }
+.kvm-pzjc .kvm-btn-box button{cursor:not-allowed;}
+.kvm-pzjc .kvm-btn-box.active{opacity: 1;
+filter: alpha(opacity=100); }
+.kvm-pzjc .kvm-btn-box.active button{cursor:pointer;}
+.kvm-icon-arrow{ background: url(../image/osdeploy.png) no-repeat -384px -7px; width: 40px; height: 40px; margin:0 auto 10px;  display: inline-block;}
+
+/*.kvm-t-wrap{border:1px solid #ccc;border-right:none;border-radius:3px;color:#666; margin:-1px;}
+.kvm-t-wrap .title{font-size:16px;line-height:2.5;padding:0 20px;background:#fff;border-right:1px solid #ccc;}
+.kvm-t-wrap table th,.kvm-t-wrap table td{padding:10px 5px;text-align:center;line-height:1.5;border-top:1px solid #ccc;border-right:1px solid #ccc;}
+.kvm-t-wrap table td{background:#fff;}*/
+
+.kvm-t-wrap .panel-header{ background: #fff;  }
+.kvm-t-wrap .panel-title{ font-size: 16px; padding-left: 5px; border-left: 3px solid #00b7ee }
+.kvm-ok{  display: inline-block; width:20px;height:20px;vertical-align:middle;background:url(../image/ok-error.png) 0 0;}
+.kvm-error{float:right;width:20px;height:20px;vertical-align:middle;background:url(../image/ok-error.png) 0 20px;}
+
+
+/*弹层*/
+.kvm-window-left{width:320px;float:left;padding-left:15px;}
+.kvm-window-center{width:90px;float:left;}
+.kvm-window-right{width:340px;float:right;}
+.kvm-window .title{color:#222;height:30px;line-height:30px;font-size:14px;font-weight:600;}
+
+/*.table-box{ border:1px solid #ddd;  }*/
+.kvm-window .panel-header,.kvm-window .panel-body{border:1px solid #ddd;}
+.kvm-window-center{padding-top:150px;text-align:center;}
+.kvm-window-center  a{margin-bottom:30px;}
+
+/*安装*/
+.kvm-set{border-left:2px solid #ddd;margin-left:20px; margin-right: 20px; margin-bottom: 10px; padding-top: 10px;}
+.kvm-set dl{padding-left:20px;position:relative;margin-top:-10px; padding-bottom: 30px;}
+.kvm-set dl dt{margin-bottom:10px;margin-top:-12px; position: relative;}
+.kvm-set dl:before{width:20px;height:10px;border-radius:5px;background:#00b7ee;content:"";margin-left:-25px;display:block;}
+.kvm-set dl dd{ border:1px solid #eee; padding:3px; }
+.kvm-set dl dd:before{width:8px;height:8px;border-radius:4px;background:#00b7ee;content:"";margin-left:-28px;display:block;}
+.kvm-set dl dt:after{width:20px;height:10px;background:url(../image/osdeploy.png) -17px -216px;content:""; position: absolute; top: 46px;
+    left: -7px}
+.kvm-set dl dt .kvm-set-os{float:right;}
+.kvm-set dl dt .kvm-set-os .l-btn-plain:hover{background:none; border:none; outline: none}
+/*创建*/
+.kvm-create td{ padding:5px 0; }
+.kvm-create .shadow-input{height:23px;line-height:23px;border:1px solid #ddd;border-radius:3px;width:200px;padding:0 5px;color:#333;}
+
+
+

@@ -1,0 +1,32 @@
+<div class="content">
+    <h3>一、创建网络</h3>
+    <ul class="kvm-set">
+        <li>
+            <div class="input-group">
+                <label class="control-label">CIDR：</label>
+                <input class="easyui-textbox control-input" data-options="value:'172.23.10.0'">&emsp;/&nbsp;
+                <input class="easyui-textbox control-input" data-options="width:40,value:24">
+            </div>
+        </li>
+        <li>
+            <div class="input-group">
+                <label class="control-label">IP范围：</label>
+                <input class="easyui-textbox control-input" data-options="validType:'ip',value:'172.23.10.1'">&nbsp;~
+                <input class="easyui-textbox control-input" data-options="validType:'ip',value:'172.23.10.253'">
+            </div>
+        </li>
+        <li>
+            <div class="input-group">
+                <label class="control-label">网关：</label>
+                <input class="easyui-textbox control-input" data-options="validType:'ip',value:'172.23.10.254'">
+            </div>
+        </li>
+        <li>
+            <div class="input-group">
+                <label class="control-label">vlan ID：</label>
+                <input class="easyui-textbox control-input" data-options="validType:'integer',value:'101'">
+                <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-objopen',disabled:true" style="float:right;" onclick="initEnviron()">启动</a>
+            </div>
+        </li>
+    </ul>
+</div>

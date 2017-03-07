@@ -1,0 +1,280 @@
+.inserveroverview_container {
+    padding-top:10px;
+    margin: 0 auto;
+    color: #666666;
+    width: 98%;
+    min-height:900px;
+     position: relative;
+}
+
+.inserveroverview_left {
+     float: left;
+    width: 79%;
+    height: 700px;
+}
+.inserveroverview_number{
+	width: 100%;
+	 height: 68px;
+	 margin: 0 auto;
+	 position:  relative;
+}
+.inserveroverview_status {
+    float: left;
+    width: 24%;
+     height: 68px;
+    background-color: white;
+    border: 1px solid #DDDDDD;
+}
+
+#inserveroverview_img_all {
+    float: left;
+    width: 68px;
+    height: 68px;
+}
+
+#inserveroverview_img_fault {
+    background-position: 294px 0;
+    float: left;
+    width: 68px;
+    height: 68px;
+}
+
+#inserveroverview_img_new {
+    background-position: 213px 0;
+    float: left;
+    width: 68px;
+    height: 68px;
+}
+
+#inserveroverview_img_offline {
+    background-position: 133px 0;
+    float: left;
+    width: 68px;
+    height: 68px;
+}
+
+.inserveroverview_num {
+    display: block;
+    font-size: 25px;
+    margin-left: 75px;
+}
+
+.inserveroverview_name {
+    display: block;
+    font-size: 15px;
+    margin-left: 75px;
+}
+
+#inserveroverview_census {
+    width:100%;
+	height:205px;
+    margin-top: 15px;
+    background-color: white;
+    border: 1px solid #DDDDDD;
+    border-bottom: none;
+    overflow: hidden;
+}
+
+.inserveroverview_inf{
+	width:100%;
+	height:245px;
+    margin-top: 15px;
+    background-color: white;
+    border: 1px solid #DDDDDD;
+    border-bottom: none;
+    overflow: hidden;
+}
+
+#inserveroverview_inf_left {
+	float:left;
+   width:50%;
+	height:205px;
+  	margin:0 auto;
+  	 text-align: center;
+    border: 1px solid #DDDDDD;
+    border-bottom: none;
+    border-top:none;
+    overflow: hidden;
+}
+
+#inserveroverview_inf_left_span {
+    float: left;
+    margin-left: 30px;
+    font-size: 17px;
+    position: relative;
+    z-index: 1;
+    line-height: 160px;
+}
+
+#inserveroverview_cpu_use_pie {
+    position: relative;
+    z-index: 0;
+    top: -10px;
+    width: 200px;
+    height: 200px;
+    float: left;
+}
+
+#inserveroverview_cpu_use_legend, #inserveroverview_mem_use_legend {
+    position: relative;
+    z-index: 1;
+    float: left;
+    left: 20px;
+    margin-top: 55px;
+}
+
+#inserveroverview_inf_right {
+    float: right;
+    width: 49.5%;
+    height: 160px;
+   margin:0 auto;
+   text-align: center;
+}
+
+#inserveroverview_inf_right_span {
+    float: left;
+    position: relative;
+    z-index: 1;
+    margin-left: 30px;
+    font-size: 17px;
+    line-height: 160px;
+}
+
+#inserveroverview_mem_use_pie {
+    position: relative;
+    z-index: 0;
+    top: -10px;
+    width: 200px;
+    height: 200px;
+    float: left;
+}
+
+.inserveroverview_span {
+    display: block;
+    line-height: 40px;
+    margin: 0px 10px 10px 10px;
+    border-bottom: 1px solid #DDDDDD; font-size: 16px; color: #666;
+}
+.inserveroverview_right_span {
+    float:left;
+   display: block;
+    height: 40px;
+    line-height: 40px;
+}
+
+/*覆写easyui表头样式*/
+.datagrid-cell {
+    padding: 0;
+}
+
+#inserveroverview_charts {
+    margin-top: 15px;
+    width: 100%;
+    height: 300px;
+    margin-bottom: 50px;
+}
+
+#inserveroverview_mem {
+   float: right;
+    width: 49%;
+    height: 300px;
+    background-color: white;
+    border: 1px solid #DDDDDD;
+    overflow: hidden;
+}
+
+#inserveroverview_cpu {
+    float: left;
+    width: 49%;
+    height: 300px;
+    background-color: white;
+    border: 1px solid #DDDDDD;
+    overflow: hidden;
+}
+
+#inserveroverview_cpu_chart, #inserveroverview_mem_chart {
+    width: 95%;
+    height: 85%;
+}
+
+.inserveroverview_right {
+   float: right;
+    width: 20%;
+    min-height:100px;
+    background-color: white;
+    border: 1px solid #DDDDDD ;
+    overflow: hidden;position: absolute;
+    right: 0;
+    bottom: 33px;
+    top: 10px;
+}
+.inhostoverview_right_all{
+	float: left;
+    width: 107%;
+    min-height:100px;
+    max-height:863px;
+    overflow-y:scroll;
+}
+.inserveroverview_right_all_title{
+	 height: 40px;
+    line-height: 40px;
+	margin: 0px 10px 10px 10px;
+    border-bottom: 1px solid #DDDDDD;
+}
+.inserveroverview_right_all_title_right{
+	float:right;
+	width: 120px;
+	height: 40px;
+}
+.inserveroverview_new {
+    display: none;
+}
+
+.inserveroverview_list {
+    margin: 0 auto;
+    position: relative;
+    width: 97%;
+}
+
+.inserveroverview_list_one{
+	float: left;
+    width: 40%;
+    height: 30px;
+    line-height:30px;
+    text-align: center;
+    display:block;/*内联对象需加*/ 
+    word-break:keep-all;/* 不换行 */
+	white-space:nowrap;/* 不换行 */
+	overflow:hidden;/* 内容超出宽度时隐藏超出部分的内容 */
+	text-overflow:ellipsis;/* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/ 
+}
+.inserveroverview_list_two{
+	float: left;
+    width: 30%;
+    height: 30px;
+    line-height:30px;
+    text-align: center;
+}
+.inserveroverview_list_three{
+	float: left;
+    width: 30%;
+    height: 30px;
+    line-height:30px;
+    text-align: center;
+}
+
+.inserveroverview_new table {
+    width: 100%;
+    position: relative;
+    left: -7px;
+}
+
+#inserveroverview_more {
+    float: right;
+    cursor: pointer;
+}
+
+.inserveroverview_clear {
+    clear: both;
+}
+.inserveroverview_container .get_more{margin-right: 10%}

@@ -1,0 +1,150 @@
+/**
+ *网络监控目录下设备概况页面共用此css
+ *请谨慎修改
+ *Created By liuenqi
+ */
+#net_main_body {
+    margin: auto;
+    height: auto;
+}
+
+#top_block {
+    width: auto;
+    height: auto;
+    margin-top: 10px;
+    margin-left: 24px;
+}
+
+.single_block {
+    background-color: #FFFFFF;
+    color: #666666;
+    width: 22.4%;
+    height: auto;
+    margin-right: 3%;
+    border: 1px solid #DDDDDD;
+    float: left;
+}
+
+.single_block:hover, .single_block_selected:hover {
+    cursor: pointer;
+    border: 1px solid #58C9F3;
+}
+
+.single_block_selected {
+    border: 1px solid #58C9F3;
+}
+
+.single_block:nth-of-type(4) {
+    margin-right: 0;
+}
+
+.block_img {
+    background-image: url("../img/host.png");
+    width: 68px;
+    height: 68px;
+    float: left;
+}
+
+#count_offline {
+    background-position: 294px 0;
+}
+
+#count_new {
+    background-position: 213px 0;
+}
+
+#count_clear {
+    background-position: 133px 0;
+}
+
+.single_block span:nth-child(2) {
+    font-size: 25px;
+    margin-left: 20px;
+}
+
+.single_block span:nth-child(3) {
+    display: block;
+    font-size: 15px;
+    margin-left: 87px;
+}
+
+#monitor_list_block {
+    margin: 20px 0 0 25px;
+    height: auto;
+}
+
+#dg_monitor_net_list, #dg_monitor_LBS_list {
+    height: 350px;
+    background-color: #FFFFFF;
+}
+
+.monitor_top_block span {
+    color: #FFFFFF;
+    padding: 5px 10px;
+    font-size: 15px;
+    cursor: pointer;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    background-color: #3DC3B8;
+}
+
+.monitor_top_block_selected {
+    background-color: #FFFFFF !important;
+    color: #3DC3B8 !important;
+}
+
+.warn_info {
+    margin: 20px 0 0 25px;
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    height: auto;
+}
+
+.block_title {
+    display: block;
+    margin: 0 25px 5px 25px;
+    line-height: 35px;
+    font-size: 14px;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.net_flow_chart {
+    margin: 20px 0 5px 25px;
+    height: auto;
+}
+
+#flow_in_chart {
+    float: left;
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+}
+
+#flow_out_chart {
+    float: right;
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+}
+
+#dg_warn_info {
+    margin: 0 25px 5px 25px;
+}
+
+.datagrid-header .datagrid-cell {
+    background-color: #F3F5F6;
+}
+
+.tooltip_cicrle {
+    width: 10px;
+    height: 10px;
+    float: left;
+    margin-right: 6px;
+    margin-top: 6px;
+    border-radius: 5px;
+    background-color: #3398DB;
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}

@@ -1,0 +1,2778 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+             <meta name="description" content="" />
+             <meta name="keywords" content="" />
+            <title>重启虚机</title>
+	<link href="/icpmg/icp/portal/styles/web.css" rel="stylesheet"
+			type="text/css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/icpmg/icp/portal/styles/util.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/icpmg/icp/portal/styles/gather.css" />
+	<script type="text/javascript" src="/icpmg/icp/portal/scripts/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="/icpmg/icp/portal/scripts/slide.js"></script>
+	<script type="text/javascript" src="/icpmg/icp/portal/scripts/TweenMax.min.js"></script>
+	<script type="text/javascript" src="/icpmg/icp/portal/scripts/myScroll.js"></script>
+	<script type="text/javascript" src="/icpmg/icp/portal/scripts/util.js"></script>
+	<script type="text/javascript" src="/icpmg/icp/portal/scripts/gather.js"></script>
+</head>
+<body>
+	<div class="top-bg">
+			<div class="main">
+				<a href="/icpmg/icp/portal/home.html"><img class="logo"
+						src="/icpmg/icp/portal/images/logo/logo.png" /> </a>
+				<div class="menu">
+					<a href="/icpmg/icp/portal/product/00.html"
+						class="sub-menu"> 产品服务 </a>
+					<a href="/icpmg/icp/portal/notice/lst/notice/notice_1.html"
+						class="sub-menu"> 通知公告 </a>
+					<a href="/icpmg/icp/portal/news/lst/website_1.html"
+						class="sub-menu"> 新闻动态 </a>
+					<a href="/icpmg/icp/portal/case/lst/government_1.html"
+						class="sub-menu"> 解决方案 </a>
+					<a href="/icpmg/icp/portal/service/lst/lession/lession_1.html" class="sub-menu"> 服务社区 </a>
+
+					<div class="clear"></div>
+				</div>
+				<div class="top-right-wear">
+					<div class="top-right">
+						<a class="console" href="javascript:toHomeJsp();"> <i
+							class="icon-console"></i> 控制台 </a>
+						<div class="nologin">
+							<span class="user-name En" id="logoutDiv"></span>
+							<button
+								onclick="window.location.href=getRootPath()+'/userMgr/logout.do'"
+								class="button logout">
+								退出
+							</button>
+							
+
+						</div>
+
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+	<div class="container-wrap">
+		<div class="container">
+
+			<!-- 左侧 -->
+			<div class="container-left">
+				<div class="inside-menu">
+					<ul>
+						<li><a href="../../lst/lession/lession_1.html">新手课堂</a></li>
+						<li><a href="../../lst/qa/qa_1.html">技术问答</a></li>
+						<li><a href="../../lst/api/api_1.html" class='active'>API文档</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- 左侧 end -->
+			
+			<!-- 右侧  -->
+			<div class="container-right">
+				
+				<!-- 面包屑 -->
+				<div class="container-guid">
+					<div>
+						<span><img src="../../../images/n-06.jpg" alt=""></span>
+						<a href="../../../home.html">首页</a>
+						<a href="../../lst/lession/lession_1.html">服务社区</a>
+						<b>API文档</b>
+					</div>
+				</div>
+
+				<div class="container-cell">
+					
+					<div class="inner-service">
+					<div class="product-details">
+						<p><font size="5px">rebootVirtualMachine</font></p>
+						<p><font style="font-weight:bold;" size="5px"> 重启虚机</font></p>
+						<p>
+	<span> </span><span style="font-family:&quot;&quot;;"><span>请求参数</span></span> 
+</p>
+<p>
+	<span> <br />
+</span> 
+</p>
+<span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span> 
+<table style="margin:auto auto auto 19.6pt;border:currentColor;border-collapse:collapse;" border="1" cellspacing="0" cellpadding="0">
+	<tbody>
+		<tr>
+			<td width="143" valign="top" style="background:#FFDAA3;border:1pt solid windowtext;">
+				<span> </span> 
+				<p>
+					<b><span style="font-family:宋体;"><span>名称</span></span></b> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="81" valign="top" style="background:#FFDAA3;">
+				<span> </span> 
+				<p>
+					<b><span style="font-family:宋体;"><span>类型</span></span></b> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="58" valign="top" style="background:#FFDAA3;">
+				<span> </span> 
+				<p>
+					<b><span style="font-family:宋体;"><span>是否必须</span></span></b> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="260" valign="top" style="background:#FFDAA3;">
+				<span> </span> 
+				<p>
+					<b><span style="font-family:宋体;"><span>描述</span></span></b> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td width="143" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>id</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="81" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>String</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="58" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span style="font-family:宋体;"><span>是</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="260" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span style="font-family:宋体;">要重启的虚机</span><span><span>ID</span></span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+	</tbody>
+</table>
+<p>
+	<span> <br />
+</span> 
+</p>
+<h4>
+	<span style="font-family:&quot;&quot;;"><span>响应参数</span></span> 
+</h4>
+<p>
+	<span> <br />
+</span> 
+</p>
+<span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span> 
+<table style="margin:auto auto auto 19.6pt;border:currentColor;border-collapse:collapse;" border="1" cellspacing="0" cellpadding="0">
+	<tbody>
+		<tr>
+			<td width="209" valign="top" style="background:#FFDAA3;border:1pt solid windowtext;">
+				<span> </span> 
+				<p>
+					<b><span style="font-family:宋体;"><span>名称</span></span></b> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background:#FFDAA3;">
+				<span> </span> 
+				<p>
+					<b><span style="font-family:宋体;"><span>描述</span></span></b> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>id</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the ID
+  of the virtual machine</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>account</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  account associated with the virtual machine</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>cpunumber</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  number of cpu this virtual machine is running with</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>cpuspeed</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the speed
+  of each cpu</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>cpuused</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  amount of the vm's CPU currently used</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>created</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  date when this virtual machine was created</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>details</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>Template
+  details in key/value pairs.</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>diskioread</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  read (io) of disk on the vm</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>diskiowrite</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  write (io) of disk on the vm</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>diskkbsread</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  read (bytes) of disk on the vm</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>diskkbswrite</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  write (bytes) of disk on the vm</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>displayname</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>user
+  generated name. The name of the virtual machine is returned if no displayname
+  exists.</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>displayvm</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>an
+  optional field whether to the display the vm to the end user or not.</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>domain</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  name of the domain in which the virtual machine exists</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>domainid</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the ID
+  of the domain in which the virtual machine exists</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>forvirtualnetwork</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  virtual network for the service offering</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>group</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  group name of the virtual machine</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>groupid</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  group ID of the virtual machine</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>guestosid</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>Os
+  type ID of the virtual machine</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>haenable</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>true
+  if high-availability is enabled, false otherwise</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>hostid</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the ID
+  of the host for the virtual machine</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>hostname</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  name of the host for the virtual machine</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>hypervisor</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  hypervisor on which the template runs</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>instancename</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>instance
+  name of the user vm; this parameter is returned to the ROOT admin only</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>isdynamicallyscalable</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>true
+  if vm contains XS/VMWare tools inorder to support dynamic scaling of VM
+  cpu/memory.</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>isodisplaytext</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>an
+  alternate display text of the ISO attached to the virtual machine</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>isoid</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the ID
+  of the ISO attached to the virtual machine</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>isoname</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  name of the ISO attached to the virtual machine</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>keypair</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>ssh
+  key-pair</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>memory</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  memory allocated for the virtual machine</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>name</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  name of the virtual machine</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>networkkbsread</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  incoming network traffic on the vm</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>networkkbswrite</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  outgoing network traffic on the host</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>password</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  password (if exists) of the virtual machine</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>passwordenabled</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>true
+  if the password rest feature is enabled, false otherwise</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>project</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  project name of the vm</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>projectid</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  project id of the vm</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>publicip</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>public
+  IP address id associated with vm via Static nat rule</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>publicipid</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>public
+  IP address id associated with vm via Static nat rule</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>rootdeviceid</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>device
+  ID of the root volume</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>rootdevicetype</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>device
+  type of the root volume</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>serviceofferingid</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the ID
+  of the service offering of the virtual machine</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>serviceofferingname</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  name of the service offering of the virtual machine</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>servicestate</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>State
+  of the Service from LB rule</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>state</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  state of the virtual machine</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>templatedisplaytext</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>an
+  alternate display text of the template for the virtual machine</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>templateid</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the ID
+  of the template for the virtual machine. A -1 is returned if the virtual
+  machine was created from an ISO file.</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>templatename</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  name of the template for the virtual machine</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>zoneid</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the ID
+  of the availablility zone for the virtual machine</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>zonename</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  name of the availability zone for the virtual machine</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>affinitygroup(*)</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>list
+  of affinity groups associated with the virtual machine</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span><span>id</span></span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the ID
+  of the affinity group</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span><span>account</span></span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  account owning the affinity group</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span><span>description</span></span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  description of the affinity group</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span><span><span>domain</span></span></span>&nbsp;<span>&nbsp;</span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  domain name of the affinity group</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span><span><span>domainid</span></span></span>&nbsp;<span>&nbsp;</span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  domain ID of the affinity group</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span><span><span>n</span>ame</span></span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  name of the affinity group</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span><span>type</span></span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  type of the affinity group</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span><span>virtualmachineIds</span></span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>virtual
+  machine Ids associated with this affinity group</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>nic(*)</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  list of nics associated with vm</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span><span>id</span></span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the ID
+  of the nic</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span><span><span>broadcasturi</span></span></span>&nbsp;<span>&nbsp;</span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  broadcast uri of the nic</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span><span><span>gateway</span></span></span>&nbsp;<span>&nbsp;</span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  gateway of the nic</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span><span><span>ip6address</span></span></span>&nbsp;<span>&nbsp;</span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  IPv6 address of network</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span><span><span>ip6cidr</span></span></span>&nbsp;<span>&nbsp;</span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  cidr of IPv6 network</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span><span><span>ip6gateway</span></span></span>&nbsp;<span>&nbsp;</span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  gateway of IPv6 network</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span><span><span>ipaddress</span></span></span>&nbsp;<span>&nbsp;</span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the ip
+  address of the nic</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span><span><span>isdefault</span></span></span>&nbsp;<span>&nbsp;</span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>true
+  if nic is default, false otherwise</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span><span><span>isolationuri</span></span></span>&nbsp;<span>&nbsp;</span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  isolation uri of the nic</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span><span><span>macaddress</span></span></span>&nbsp;<span>&nbsp;</span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>true
+  if nic is default, false otherwise</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span><span><span>netmask</span></span></span>&nbsp;<span>&nbsp;</span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  netmask of the nic</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span><span><span>networkid</span></span></span>&nbsp;<span>&nbsp;</span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the ID
+  of the corresponding network</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span><span><span>networkname</span></span></span>&nbsp;<span>&nbsp;</span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  name of the corresponding network</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span><span><span>secondaryip</span></span></span>&nbsp;<span>&nbsp;</span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  Secondary ipv4 addr of nic</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span><span><span>traffictype</span></span></span>&nbsp;<span>&nbsp;</span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  traffic type of the nic</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span><span><span>type</span></span></span>&nbsp;<span>&nbsp;</span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  type of the nic</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>securitygroup(*)</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>list
+  of security groups associated with the virtual machine</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span><span><span><span>&nbsp;</span>id</span></span></span>&nbsp;<span>&nbsp;</span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the ID
+  of the security group</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span><span><span>account</span></span></span>&nbsp;<span>&nbsp;</span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  account owning the security group</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span><span><span>description</span></span></span>&nbsp;<span>&nbsp;</span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  description of the security group</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span><span><span>domain</span></span></span>&nbsp;<span>&nbsp;</span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  domain name of the security group</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span><span><span>domainid</span></span></span>&nbsp;<span>&nbsp;</span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  domain ID of the security group</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span><span><span>name</span></span></span>&nbsp;<span>&nbsp;</span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  name of the security group</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span><span><span>project</span></span></span>&nbsp;<span>&nbsp;</span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  project name of the group</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span><span><span>projectid</span></span></span>&nbsp;<span>&nbsp;</span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  project id of the group</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span><span><span>egressrule(*)</span></span></span>&nbsp;<span>&nbsp;</span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  list of egress rules associated with the security group</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span><span><span>account</span></span></span>&nbsp;<span>&nbsp;</span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>account
+  owning the security group rule</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span><span><span>cidr</span></span></span>&nbsp;<span>&nbsp;</span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  CIDR notation for the base IP address of the security group rule</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span><span><span>endport</span></span></span>&nbsp;<span>&nbsp;</span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  ending IP of the security group rule</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span><span><span>icmpcode</span></span></span>&nbsp;<span>&nbsp;</span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  code for the ICMP message response</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span><span><span>icmptype</span></span></span>&nbsp;<span>&nbsp;</span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  type of the ICMP message response</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span><span><span>protocol</span></span></span>&nbsp;<span>&nbsp;</span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  protocol of the security group rule</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span><span><span>ruleid</span></span></span>&nbsp;<span>&nbsp;</span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the id
+  of the security group rule</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span><span><span>securitygroupname</span></span></span>&nbsp;<span>&nbsp;</span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>security
+  group name</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span><span><span>startport</span></span></span>&nbsp;<span>&nbsp;</span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  starting IP of the security group rule</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span><span><span>ingressrule(*)</span></span></span>&nbsp;<span>&nbsp;</span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  list of ingress rules associated with the security group</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span><span><span>account</span></span></span>&nbsp;<span>&nbsp;</span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>account
+  owning the security group rule</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span><span><span>cidr</span></span></span>&nbsp;<span>&nbsp;</span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  CIDR notation for the base IP address of the security group rule</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span><span>endport</span></span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  ending IP of the security group rule</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span><span>icmpcode</span></span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  code for the ICMP message response</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span><span>icmptype</span></span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  type of the ICMP message response</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span><span>protocol</span></span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  protocol of the security group rule</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span><span>ruleid</span></span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the id
+  of the security group rule</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span><span>securitygroupname</span></span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>security
+  group name</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span><span>startport</span></span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  starting IP of the security group rule</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span><span>tags(*)</span></span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  list of resource tags associated with the rule</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span><span>account</span></span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  account associated with the tag</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span><span>customer</span></span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>customer
+  associated with the tag</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span><span>domain</span></span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  domain associated with the tag</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span><span>domainid</span></span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the ID
+  of the domain associated with the tag</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span><span>key</span></span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>tag
+  key name</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span><span>project</span></span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  project name where tag belongs to</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span><span>projectid</span></span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  project id the tag belongs to</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span><span>resourceid</span></span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>id of
+  the resource</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span><span>resourcetype</span></span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>resource
+  type</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span><span>value</span></span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>tag
+  value</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span><span>jobid</span></span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the ID
+  of the latest async job acting on this object</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span><span>jobstatus</span></span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  current status of the latest async job acting on this object</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>tags(*)</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  list of resource tags associated with vm</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span><span>account</span></span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  account associated with the tag</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span><span>customer</span></span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>customer
+  associated with the tag</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span><span>domain</span></span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  domain associated with the tag</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span><span>domainid</span></span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the ID
+  of the domain associated with the tag</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span><span>key</span></span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>tag
+  key name</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span><span>project</span></span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  project name where tag belongs to</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span><span>projectid</span></span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  project id the tag belongs to</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span><span>resourceid</span></span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>id of
+  the resource</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span><span>resourcetype</span></span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>resource
+  type</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span><span>value</span></span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>tag
+  value</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>jobid</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the ID
+  of the latest async job acting on this object</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+		<tr>
+			<td width="209" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p>
+					<span><span>jobstatus</span></span> 
+				</p>
+<span> </span> 
+			</td>
+			<td width="180" valign="top" style="background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>the
+  current status of the latest async job acting on this object</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+	</tbody>
+</table>
+<p>
+	<b><span style="color:#00B0F0;font-family:&quot;font-size:12pt;"><br />
+</span></b> 
+</p>
+<p>
+	<b><span style="color:#00B0F0;font-family:&quot;font-size:12pt;">请求举例</span></b> 
+</p>
+<p>
+	<span> <br />
+</span> 
+</p>
+<span> </span><span> </span><span> </span><span> </span> 
+<table style="border:currentColor;border-collapse:collapse;" border="1" cellspacing="0" cellpadding="0">
+	<tbody>
+		<tr>
+			<td width="568" valign="top" style="border:1pt solid gray;background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span style="font-family:&quot;font-size:9pt;"><a href="http://localhost:8080/client/api"><span style="color:blue;">http://</span><span style="color:blue;">localhost</span><span style="color:blue;">:8080/client/api</span></a></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span style="font-family:&quot;font-size:9pt;">?sessionkey=8TmTaYH9P28fZ5IrW5XBa6RQLFg=</span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span style="font-family:&quot;font-size:9pt;">&amp;command=rebootVirtualMachine</span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span style="font-family:&quot;font-size:9pt;">&amp;id=c81c075b-cd26-45cd-814d-0808a813fee5</span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span style="font-family:&quot;font-size:9pt;">&amp;response=json</span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+	</tbody>
+</table>
+<p>
+	<span> <br />
+</span> 
+</p>
+<p>
+	<b><span style="color:#00B0F0;font-family:&quot;font-size:12pt;">响应举例</span></b> 
+</p>
+<p>
+	<span> <br />
+</span> 
+</p>
+<span> </span><span> </span><span> </span><span> </span> 
+<table style="border:currentColor;border-collapse:collapse;" border="1" cellspacing="0" cellpadding="0">
+	<tbody>
+		<tr>
+			<td width="568" valign="top" style="border:1pt solid gray;background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>{ "rebootvirtualmachineresponse" : </span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>{"jobid":"3d5b1d33-8926-4b4f-8a60-45d8488d3fbf"</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>} }</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+	</tbody>
+</table>
+<p>
+	<span>&nbsp;</span><span><br />
+&nbsp;</span> 
+</p>
+<span> </span><span> </span><span> </span><span> </span> 
+<table style="border:currentColor;border-collapse:collapse;" border="1" cellspacing="0" cellpadding="0">
+	<tbody>
+		<tr>
+			<td width="568" valign="top" style="border:1pt solid gray;background-color:transparent;">
+				<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>{ "queryasyncjobresultresponse" : </span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>{"accountid":"b696c6cc-2f48-11e4-b200-448a5b98db6e",</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"userid":"b69da6e6-2f48-11e4-b200-448a5b98db6e",</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"cmd":"org.apache.cloudstack.api.command.user.vm.RebootVMCmd",</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"jobstatus":1,</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"jobprocstatus":0,</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"jobresultcode":0,</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"jobresulttype":"object",</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"jobresult":</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>{"virtualmachine":{</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"id":"c81c075b-cd26-45cd-814d-0808a813fee5",</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"name":"vm-1",</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"displayname":"vm-1",</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"account":"admin",</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"domainid":"b696b49c-2f48-11e4-b200-448a5b98db6e",</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"domain":"ROOT",</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"created":"2014-08-29T15:01:37+0800",</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"state":"Running",</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"haenable":false,</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"zoneid":"d4781e20-baa2-4b2b-8d05-cd0c863e31b4",</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"zonename":"DevCloud0",</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"hostid":"7d1a0800-fb4a-4f9d-8c7e-da7db1a99977",</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"hostname":"devcloud",</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"templateid":"ae15a8e6-2f48-11e4-b200-448a5b98db6e",</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"templatename":"tiny Linux",</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"templatedisplaytext":"tiny Linux",</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"passwordenabled":false,</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"serviceofferingid":"dfddb133-2f48-11e4-b200-448a5b98db6e",</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"serviceofferingname":"tinyOffering",</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"cpunumber":1,</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"cpuspeed":100,</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"memory":100,</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"cpuused":"0.8%",</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"networkkbsread":6710886,</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"networkkbswrite":6710886,</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"diskkbsread":0,</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"diskkbswrite":0,</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"diskioread":0,</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"diskiowrite":0,</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"guestosid":"ae1620f7-2f48-11e4-b200-448a5b98db6e",</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"rootdeviceid":0,</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"rootdevicetype":"ROOT",</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"securitygroup":[{</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"id":"ec518393-2f48-11e4-b200-448a5b98db6e",</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"name":"default",</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"description":"Default Security Group",</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"account":"admin",</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"ingressrule":[],</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"egressrule":[],</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"tags":[]}],</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"nic":[{</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"id":"25e411e1-f09c-45dd-b9eb-6f8b3baf0e05",</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"networkid":"0247ee76-bed8-4651-9485-8a1ef189265f",</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"networkname":"guestNetworkForBasicZone",</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"netmask":"255.255.255.0",</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"gateway":"192.168.56.1",</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"ipaddress":"192.168.56.102",</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"isolationuri":"ec2://untagged",</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"broadcasturi":"vlan://untagged",</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"traffictype":"Guest",</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"type":"Shared",</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"isdefault":true,</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"macaddress":"06:ff:10:00:00:18"}],</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"hypervisor":"XenServer",</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"instancename":"i-2-3-VM",</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"tags":[],</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"affinitygroup":[],</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"displayvm":true,</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"isdynamicallyscalable":true,</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"jobid":"bf2b6dac-fb07-4284-9e40-3780f998a282",</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"jobstatus":0}},</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"created":"2014-08-29T16:09:13+0800",</span></span> 
+				</p>
+<span> </span> 
+				<p align="left" style="text-align:left;">
+					<span><span>"jobid":"bf2b6dac-fb07-4284-9e40-3780f998a282"}
+  }</span></span> 
+				</p>
+<span> </span> 
+			</td>
+		</tr>
+	</tbody>
+</table>
+<p>
+	<span><br />
+</span> 
+</p>
+<h4>
+	<span style="font-family:&quot;&quot;;"><span>任务完成响应</span></span> 
+</h4>
+<p>
+	<span> <br />
+</span> 
+</p>
+<span> </span><span> </span><span> </span><span> </span> 
+<table style="border:currentColor;border-collapse:collapse;" border="1" cellspacing="0" cellpadding="0">
+	<tbody>
+		<tr>
+			<td width="568" valign="top" style="border:1pt solid gray;background-color:transparent;">
+<pre><span style="font-family:&quot;font-size:9pt;">{ </span></pre>
+<pre><span style="font-family:&quot;font-size:9pt;">"queryasyncjobresultresponse": </span></pre>
+<pre><span style="font-family:&quot;font-size:9pt;">{</span></pre>
+<pre><span style="font-family:&quot;font-size:9pt;">"accountid":"fea93bd6-2c48-11e4-aadd-448a5b98db6e",</span></pre>
+<pre><span style="font-family:&quot;font-size:9pt;">"userid":"feabb778-2c48-11e4-aadd-448a5b98db6e",</span></pre>
+<pre><span style="font-family:&quot;font-size:9pt;">"cmd":"org.apache.cloudstack.api.command.user.vm.RebootVMCmd",</span></pre>
+<pre><span style="font-family:&quot;font-size:9pt;">"jobstatus":1,</span></pre>
+<pre><span style="font-family:&quot;font-size:9pt;">"jobprocstatus":0,</span></pre>
+<pre><span style="font-family:&quot;font-size:9pt;">"jobresultcode":0,</span></pre>
+<pre><span style="font-family:&quot;font-size:9pt;">"jobresulttype":"object",</span></pre>
+<pre><span style="font-family:&quot;font-size:9pt;">"jobresult":{"virtualmachine":</span></pre>
+<pre><span style="font-family:&quot;font-size:9pt;">{</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"id":"cafd38b6-b6f1-46c6-b9ea-62d0ab47f8cb",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"name":"VM-2",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"displayname":"VM-2",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"account":"admin",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"domainid":"fea671b2-2c48-11e4-aadd-448a5b98db6e",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"domain":"ROOT",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"created":"2014-08-27T16:03:20+0800",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"state":"Running",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"haenable":false,</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"zoneid":"abd6c119-6fd4-4633-8e95-4fd3d9b7420c",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"zonename":"testzone",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"hostid":"ae0b1eb1-5f04-4257-a44e-1eb33d717bbe",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"hostname":"devcloud",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"templateid":"f7bbdcbe-2c48-11e4-aadd-448a5b98db6e",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"templatename":"tiny Linux",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"templatedisplaytext":"tinyLinux",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"passwordenabled":false,</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"serviceofferingid":"4ee869e4-2c49-11e4-aadd-448a5b98db6e",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"serviceofferingname":"tinyOffering",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"cpunumber":1,</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"cpuspeed":100,</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"memory":100,</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"cpuused":"0.03%",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"networkkbsread":4,</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"networkkbswrite":2,</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"diskkbsread":0,</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"diskkbswrite":0,</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"diskioread":0,</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"diskiowrite":0,</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"guestosid":"f7c08ea1-2c48-11e4-aadd-448a5b98db6e",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"rootdeviceid":0,</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"rootdevicetype":"ROOT",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"securitygroup":[],</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"nic":</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">[</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">{</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"id":"d352d4fd-c2a7-4dfe-b842-5bf8b8ef3ecf",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"networkid":"64529e81-fa82-41ba-b4c8-d0d4316cde59",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"networkname":"admin-network",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"netmask":"255.255.255.0",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"gateway":"10.1.1.1",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"ipaddress":"10.1.1.10",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"isolationuri":"vlan://3943",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"broadcasturi":"vlan://3943",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"traffictype":"Guest",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"type":"Isolated",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"isdefault":true,</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"macaddress":"02:00:4a:76:00:0e"</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">}</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">],</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"hypervisor":"XenServer",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"instancename":"i-2-16-VM",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"tags":[],</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"affinitygroup":[],</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"displayvm":true,</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"isdynamicallyscalable":true,</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"jobid":"a4622a9b-03c1-44ca-a34f-b22a4b0c7eaf",</span></pre>
+<pre><span style="color:#00B050;font-family:&quot;font-size:9pt;">"jobstatus":0</span></pre>
+<pre><span style="font-family:&quot;font-size:9pt;">}/*</span><span><span> </span></span><span style="font-family:&quot;font-size:9pt;">virtualmachine </span><span style="color:red;font-size:9pt;"><span>重启虚机接口的响应参数及其值</span></span><span style="font-family:&quot;font-size:9pt;">*/</span></pre>
+<pre><span style="font-family:&quot;font-size:9pt;">},/*jobresult*/</span></pre>
+<pre><span style="font-family:&quot;font-size:9pt;">"created":"2014-08-27T17:12:00+0800",</span></pre>
+<pre><span style="font-family:&quot;font-size:9pt;">"jobid":"a4622a9b-03c1-44ca-a34f-b22a4b0c7eaf"</span></pre>
+<pre><span style="font-family:&quot;font-size:9pt;">} </span></pre>
+<pre><span style="font-family:&quot;font-size:9pt;">}</span></pre>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<p>
+	<span>&nbsp;<br />
+</span><span><span style="font-family:&quot;&quot;;">与创建虚机类似，同样需要在发送重启虚机消息后，每五秒发送一个查询任务消息，直到任务完成。</span></span> 
+</p>
+<p>
+	<span> <br />
+</span> 
+</p>
+					</div>
+					</div>
+				</div>
+
+			</div>
+			<!-- 右侧 end -->
+			<div class="clear"></div>
+
+		</div>
+	</div>
+
+	<div class="page-footer-copyright">
+			<span> <small>技术支持：浪潮云服务信息科技有限公司</small> </span>&nbsp;&nbsp;&nbsp;&nbsp;
+			<span><small>©浪潮集团版权所有</small> </span>
+			<span><small>ICP备案号：鲁ICP备05019369号</small> </span>
+		</div>
+</body>

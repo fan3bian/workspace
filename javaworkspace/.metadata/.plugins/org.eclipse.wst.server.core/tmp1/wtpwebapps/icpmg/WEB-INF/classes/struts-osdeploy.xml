@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 对象存储 -->
+	<package name="osdeploy" namespace="/osdeploy" extends="struts-default">
+		<interceptors>
+			<!-- 定义系统的登录控制拦截器 -->
+			<interceptor name="nosessInterceptor" class="com.inspur.icpmg.interceptor.LoginInterceptor"></interceptor>
+			<!-- 定义系统日志拦截器 -->
+			<interceptor name="sysLogInterceptor" class="com.inspur.icpmg.interceptor.SysLogInterceptor"></interceptor>
+			<interceptor-stack name="uuStack">
+				<interceptor-ref name="paramsPrepareParamsStack">
+            		<param name="prepare.alwaysInvokePrepare">false</param>
+        		</interceptor-ref>
+				<!-- 引用登录控制拦截器 -->
+				<interceptor-ref name="nosessInterceptor"></interceptor-ref>
+				<!-- 引用系统日志拦截器 -->
+		      	<interceptor-ref name="sysLogInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 将自定义的拦截器uuStack定义成默认的拦截器栈 -->
+		<default-interceptor-ref name="uuStack"></default-interceptor-ref>
+		<global-results>
+			<result name="noSession">/login.jsp</result>
+			<result name="null">/login.jsp</result>
+		</global-results>
+		
+		<action name="queryEnvironList" class="com.inspur.icpmg.osdeploy.action.OsDeployEnvironAction" method="queryEnvironList">
+			<result name="queryEnvironList">/web/osdeploy/environ.jsp</result>
+		</action>
+		<action name="enterEnviron" class="com.inspur.icpmg.osdeploy.action.OsDeployEnvironAction" method="enterEnviron">
+			<result name="enterEnviron">/web/osdeploy/environMg.jsp</result>
+		</action>
+		<action name="queryEnviron" class="com.inspur.icpmg.osdeploy.action.OsDeployEnvironAction" method="queryEnviron"></action>
+		
+		<action name="newEnviron" class="com.inspur.icpmg.osdeploy.action.OsDeployEnvironAction" method="newEnviron"></action>
+		<action name="editEnviron" class="com.inspur.icpmg.osdeploy.action.OsDeployEnvironAction" method="editEnviron"></action>
+		<action name="deleteEnviron" class="com.inspur.icpmg.osdeploy.action.OsDeployEnvironAction" method="deleteEnviron"></action>
+		<action name="initEnviron" class="com.inspur.icpmg.osdeploy.action.OsDeployEnvironAction" method="initEnviron"></action>
+		<action name="addHostToEnviron" class="com.inspur.icpmg.osdeploy.action.OsDeployHostAction" method="addHostToEnviron"></action>
+		<action name="queryHosts" class="com.inspur.icpmg.osdeploy.action.OsDeployHostAction" method="queryHosts"></action>
+		<action name="queryHostList" class="com.inspur.icpmg.osdeploy.action.OsDeployHostAction" method="queryHostList"></action>
+		<action name="queryHost" class="com.inspur.icpmg.osdeploy.action.OsDeployHostAction" method="queryHost"></action>
+		<action name="newHost" class="com.inspur.icpmg.osdeploy.action.OsDeployHostAction" method="newHost"></action>
+		<action name="newHostList" class="com.inspur.icpmg.osdeploy.action.OsDeployHostAction" method="newHostList"></action>
+		<action name="editHost" class="com.inspur.icpmg.osdeploy.action.OsDeployHostAction" method="editHost"></action>
+		<action name="deleteHost" class="com.inspur.icpmg.osdeploy.action.OsDeployHostAction" method="deleteHost"></action>
+		<action name="queryLogList" class="com.inspur.icpmg.osdeploy.action.OsDeployHostAction" method="queryLogList"></action>
+		<action name="addNode" class="com.inspur.icpmg.osdeploy.action.OsDeployHostAction" method="addNode"></action>
+		<action name="configSystem" class="com.inspur.icpmg.osdeploy.action.OsDeployHostAction" method="configSystem"></action>	
+		<action name="configConNode" class="com.inspur.icpmg.osdeploy.action.OsDeployEnvironAction" method="configConNode"></action>	
+		<action name="queryNodeType" class="com.inspur.icpmg.osdeploy.action.OsDeployHostAction" method="queryNodeType"></action>	
+		<action name="deleteNode" class="com.inspur.icpmg.osdeploy.action.OsDeployHostAction" method="deleteNode"></action>
+		<action name="checkHost" class="com.inspur.icpmg.osdeploy.action.OsDeployHostAction" method="checkHost"></action>	
+		
+		<action name="checkNet" class="com.inspur.icpmg.osdeploy.action.OsDeployHostAction" method="checkNet"></action>	
+		<action name="checkServer" class="com.inspur.icpmg.osdeploy.action.OsDeployHostAction" method="checkServer"></action>
+		<action name="queryByStatus" class="com.inspur.icpmg.osdeploy.action.OsDeployHostAction" method="queryByStatus"></action>
+		<action name="installWare" class="com.inspur.icpmg.osdeploy.action.OsDeployEnvironAction" method="installWare"></action>
+<!-- 		<action name="queryEnvironType" class="com.inspur.icpmg.osdeploy.action.OsDeployEnvironAction" method="queryEnvironType"></action> -->
+	</package>
+</struts>

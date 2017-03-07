@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- OpenStack平台监控 LuYue -->
+	<package name="openstack_platformoverview" namespace="/os_ploverview"
+		extends="struts-default">
+		<interceptors>
+			<!-- 定义系统的登录控制拦截器 -->
+			<interceptor name="nosessInterceptor"
+				class="com.inspur.icpmg.interceptor.LoginInterceptor"></interceptor>
+			<!-- 定义系统日志拦截器 -->
+			<interceptor name="sysLogInterceptor"
+				class="com.inspur.icpmg.interceptor.SysLogInterceptor"></interceptor>
+			<interceptor-stack name="uuStack">
+				<interceptor-ref name="paramsPrepareParamsStack">
+					<param name="prepare.alwaysInvokePrepare">false</param>
+				</interceptor-ref>
+				<!-- 引用登录控制拦截器 -->
+				<interceptor-ref name="nosessInterceptor"></interceptor-ref>
+				<!-- 引用系统日志拦截器 -->
+				<interceptor-ref name="sysLogInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 将自定义的拦截器uuStack定义成默认的拦截器栈 -->
+		<default-interceptor-ref name="uuStack"></default-interceptor-ref>
+		<global-results>
+			<result name="noSession">/login.jsp</result>
+			<result name="null">/login.jsp</result>
+		</global-results>
+		<!-- 获取OpenStack平台各组件健康度 -->
+		<action name="getOSComHealth"
+			class="com.inspur.icpmg.omsMonitor.openstack.action.PlatformOverviewAction"
+			method="getComponentHealth">
+		</action>
+		<action name="getOSVMSummary"
+			class="com.inspur.icpmg.omsMonitor.openstack.action.PlatformOverviewAction"
+			method="getVMSummary">
+		</action>
+		<action name="getVResourceSummary"
+			class="com.inspur.icpmg.omsMonitor.openstack.action.PlatformOverviewAction"
+			method="getVResourceSummary">
+		</action>
+		<action name="getPlatformList"
+			class="com.inspur.icpmg.omsMonitor.openstack.action.PlatformOverviewAction"
+			method="getPlatformList">
+		</action>
+
+
+	</package>
+	<!-- 运维监控 物理机单台运行状态 LuYue -->
+	<package name="inhost_runoverview" namespace="/inhost_runoverview"
+		extends="struts-default">
+		<interceptors>
+			<!-- 定义系统的登录控制拦截器 -->
+			<interceptor name="nosessInterceptor"
+				class="com.inspur.icpmg.interceptor.LoginInterceptor"></interceptor>
+			<!-- 定义系统日志拦截器 -->
+			<interceptor name="sysLogInterceptor"
+				class="com.inspur.icpmg.interceptor.SysLogInterceptor"></interceptor>
+			<interceptor-stack name="uuStack">
+				<interceptor-ref name="paramsPrepareParamsStack">
+					<param name="prepare.alwaysInvokePrepare">false</param>
+				</interceptor-ref>
+				<!-- 引用登录控制拦截器 -->
+				<interceptor-ref name="nosessInterceptor"></interceptor-ref>
+				<!-- 引用系统日志拦截器 -->
+				<interceptor-ref name="sysLogInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 将自定义的拦截器uuStack定义成默认的拦截器栈 -->
+		<default-interceptor-ref name="uuStack"></default-interceptor-ref>
+		<global-results>
+			<result name="noSession">/login.jsp</result>
+			<result name="null">/login.jsp</result>
+		</global-results>
+		<!-- 获取运行状态 计费状态等基本状态信息 -->
+		<action name="getInhostRunStatus"
+			class="com.inspur.icpmg.omsMonitor.inhost.action.InhostRunOverviewAction"
+			method="getStatus"></action>
+		<!-- 获取告警数量 -->
+		<action name="getInhostRunAlarm"
+			class="com.inspur.icpmg.omsMonitor.inhost.action.InhostRunOverviewAction"
+			method="getAlarmNum"></action>
+		<!-- 获取Cpu、内存利用率 -->
+		<action name="getInhostUseage"
+			class="com.inspur.icpmg.omsMonitor.inhost.action.InhostRunOverviewAction"
+			method="getUseage"></action>
+		<!-- 获取主机趋势指标数据 -->
+		<action name="getInhostIndexData"
+			class="com.inspur.icpmg.omsMonitor.inhost.action.InhostRunOverviewAction"
+			method="getIndexData"></action>
+		<!-- 获取主机Cpu具体指标数据 -->
+		<action name="getInhostCpuData"
+			class="com.inspur.icpmg.omsMonitor.inhost.action.InhostRunOverviewAction"
+			method="getCpuDetail"></action>
+
+		<!-- 获取主机磁盘具体指标数据 -->
+		<action name="getInhostDiskData"
+			class="com.inspur.icpmg.omsMonitor.inhost.action.InhostRunOverviewAction"
+			method="getDiskDetail"></action>
+
+		<!-- 获取主机内存具体指标数据 -->
+		<action name="getInhostMemData"
+			class="com.inspur.icpmg.omsMonitor.inhost.action.InhostRunOverviewAction"
+			method="getMemDetail"></action>
+		<!-- 获取主机网卡具体指标数据 -->
+		<action name="getInhostNicData"
+			class="com.inspur.icpmg.omsMonitor.inhost.action.InhostRunOverviewAction"
+			method="getNicDetail"></action>
+
+
+	</package>
+
+	<!-- 运维监控 虚拟机单台运行状态 LuYue -->
+	<package name="inserver_runoverview" namespace="/inserver_runoverview"
+		extends="struts-default">
+		<interceptors>
+			<!-- 定义系统的登录控制拦截器 -->
+			<interceptor name="nosessInterceptor"
+				class="com.inspur.icpmg.interceptor.LoginInterceptor"></interceptor>
+			<!-- 定义系统日志拦截器 -->
+			<interceptor name="sysLogInterceptor"
+				class="com.inspur.icpmg.interceptor.SysLogInterceptor"></interceptor>
+			<interceptor-stack name="uuStack">
+				<interceptor-ref name="paramsPrepareParamsStack">
+					<param name="prepare.alwaysInvokePrepare">false</param>
+				</interceptor-ref>
+				<!-- 引用登录控制拦截器 -->
+				<interceptor-ref name="nosessInterceptor"></interceptor-ref>
+				<!-- 引用系统日志拦截器 -->
+				<interceptor-ref name="sysLogInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 将自定义的拦截器uuStack定义成默认的拦截器栈 -->
+		<default-interceptor-ref name="uuStack"></default-interceptor-ref>
+		<global-results>
+			<result name="noSession">/login.jsp</result>
+			<result name="null">/login.jsp</result>
+		</global-results>
+		<!-- 获取运行状态 计费状态等基本状态信息 -->
+		<action name="getInserverRunStatus"
+			class="com.inspur.icpmg.omsMonitor.inserver.action.InserverRunOverviewAction"
+			method="getStatus"></action>
+		<!-- 获取告警数量 -->
+		<action name="getInserverRunAlarm"
+			class="com.inspur.icpmg.omsMonitor.inserver.action.InserverRunOverviewAction"
+			method="getAlarmNum"></action>
+		<!-- 获取Cpu、内存利用率 -->
+		<action name="getInserverUseage"
+			class="com.inspur.icpmg.omsMonitor.inserver.action.InserverRunOverviewAction"
+			method="getUseage"></action>
+		<!-- 获取主机全部趋势指标数据 -->
+		<action name="getInserverIndexData"
+			class="com.inspur.icpmg.omsMonitor.inserver.action.InserverRunOverviewAction"
+			method="getIndexData"></action>
+		<!-- 获取主机计算指标趋势数据 -->
+		<action name="getInserverComputeIndexData"
+			class="com.inspur.icpmg.omsMonitor.inserver.action.InserverRunOverviewAction"
+			method="getComputeIndexData"></action>
+		<!-- 获取主机网络指标趋势数据 -->
+		<action name="getInserverNetworkIndexData"
+			class="com.inspur.icpmg.omsMonitor.inserver.action.InserverRunOverviewAction"
+			method="getNetworkIndexData"></action>
+		<!-- 获取虚拟机瘦置备磁盘数据 -->
+		<action name="getInserverDiskData"
+			class="com.inspur.icpmg.omsMonitor.inserver.action.InserverRunOverviewAction"
+			method="getThinDiskDetail"></action>
+		<!-- 获取虚拟机所有磁盘容量 -->
+
+		<action name="getInserverDiskSize"
+			class="com.inspur.icpmg.omsMonitor.inserver.action.InserverRunOverviewAction"
+			method="getDiskSize"></action>
+
+		<!-- 获取虚拟机所有磁盘IO速率 -->
+		<action name="getInserverDiskIO"
+			class="com.inspur.icpmg.omsMonitor.inserver.action.InserverRunOverviewAction"
+			method="getDiskIO"></action>
+	</package>
+
+	<!-- 运维监控 Openstack虚拟机单台运行状态 LuYue -->
+	<package name="os_inserver_runoverview" namespace="/os_inserver_runoverview"
+		extends="struts-default">
+		<interceptors>
+			<!-- 定义系统的登录控制拦截器 -->
+			<interceptor name="nosessInterceptor"
+				class="com.inspur.icpmg.interceptor.LoginInterceptor"></interceptor>
+			<!-- 定义系统日志拦截器 -->
+			<interceptor name="sysLogInterceptor"
+				class="com.inspur.icpmg.interceptor.SysLogInterceptor"></interceptor>
+			<interceptor-stack name="uuStack">
+				<interceptor-ref name="paramsPrepareParamsStack">
+					<param name="prepare.alwaysInvokePrepare">false</param>
+				</interceptor-ref>
+				<!-- 引用登录控制拦截器 -->
+				<interceptor-ref name="nosessInterceptor"></interceptor-ref>
+				<!-- 引用系统日志拦截器 -->
+				<interceptor-ref name="sysLogInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 将自定义的拦截器uuStack定义成默认的拦截器栈 -->
+		<default-interceptor-ref name="uuStack"></default-interceptor-ref>
+		<global-results>
+			<result name="noSession">/login.jsp</result>
+			<result name="null">/login.jsp</result>
+		</global-results>
+		<!-- 获取运行状态 计费状态等基本状态信息 -->
+		<action name="getOSInserverRunStatus"
+			class="com.inspur.icpmg.omsMonitor.openstack.action.VMRunOverviewAction"
+			method="getStatus"></action>
+		<!-- 获取告警数量 -->
+		<action name="getOSInserverRunAlarm"
+			class="com.inspur.icpmg.omsMonitor.openstack.action.VMRunOverviewAction"
+			method="getAlarmNum"></action>
+		<!-- 获取Cpu、内存利用率 -->
+		<action name="getOSInserverUseage"
+			class="com.inspur.icpmg.omsMonitor.openstack.action.VMRunOverviewAction"
+			method="getUsage"></action>
+		<!-- 获取虚拟机全部趋势指标数据 -->
+		<action name="getOSInserverIndexData"
+			class="com.inspur.icpmg.omsMonitor.openstack.action.VMRunOverviewAction"
+			method="getIndexData"></action>
+		<!-- 获取虚拟机计算指标趋势数据 -->
+		<action name="getOSInserverComputeIndexData"
+			class="com.inspur.icpmg.omsMonitor.openstack.action.VMRunOverviewAction"
+			method="getComputeIndexData"></action>
+		<!-- 获取虚拟机网络指标趋势数据 -->
+		<action name="getOSInserverNetworkIndexData"
+			class="com.inspur.icpmg.omsMonitor.openstack.action.VMRunOverviewAction"
+			method="getNetworkIndexData"></action>
+
+
+		<!-- 磁盘指标 下拉选框 -->
+		<action name="getDiskData"
+			class="com.inspur.icpmg.omsMonitor.openstack.action.VMRunOverviewAction"
+			method="getDiskData"></action>
+		<!-- 磁盘指标 下拉选框 -->
+		<action name="getDiskMount"
+			class="com.inspur.icpmg.omsMonitor.openstack.action.VMRunOverviewAction"
+			method="getDiskMount"></action>
+
+
+		<action name="getOSInserverDiskIndexData"
+			class="com.inspur.icpmg.omsMonitor.openstack.action.VMRunOverviewAction"
+			method="getDiskIndexData"></action>
+
+		<action name="getOSInserverNetworkIndex"
+			class="com.inspur.icpmg.omsMonitor.openstack.action.VMRunOverviewAction"
+			method="getNetworkIndex"></action>
+
+	</package>
+
+	<!-- 运维监控 统计类查询 zhang_xiaoyu -->
+	<package name="oms_summary" namespace="/oms_summary" extends="struts-default">
+		<interceptors>
+			<!-- 定义系统的登录控制拦截器 -->
+			<interceptor name="nosessInterceptor"
+				class="com.inspur.icpmg.interceptor.LoginInterceptor"></interceptor>
+			<!-- 定义系统日志拦截器 -->
+			<interceptor name="sysLogInterceptor"
+				class="com.inspur.icpmg.interceptor.SysLogInterceptor"></interceptor>
+			<interceptor-stack name="uuStack">
+				<interceptor-ref name="paramsPrepareParamsStack">
+					<param name="prepare.alwaysInvokePrepare">false</param>
+				</interceptor-ref>
+				<!-- 引用登录控制拦截器 -->
+				<interceptor-ref name="nosessInterceptor"></interceptor-ref>
+				<!-- 引用系统日志拦截器 -->
+				<interceptor-ref name="sysLogInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 将自定义的拦截器uuStack定义成默认的拦截器栈 -->
+		<default-interceptor-ref name="uuStack"></default-interceptor-ref>
+		<global-results>
+			<result name="noSession">/login.jsp</result>
+			<result name="null">/login.jsp</result>
+		</global-results>
+
+		<!-- 物理机统计 -->
+		<action name="queryHostSummary"
+			class="com.inspur.icpmg.omsMonitor.host.action.hostSummaryQueryAction"
+			method="queryHostSummary"></action>
+		<!-- 物理机列表查询 -->
+		<action name="queryHostList"
+			class="com.inspur.icpmg.omsMonitor.host.action.hostSummaryQueryAction"
+			method="queryHostList"></action>
+		<!-- 虚拟机统计 -->
+		<action name="queryVmSummary"
+			class="com.inspur.icpmg.omsMonitor.inserver.action.inserverSummaryQueryAction"
+			method="queryVmSummary"></action>
+		<!-- 虚拟机列表查询 -->
+		<action name="queryVmList"
+			class="com.inspur.icpmg.omsMonitor.inserver.action.inserverSummaryQueryAction"
+			method="queryVmList"></action>
+		<!-- 虚拟机平台查询 -->
+		<action name="queryVmPlatformType"
+			class="com.inspur.icpmg.omsMonitor.inserver.action.inserverSummaryQueryAction"
+			method="queryVmPlatformType"></action>
+		<!-- 物理主机服务统计 -->
+		<action name="queryInhostSummary"
+			class="com.inspur.icpmg.omsMonitor.inhost.action.inhostSummaryQueryAction"
+			method="queryInhostSummary"></action>
+		<!-- 物理主机服务用户统计 -->
+		<action name="queryInhostUserSummary"
+			class="com.inspur.icpmg.omsMonitor.inhost.action.inhostSummaryQueryAction"
+			method="queryInhostUserSummary"></action>
+		<!-- 物理主机服务列表查询 -->
+		<action name="queryInhostList"
+			class="com.inspur.icpmg.omsMonitor.inhost.action.inhostSummaryQueryAction"
+			method="queryInhostList"></action>
+		<!-- 物理主机服务用户列表查询 -->
+		<action name="queryInhostUserList"
+			class="com.inspur.icpmg.omsMonitor.inhost.action.inhostSummaryQueryAction"
+			method="queryInhostUserList"></action>
+		<!-- 物理主机服务单台设备详细信息查询 -->
+		<action name="queryBasicInfo"
+			class="com.inspur.icpmg.omsMonitor.inhost.action.inhostDetailQueryAction"
+			method="queryBasicInfo"></action>
+		<!-- 告警信息查询 -->
+		<action name="queryAlarmEvent"
+			class="com.inspur.icpmg.omsMonitor.inhost.action.inhostDetailQueryAction"
+			method="queryAlarmEvent"></action>
+		<!-- 虚机查询 -->
+		<action name="queryVmLists"
+			class="com.inspur.icpmg.omsMonitor.inhost.action.inhostDetailQueryAction"
+			method="queryVmLists"></action>
+
+	</package>
+
+	<package name="kpisearch" namespace="/kpisearch" extends="struts-default">
+		<interceptors>
+			<!-- 定义系统的登录控制拦截器 -->
+			<interceptor name="nosessInterceptor"
+				class="com.inspur.icpmg.interceptor.LoginInterceptor"></interceptor>
+			<!-- 定义系统日志拦截器 -->
+			<interceptor name="sysLogInterceptor"
+				class="com.inspur.icpmg.interceptor.SysLogInterceptor"></interceptor>
+			<interceptor-stack name="uuStack">
+				<interceptor-ref name="paramsPrepareParamsStack">
+					<param name="prepare.alwaysInvokePrepare">false</param>
+				</interceptor-ref>
+				<!-- 引用登录控制拦截器 -->
+				<interceptor-ref name="nosessInterceptor"></interceptor-ref>
+				<!-- 引用系统日志拦截器 -->
+				<interceptor-ref name="sysLogInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 将自定义的拦截器uuStack定义成默认的拦截器栈 -->
+		<default-interceptor-ref name="uuStack"></default-interceptor-ref>
+		<global-results>
+			<result name="noSession">/login.jsp</result>
+			<result name="null">/login.jsp</result>
+		</global-results>
+		<action name="getIndListByNetype"
+			class="com.inspur.icpmg.omsMonitor.kpisearch.action.KpiSearchAction"
+			method="getIndListByNetype"></action>
+		<action name="getIndValueByCondition"
+			class="com.inspur.icpmg.omsMonitor.kpisearch.action.KpiSearchAction"
+			method="getIndValueByCondition"></action>
+	</package>
+
+	<!-- 网络监控概况 liu enqi 20160912 -->
+	<package name="networkmonitor" namespace="/networkmonitor"
+		extends="struts-default">
+		<interceptors>
+			<!-- 定义系统的登录控制拦截器 -->
+			<interceptor name="nosessInterceptor"
+				class="com.inspur.icpmg.interceptor.LoginInterceptor"></interceptor>
+			<!-- 定义系统日志拦截器 -->
+			<interceptor name="sysLogInterceptor"
+				class="com.inspur.icpmg.interceptor.SysLogInterceptor"></interceptor>
+			<interceptor-stack name="uuStack">
+				<interceptor-ref name="paramsPrepareParamsStack">
+					<param name="prepare.alwaysInvokePrepare">false</param>
+				</interceptor-ref>
+				<!-- 引用登录控制拦截器 -->
+				<interceptor-ref name="nosessInterceptor"></interceptor-ref>
+				<!-- 引用系统日志拦截器 -->
+				<interceptor-ref name="sysLogInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 将自定义的拦截器uuStack定义成默认的拦截器栈 -->
+		<default-interceptor-ref name="uuStack"></default-interceptor-ref>
+		<global-results>
+			<result name="noSession">/login.jsp</result>
+			<result name="null">/login.jsp</result>
+		</global-results>
+		<!-- 网络设备监控 -->
+		<action name="getNetDeviceInfo"
+			class="com.inspur.icpmg.omsMonitor.network.action.NetworkInfoMonitorAction"
+			method="getNetDeviceInfo"></action>
+		<!-- 应用负载监控 -->
+		<action name="getLBSInfo"
+			class="com.inspur.icpmg.omsMonitor.network.action.NetworkInfoMonitorAction"
+			method="getLBSInfo"></action>
+		<!-- 网络专线监控 -->
+		<action name="getZLineInfo"
+			class="com.inspur.icpmg.omsMonitor.network.action.NetworkInfoMonitorAction"
+			method="getZLineInfo"></action>
+		<!-- 应用负载孩子节点获取 -->
+		<action name="getLBSChildrenInfo"
+			class="com.inspur.icpmg.omsMonitor.network.action.NetworkInfoMonitorAction"
+			method="getLBSChildrenInfo"></action>
+		<!-- 应用负载后端服务节点获取 -->
+		<action name="getLBSSonInfo"
+			class="com.inspur.icpmg.omsMonitor.network.action.NetworkInfoMonitorAction"
+			method="getLBSSonInfo"></action>
+		<!-- 获取网络设备状态 -->
+		<action name="getNetStatusCount"
+			class="com.inspur.icpmg.omsMonitor.network.action.NetworkStatusQueryAction"
+			method="getNetStatusCount"></action>
+		<!-- 获取网络设备流速Top -->
+		<action name="getNetDeviceFlow"
+			class="com.inspur.icpmg.omsMonitor.network.action.NetworkInfoMonitorAction"
+			method="getNetDeviceFlow"></action>
+		<!-- 获取负载均衡流速Top -->
+		<action name="getLBSFlow"
+			class="com.inspur.icpmg.omsMonitor.network.action.NetworkInfoMonitorAction"
+			method="getLBSFlow"></action>
+		<!-- 获取设备告警统计 -->
+		<action name="getAlarmInfo"
+			class="com.inspur.icpmg.omsMonitor.network.action.NetworkStatusQueryAction"
+			method="getAlarmInfo"></action>
+	</package>
+
+	<!-- 网络监控运行概况页面相关 liuenqi 20161010 -->
+	<package name="networkrunoverview" namespace="/networkrunoverview"
+		extends="struts-default">
+		<interceptors>
+			<!-- 定义系统的登录控制拦截器 -->
+			<interceptor name="nosessInterceptor"
+				class="com.inspur.icpmg.interceptor.LoginInterceptor"></interceptor>
+			<!-- 定义系统日志拦截器 -->
+			<interceptor name="sysLogInterceptor"
+				class="com.inspur.icpmg.interceptor.SysLogInterceptor"></interceptor>
+			<interceptor-stack name="uuStack">
+				<interceptor-ref name="paramsPrepareParamsStack">
+					<param name="prepare.alwaysInvokePrepare">false</param>
+				</interceptor-ref>
+				<!-- 引用登录控制拦截器 -->
+				<interceptor-ref name="nosessInterceptor"></interceptor-ref>
+				<!-- 引用系统日志拦截器 -->
+				<interceptor-ref name="sysLogInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 将自定义的拦截器uuStack定义成默认的拦截器栈 -->
+		<default-interceptor-ref name="uuStack"></default-interceptor-ref>
+		<global-results>
+			<result name="noSession">/login.jsp</result>
+			<result name="null">/login.jsp</result>
+		</global-results>
+		<!-- 获取端口详情 -->
+		<action name="getNetworkPortInfo"
+			class="com.inspur.icpmg.omsMonitor.network.action.NetworkRunOverviewAction"
+			method="getNetworkPortInfo"></action>
+		<!-- 获取端口列表 -->
+		<action name="getNetworkPortList"
+			class="com.inspur.icpmg.omsMonitor.network.action.NetworkRunOverviewAction"
+			method="getNetworkPortList"></action>
+		<!-- 获取指标值 -->
+		<action name="getNetworkKpi"
+			class="com.inspur.icpmg.omsMonitor.network.action.NetworkRunOverviewAction"
+			method="getNetworkKpi"></action>
+		<!-- 获取顶部信息 -->
+		<action name="getNetworkBasicInfo"
+			class="com.inspur.icpmg.omsMonitor.network.action.NetworkRunOverviewAction"
+			method="getNetworkBasicInfo"></action>
+		<!-- 获取应用负载指标值 -->
+		<action name="getLBSChartData"
+			class="com.inspur.icpmg.omsMonitor.network.action.NetworkRunOverviewAction"
+			method="getLBSChartData"></action>
+		<!-- 获取应用负载指标treegrid -->
+		<action name="getLBSTreeData"
+			class="com.inspur.icpmg.omsMonitor.network.action.NetworkRunOverviewAction"
+			method="getLBSTreeData"></action>
+		<!-- 获取网络专线Chart -->
+		<action name="getLineChartData"
+			class="com.inspur.icpmg.omsMonitor.network.action.NetworkRunOverviewAction"
+			method="getLineChartData"></action>
+		<!-- 获取网络专线顶栏信息 -->
+		<action name="getLineBasicInfo"
+			class="com.inspur.icpmg.omsMonitor.network.action.NetworkRunOverviewAction"
+			method="getLineBasicInfo"></action>
+	</package>
+
+	<!-- 流量相关页面 zhangxy 20160922 -->
+	<package name="networkfolw" namespace="/networkfolw" extends="struts-default">
+		<interceptors>
+			<!-- 定义系统的登录控制拦截器 -->
+			<interceptor name="nosessInterceptor"
+				class="com.inspur.icpmg.interceptor.LoginInterceptor"></interceptor>
+			<!-- 定义系统日志拦截器 -->
+			<interceptor name="sysLogInterceptor"
+				class="com.inspur.icpmg.interceptor.SysLogInterceptor"></interceptor>
+			<interceptor-stack name="uuStack">
+				<interceptor-ref name="paramsPrepareParamsStack">
+					<param name="prepare.alwaysInvokePrepare">false</param>
+				</interceptor-ref>
+				<!-- 引用登录控制拦截器 -->
+				<interceptor-ref name="nosessInterceptor"></interceptor-ref>
+				<!-- 引用系统日志拦截器 -->
+				<interceptor-ref name="sysLogInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 将自定义的拦截器uuStack定义成默认的拦截器栈 -->
+		<default-interceptor-ref name="uuStack"></default-interceptor-ref>
+		<global-results>
+			<result name="noSession">/login.jsp</result>
+			<result name="null">/login.jsp</result>
+		</global-results>
+		<!-- 获取主机名称（下拉） -->
+		<action name="getNeids"
+			class="com.inspur.icpmg.omsMonitor.network.action.FlowMonitorOverviewAction"
+			method="getNeids"></action>
+		<!-- 获取指标名称（下拉） -->
+		<action name="getKpis"
+			class="com.inspur.icpmg.omsMonitor.network.action.FlowMonitorOverviewAction"
+			method="getKpis"></action>
+		<!-- 获取后端服务（下拉） -->
+		<action name="getSLBservice"
+			class="com.inspur.icpmg.omsMonitor.network.action.FlowMonitorOverviewAction"
+			method="getSLBservice"></action>
+		<!-- 返回查询值 -->
+		<action name="queryData"
+			class="com.inspur.icpmg.omsMonitor.network.action.FlowMonitorOverviewAction"
+			method="queryData"></action>
+		<!-- 流量对比列表查询 -->
+		<action name="queryFlowContrastList"
+			class="com.inspur.icpmg.omsMonitor.network.action.FlowContrastListAction"
+			method="queryFlowContrastList"></action>
+		<!-- 流量对比列表保存 -->
+		<action name="saveFlowContrastList"
+			class="com.inspur.icpmg.omsMonitor.network.action.FlowContrastListAction"
+			method="saveFlowContrastList"></action>
+		<!-- 流量对比列表详情 -->
+		<action name="detailFlowContrastList"
+			class="com.inspur.icpmg.omsMonitor.network.action.FlowContrastListAction"
+			method="detailFlowContrastList"></action>
+		<!-- 流量对比列表删除 -->
+		<action name="deleteFlowContrastList"
+			class="com.inspur.icpmg.omsMonitor.network.action.FlowContrastListAction"
+			method="deleteFlowContrastList"></action>
+	</package>
+
+	<!-- 网络专线相关页面 zhangxy 20161028 -->
+	<package name="zlineoverview" namespace="/zlineoverview"
+		extends="struts-default">
+		<interceptors>
+			<!-- 定义系统的登录控制拦截器 -->
+			<interceptor name="nosessInterceptor"
+				class="com.inspur.icpmg.interceptor.LoginInterceptor"></interceptor>
+			<!-- 定义系统日志拦截器 -->
+			<interceptor name="sysLogInterceptor"
+				class="com.inspur.icpmg.interceptor.SysLogInterceptor"></interceptor>
+			<interceptor-stack name="uuStack">
+				<interceptor-ref name="paramsPrepareParamsStack">
+					<param name="prepare.alwaysInvokePrepare">false</param>
+				</interceptor-ref>
+				<!-- 引用登录控制拦截器 -->
+				<interceptor-ref name="nosessInterceptor"></interceptor-ref>
+				<!-- 引用系统日志拦截器 -->
+				<interceptor-ref name="sysLogInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 将自定义的拦截器uuStack定义成默认的拦截器栈 -->
+		<default-interceptor-ref name="uuStack"></default-interceptor-ref>
+		<global-results>
+			<result name="noSession">/login.jsp</result>
+			<result name="null">/login.jsp</result>
+		</global-results>
+		<!-- 获取主机名称（下拉） -->
+		<action name="getZlineStatusCount"
+			class="com.inspur.icpmg.omsMonitor.network.action.ZlineOverviewAction"
+			method="getZlineStatusCount"></action>
+	</package>
+</struts>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <style type="text/css">
+    body {
+        background-color: #e3e3e3;
+    }
+    
+    .card {
+        border: 1px #c9ccd0 solid;
+        width: 30%;
+        height: 160px;
+        cursor: pointer;
+        border-radius: 10px;
+        color: #000;
+        background-color: white;
+        display: inline-block;
+        margin: 10px;
+        box-sizing: border-box;
+    }
+    
+    .card-top {
+        height: 30%;
+        border-bottom: 1px #c9ccd0 solid;
+    }
+    
+    .card-bottom {
+        height: 70%;
+    }
+    
+    .card-bottom .cell {
+        float: left;
+        width: 24%;
+        height: 100%;
+        border-right: 1px #ccc solid;
+        margin: 20px 0;
+    }
+    
+    .card:hover {
+        border: 1px solid rgba(12, 148, 222, 0.8);
+        box-shadow: 0 0 5px rgba(12, 148, 222, 0.8);
+    }
+    
+    .card-bottom .cell div.value {
+        height: 10px;
+    }
+    
+    .card-bottom .cell div.item {
+        height: 10px;
+    }
+    
+    .card-bottom .cell div {
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .os-hov {
+        color: #97c9e5;
+    }
+    </style>
+    <div class="card">
+        <div class="card-top">政务云</div>
+        <div class="card-bottom">
+            <div class="cell"><div class="value">9</div><div class="item">节点总数</div></div>
+            <div class="cell"><div class="value"></div><div class="item">控制节点</div></div>
+            <div class="cell"><div class="value"></div><div class="item">控制节点</div></div>
+            <div class="cell"><div class="value"></div><div class="item">控制节点</div></div>
+        </div>
+</body>
+
+</html>

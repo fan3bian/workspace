@@ -1,0 +1,7 @@
+con1_manage_ip,172.23.27.11;
+com1_manage_ip,172.23.27.21;
+com2_manage_ip,172.23.27.22;
+ceph1_manage_ip,172.23.27.31;
+ceph2_manage_ip,172.23.27.32;
+
+

@@ -1,0 +1,3 @@
+ALTER TABLE `gc_etype`
+ADD COLUMN `servertype`  varchar(10) NULL COMMENT '服务类型ID，例如计算。存储，数据库容灾' AFTER `remark`,
+ADD COLUMN `servername`  varchar(255) NULL COMMENT '服务类型名称，例如计算。存储，数据库容灾' AFTER `servertype`;

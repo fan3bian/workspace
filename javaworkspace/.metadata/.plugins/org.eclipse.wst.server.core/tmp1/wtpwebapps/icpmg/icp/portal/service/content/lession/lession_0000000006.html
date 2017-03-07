@@ -1,0 +1,273 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+         <title>独立云磁盘和可用区常见问题</title>
+	<link href="/icpmg/icp/portal/styles/web.css" rel="stylesheet"
+			type="text/css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/icpmg/icp/portal/styles/util.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/icpmg/icp/portal/styles/gather.css" />
+	<script type="text/javascript" src="/icpmg/icp/portal/scripts/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="/icpmg/icp/portal/scripts/slide.js"></script>
+	<script type="text/javascript" src="/icpmg/icp/portal/scripts/TweenMax.min.js"></script>
+	<script type="text/javascript" src="/icpmg/icp/portal/scripts/myScroll.js"></script>
+	<script type="text/javascript" src="/icpmg/icp/portal/scripts/util.js"></script>
+	<script type="text/javascript" src="/icpmg/icp/portal/scripts/gather.js"></script>
+</head>
+<body>
+	<div class="top-bg">
+			<div class="main">
+				<a href="/icpmg/icp/portal/home.html"><img class="logo"
+						src="/icpmg/icp/portal/images/logo/logo.png" /> </a>
+				<div class="menu">
+					<a href="/icpmg/icp/portal/product/00.html"
+						class="sub-menu"> 产品服务 </a>
+					<a href="/icpmg/icp/portal/notice/lst/notice/notice_1.html"
+						class="sub-menu"> 通知公告 </a>
+					<a href="/icpmg/icp/portal/news/lst/website_1.html"
+						class="sub-menu"> 新闻动态 </a>
+					<a href="/icpmg/icp/portal/case/lst/government_1.html"
+						class="sub-menu"> 解决方案 </a>
+					<a href="/icpmg/icp/portal/service/lst/lession/lession_1.html" class="sub-menu"> 服务社区 </a>
+
+					<div class="clear"></div>
+				</div>
+				<div class="top-right-wear">
+					<div class="top-right">
+						<a class="console" href="javascript:toHomeJsp();"> <i
+							class="icon-console"></i> 控制台 </a>
+						<div class="nologin">
+							<span class="user-name En" id="logoutDiv"></span>
+							<button
+								onclick="window.location.href=getRootPath()+'/userMgr/logout.do'"
+								class="button logout">
+								退出
+							</button>
+							
+
+						</div>
+
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+
+	<div class="container-wrap">
+		<div class="container">
+
+			<!-- 左侧 -->
+			<div class="container-left">
+				<div class="inside-menu">
+					<ul>
+						<li><a class='active' href="../../lst/lession/lession_1.html">新手课堂</a></li>
+						<li><a href="../../lst/qa/qa_1.html">技术问答</a></li>
+						<li><a href="../../lst/api/api_1.html">API文档</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- 左侧 end -->
+			
+			<!-- 右侧  -->
+			<div class="container-right">
+				
+				<!-- 面包屑 -->
+				<div class="container-guid">
+					<div>
+						<span><img src="../../../images/n-06.jpg" alt=""></span>
+						<a href="../../../home.html">首页</a>
+						<a href="../../lst/lession/lession_1.html">服务社区</a>
+						<b>新手课堂</b>
+					</div>
+				</div>
+
+				<div class="container-cell">
+					<div class="service-detail">
+						<h2>独立云磁盘和可用区常见问题</h2>
+						 <p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<strong><span style="font-family:微软雅黑, sans-serif;vertical-align:baseline;">1</span></strong><strong><span style="font-family:微软雅黑, sans-serif;vertical-align:baseline;">）什么是独立云磁盘？</span></strong> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<span style="font-family:微软雅黑, sans-serif;vertical-align:baseline;">独立云磁盘是指相对于云服务器ECS，能够独立存在的云磁盘，它可以在同一个可用区内的不同ECS实例之间自由挂载和卸载，不能跨地域、跨可用区挂载。独立云磁盘的基本特性与云磁盘一样，数据可靠性与云磁盘相同。较之云磁盘，独立云磁盘兼顾了数据安全性和ECS实例磁盘变化的灵活性。</span> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<span style="font-family:微软雅黑, sans-serif;vertical-align:baseline;">&nbsp;</span> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<strong><span style="font-family:微软雅黑, sans-serif;vertical-align:baseline;">2</span></strong><strong><span style="font-family:微软雅黑, sans-serif;vertical-align:baseline;">）什么是可用区？</span></strong> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<span style="font-family:微软雅黑, sans-serif;vertical-align:baseline;">可用区是指在同一地域下，电力和网络互相独立的物理区域，故障会被隔离在一个可用区内。在同一地域下可用区内与可用区之间内网互通，同一可用区内的ECS实例网络延时更小；不同可用区之间故障隔离，独立云磁盘可以在同一可用区内的不同ECS间自由挂载和卸载。</span> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<span style="font-family:微软雅黑, sans-serif;vertical-align:baseline;">如果您的应用需要更高的高可用性，建议您将ECS实例创建在不同的可用区内。</span> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<strong><span style="font-family:微软雅黑, sans-serif;vertical-align:baseline;">3</span></strong><strong><span style="font-family:微软雅黑, sans-serif;vertical-align:baseline;">）独立云磁盘跟现在的磁盘有什么区别？</span></strong> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<span style="vertical-align:baseline;">临时磁盘和云磁盘是随实例购买时直接生成的，不能卸载，而独立云磁盘可以单独购买并且挂载到实例上，一旦挂载后，使用上和临时磁盘和云磁盘没有区别。</span> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<strong><span style="font-family:微软雅黑, sans-serif;vertical-align:baseline;">4</span></strong><strong><span style="font-family:微软雅黑, sans-serif;vertical-align:baseline;">）服务器应用与可用区选择的选择关系是怎么样的？</span></strong> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<span style="font-family:微软雅黑, sans-serif;vertical-align:baseline;">如果您的应用需要更高的高可用性，建议您将ECS实例创建在不同可用区内。如果您的ECS实例之间需要更低的网络访问延时,建议ECS实例创建在同一个可用区下。独立云磁盘只能挂载在同一可用区的ECS实例内</span> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<strong><span style="font-family:微软雅黑, sans-serif;vertical-align:baseline;">5)</span></strong><strong><span style="font-family:微软雅黑, sans-serif;vertical-align:baseline;">一块独立云磁盘可以挂载到多个ECS实例上吗？</span></strong> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<span style="font-family:微软雅黑, sans-serif;vertical-align:baseline;">一块独立云磁盘同时只能挂载到同一可用区的一台实例，不可跨可用区挂载。</span> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<strong><span style="vertical-align:baseline;">6</span></strong><strong><span style="vertical-align:baseline;">）独立云磁盘怎么收费？</span></strong> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<span style="font-family:微软雅黑, sans-serif;vertical-align:baseline;">独立云磁盘按量收取费用，如果帐户余额不足时，会停止独立云磁盘的服务。同时我们这次统一下调了所有按量付费实例上磁盘的价格（临时磁盘，云磁盘）并且新的独立云磁盘也与最新磁盘价格保持统一，不管是在购买包年包月/按量付费的实例购买的磁盘还是单独购买的独立云磁盘，价格都是一致的。</span> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<strong><span style="vertical-align:baseline;">7</span></strong><strong><span style="vertical-align:baseline;">）独立云磁盘能够挂载到包年包月实例上吗？</span></strong> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<span style="vertical-align:baseline;">可以，独立云磁盘可以挂载到同一地域下的同一可用区的任意实例上（包括包年包月和按量付费实例）。</span> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<strong><span style="font-family:微软雅黑, sans-serif;vertical-align:baseline;">8</span></strong><strong><span style="font-family:微软雅黑, sans-serif;vertical-align:baseline;">）独立云磁盘和普通云磁盘的磁盘性能和数据安全性一样吗，磁盘性能会有提升吗?</span></strong> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<span style="font-family:微软雅黑, sans-serif;vertical-align:baseline;">独立云磁盘恶化普通云磁盘一样的，没有区别，磁盘性能上不会有提升。</span> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<strong><span style="vertical-align:baseline;">9</span></strong><strong><span style="vertical-align:baseline;">）我的包年包月实例上不需要的磁盘能不能卸载？</span></strong> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<span style="vertical-align:baseline;">很抱歉，暂时不行。</span> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<strong><span style="vertical-align:baseline;">10</span></strong><strong><span style="vertical-align:baseline;">）同一台实例上能不能同时有云磁盘，临时磁盘和独立云磁盘</span></strong> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<span style="vertical-align:baseline;">可以，临时磁盘和云磁盘在您购买的时候就必须选定，而独立云磁盘则需要单独购买后在控制台或者通过API进行挂载。</span> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<strong><span style="vertical-align:baseline;">11</span></strong><strong><span style="vertical-align:baseline;">）为什么我的独立云磁盘和我的实例一起释放了？</span></strong> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<span style="vertical-align:baseline;">独立云磁盘在挂载时可以决定磁盘是随实例释放还是在实例释放时保留独立云磁盘，系统会根据您的选择来执行。当然您可以随时通过控制台和API更改这个选项。</span> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<strong><span style="vertical-align:baseline;">12</span></strong><strong><span style="vertical-align:baseline;">）为什么独立云磁盘挂载时找不到我想挂载的实例？</span></strong> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<span style="vertical-align:baseline;">请确保您的实例和磁盘处于同一个地域的同一个可用区，独立云磁盘只能在同一个地域的同一个可用区内进行挂载，或者确保您的实例没有被释放。</span> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<strong><span style="vertical-align:baseline;">13</span></strong><strong><span style="vertical-align:baseline;">）为什么我在本实例列表中选择独立云磁盘挂载时找不到我想要挂载的磁盘？</span></strong> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<span style="vertical-align:baseline;">请确保您的实例和磁盘处于同一个地域的同一个可用区，独立云磁盘只能在同一个地域的同一个可用区内进行挂载。或者确保您的独立云磁盘没有被释放。</span> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<strong><span style="vertical-align:baseline;">14</span></strong><strong><span style="vertical-align:baseline;">）我删除磁盘的时候，快照会被保留吗？</span></strong> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<span style="vertical-align:baseline;">现在磁盘被删除是，快照不会被删除，但是自动快照会被删除，空出额度，以确保您的自动快照策略有足够正确执行。</span> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<strong><span style="vertical-align:baseline;">15</span></strong><strong><span style="vertical-align:baseline;">）为什么我的独立云磁盘没有自动快照了？</span></strong> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<span style="vertical-align:baseline;">独立云磁盘只有在使用中的状态（挂载到实例时）才会执行创建新的自动快照的策略，但是原来创建的自动快照随着时间的推移会被逐渐删除。</span> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<strong><span style="vertical-align:baseline;">16</span></strong><strong><span style="vertical-align:baseline;">）为什么我不能购买独立云磁盘？</span></strong> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<span style="vertical-align:baseline;">因为您暂时没有购买和使用独立云磁盘的权限，您可以通过工单提交申请，我们将逐步为您开通。</span> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<strong><span style="vertical-align:baseline;">17</span></strong><strong><span style="vertical-align:baseline;">）一台实例能挂载多少块独立云磁盘</span></strong> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<span style="vertical-align:baseline;">每台实例（包括包年包月和按量付费）最多只能拥有4块数据盘，包括临时磁盘，云磁盘和独立云磁盘。</span> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<strong><span style="vertical-align:baseline;">18</span></strong><strong><span style="vertical-align:baseline;">）卸载独立云磁盘时，我的磁盘会丢数据吗？</span></strong> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<span style="vertical-align:baseline;">我们强烈建议：</span> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<span style="vertical-align:baseline;">l<span style="vertical-align:baseline;">&nbsp;<span class="Apple-converted-space">&nbsp;</span></span></span><span style="vertical-align:baseline;">在Windows操作系统下，为了保证数据完整性，建议您暂停对该磁盘的所有文件系统的读写操作，否则未完成读写的数据会丢失。</span> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<span style="vertical-align:baseline;">l<span style="vertical-align:baseline;">&nbsp;<span class="Apple-converted-space">&nbsp;</span></span></span><span style="vertical-align:baseline;">在Linux操作系统下，您需要登录实例中对该磁盘进行unmount命令行操作，命令执行成功后再进入控制台对磁盘进行“卸载”操作。</span> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<strong><span style="vertical-align:baseline;">19</span></strong><strong><span style="vertical-align:baseline;">）我的系统盘能够卸载吗？</span></strong> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<span style="vertical-align:baseline;">暂时不行。</span> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<strong><span style="vertical-align:baseline;">20</span></strong><strong><span style="vertical-align:baseline;">）什么是挂载点？</span></strong> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<span style="vertical-align:baseline;">挂载点是阿里云服务器上磁盘在磁盘控制器总线上的位置。所选配的挂载点，在Linux环境下与磁盘设备号对应；在Windows环境下与磁盘管理器中的磁盘顺序一致。</span> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<strong><span style="vertical-align:baseline;">21</span></strong><strong><span style="vertical-align:baseline;">）为什么我在控制台上找不到重置磁盘，更换操作系统，回滚快照的操作了？</span></strong> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<span style="vertical-align:baseline;">我们在这次升级中更改了这几个操作的名称，分别改为了：重新初始化磁盘，更换系统盘和回滚磁盘。</span> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<strong><span style="vertical-align:baseline;">22</span></strong><strong><span style="vertical-align:baseline;">）重新初始化磁盘时，我的快照会丢失吗？</span></strong> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<span style="vertical-align:baseline;">不会，自动快照也不会丢失</span> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<strong><span style="vertical-align:baseline;">23</span></strong><strong><span style="vertical-align:baseline;">）更换系统盘时，我的快照会丢失吗？</span></strong> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<span style="vertical-align:baseline;">不会，不过请注意，更换系统盘相当于对您的系统盘进行更换，磁盘ID会发生变化，而您原来的系统盘的快照（用户快照和自动快照）将不能用于回滚新的系统盘。<span style="line-height:normal;font-family:微软雅黑;font-size:13px;vertical-align:baseline;">而原系统盘的用户快照仍旧保留（自动快照会被删除），可以创建自定义镜像。</span></span> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<strong><span style="vertical-align:baseline;">24</span></strong><strong><span style="vertical-align:baseline;">）为什么我的数据盘不能选择临时磁盘</span></strong> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<span style="vertical-align:baseline;">只有系统盘是临时磁盘时，才能选择临时磁盘和云磁盘，如果系统盘是云磁盘，则数据盘只能选择云磁盘.</span> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<strong><span style="font-family:微软雅黑, sans-serif;vertical-align:baseline;">25</span></strong><strong><span style="font-family:微软雅黑, sans-serif;vertical-align:baseline;">）独立云磁盘服务器的应用场景有哪些？</span></strong> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<span style="font-family:微软雅黑, sans-serif;vertical-align:baseline;">主要用于不同实例间快速数据转移和数据保存。</span> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<strong><span style="font-family:微软雅黑, sans-serif;vertical-align:baseline;">26</span></strong><strong><span style="font-family:微软雅黑, sans-serif;vertical-align:baseline;">）可以使用用户快照创建独立云磁盘吗？</span></strong> 
+</p>
+<p style="color:#333333;text-indent:0px;background-color:#FFFFFF;">
+	<span style="font-family:微软雅黑, sans-serif;vertical-align:baseline;">选择已有快照直接创建一块独立云磁盘，新创建的独立云磁盘与快照的容量大小及数据完全相同，容量大小不可更改。</span> 
+</p> 				 
+					</div>
+				</div>
+
+			</div>
+			<!-- 右侧 end -->
+			<div class="clear"></div>
+
+		</div>
+	</div>
+
+	<div class="page-footer-copyright">
+			<span> <small>技术支持：浪潮云服务信息科技有限公司</small> </span>&nbsp;&nbsp;&nbsp;&nbsp;
+			<span><small>©浪潮集团版权所有</small> </span>
+			<span><small>ICP备案号：鲁ICP备05019369号</small> </span>
+		</div>
+</body>
+</html>

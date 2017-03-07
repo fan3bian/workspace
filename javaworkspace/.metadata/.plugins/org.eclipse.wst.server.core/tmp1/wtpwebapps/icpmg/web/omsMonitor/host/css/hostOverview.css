@@ -1,0 +1,229 @@
+.inhostoverview_container {
+	padding-top:10px;
+    margin: 0 auto;
+    color: #666666;
+    width: 98%;
+    min-height:500px;
+    position: relative; overflow: hidden;
+}
+.inhostoverview_k{
+	{padding-top: 20px;}
+}
+.inhostoverview_left {
+    float: left;
+    width: 79%;
+    /*height: 500px;*/
+}
+.inhostoverview_number{
+	width: 100%;
+	 height: 68px;
+	 margin: 0 auto;
+	 position:  relative;
+}
+.inhostoverview_status {
+    float: left;
+    width: 24%;
+     height: 68px;
+    background-color: white;
+    border: 1px solid #DDDDDD;
+}
+
+#inhostoverview_img_all {
+    float: left;
+    width: 68px;
+    height: 68px;
+}
+
+#inhostoverview_img_fault {
+    background-position: 294px 0;
+    float: left;
+    width: 68px;
+    height: 68px;
+}
+
+#inhostoverview_img_new {
+    background-position: 213px 0;
+    float: left;
+    width: 68px;
+    height: 68px;
+}
+
+#inhostoverview_img_offline {
+    background-position: 133px 0;
+    float: left;
+    width: 68px;
+    height: 68px;
+}
+
+.inhostoverview_num {
+    display: block;
+    font-size: 25px;
+    margin-left: 80px;
+}
+
+.inhostoverview_name {
+    display: block;
+    font-size: 15px;
+    margin-left: 80px;
+}
+
+.inhostoverview_census {
+	width:100%;
+	height:205px;
+    margin-top: 15px;
+    background-color: white;
+    border: 1px solid #DDDDDD;
+    border-bottom: none;
+    overflow: hidden;
+}
+
+.inhostoverview_span {
+    float:left;
+   display: block;
+    height: 40px;
+    line-height: 40px;margin:0 0 0 10px; font-size: 16px; color: #666;
+}
+
+/*¸²Ð´easyui±íÍ·ÑùÊ½*/
+.datagrid-cell {
+    padding: 0;
+}
+
+.inhostoverview_charts {
+    margin-top: 15px;
+    width: 100%;
+    height: 300px;
+}
+
+.inhostoverview_cpu {
+    float: left;
+    width: 49%;
+    height: 300px;
+    background-color: white;
+    border: 1px solid #DDDDDD;
+    overflow: hidden;
+}
+
+.inhostoverview_mem {
+    float: right;
+    width: 49%;
+    height: 300px;
+    background-color: white;
+    border: 1px solid #DDDDDD;
+    overflow: hidden;
+}
+
+#inhostoverview_cpu_chart {
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+}
+
+#inhostoverview_mem_chart {
+    width: 100%;
+    height: 260px;
+     overflow: hidden;
+}
+
+.inhostoverview_right {
+    float: right;
+    width: 20%;
+    min-height:100px;
+    background-color: white;
+    border: 1px solid #DDDDDD ;
+    overflow: hidden;  position: absolute;
+    right: 0;
+    bottom: 65px;
+    top: 10px;
+    
+}
+.inhostoverview_right_all{
+	float: left;
+    width: 107%;
+    min-height:100px;
+    max-height:920px;
+    overflow-y:scroll;
+}
+.inhostoverview_right_all_title{
+	 height: 40px;
+    line-height: 40px;
+	margin: 0px 0px 10px 0px;
+    border-bottom: 1px solid #DDDDDD;
+}
+.inhostoverview_right_all_title_right{
+	float:right;
+	width: 140px; margin-right: 5px;
+}
+#inhostoverview_more {
+    float: right;
+    cursor: pointer;
+}
+
+#inhostoverview_new {
+    display: none;
+}
+
+.inhostoverview_list {
+     margin: 0 auto;
+    position: relative;
+    width: 97%;
+}
+
+.inhostoverview_list_one{
+	float: left;
+    width: 40%;
+    height: 30px;
+    line-height:30px;
+    text-align: center;
+    display:block;/*ÄÚÁª¶ÔÏóÐè¼Ó*/ 
+    word-break:keep-all;/* ²»»»ÐÐ */
+	white-space:nowrap;/* ²»»»ÐÐ */
+	overflow:hidden;/* ÄÚÈÝ³¬³ö¿í¶ÈÊ±Òþ²Ø³¬³ö²¿·ÖµÄÄÚÈÝ */
+	text-overflow:ellipsis;/* µ±¶ÔÏóÄÚÎÄ±¾Òç³öÊ±ÏÔÊ¾Ê¡ÂÔ±ê¼Ç(...) £»ÐèÓëoverflow:hidden;Ò»ÆðÊ¹ÓÃ¡£*/ 
+}
+.inhostoverview_list_two{
+	float: left;
+    width: 30%;
+    height: 30px;
+    line-height:30px;
+    text-align: center;
+}
+.inhostoverview_list_three{
+	float: left;
+    width: 30%;
+    height: 30px;
+    line-height:30px;
+    text-align: center;
+}
+.inhostoverview_new table {
+    width: 100%;
+    position: relative;
+    left: -10px;
+}
+
+.inhostoverview_clear {
+    clear: both;
+}
+
+.m-btn-downarrow, .s-btn-downarrow {
+    display: inline-block;
+    font-size: 1px;
+    height: 16px;
+    margin-top: -15px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 16px;
+}
+.l-btn-icon {
+    display: inline-block;
+    font-size: 1px;
+    height: 16px;
+    line-height: 16px;
+    margin-top: -15px;
+    position: absolute;
+    top: 50%;
+    width: 16px;
+}
+.inhostoverview_title{ margin:0 10px 10px 10px;border-bottom: 1px solid #ddd; overflow: hidden; }
+.inhostoverview_container .get_more{margin-right: 10%}

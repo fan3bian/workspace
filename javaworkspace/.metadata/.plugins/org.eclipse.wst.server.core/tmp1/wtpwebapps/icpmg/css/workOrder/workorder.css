@@ -1,0 +1,436 @@
+
+/***********工单标题样式重写start*******/
+.TicketTitle{
+	text-align:center;
+	background-color:#F0F8FF;
+	border:#BCD2EE 1px solid;
+}
+.Titlefont{
+	text-align:center;
+	font-size:20px;
+	color:#4048B0;
+	font-family:"arial";
+}
+#toptable{
+	border-style:none;
+	padding:0 0 0 0 !important;
+}
+/*********工单标题样式重写end*********/
+/*********自定义样式*********/
+div#main_frame {
+	margin: 10px 5px 0 -20px;
+	width: 95%;
+	padding: 0 5px 0 5px;
+}
+
+/******td样式重写start*******/
+.FieldInputtd {
+	width:27%;
+    background-color: #FFFFFF;
+	font: normal 12px tahoma, arial, helvetica, sans-serif;
+    text-align: left;
+    word-wrap: break-word;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+    border:red 2px solid !important;  
+}
+.FieldLabel {
+	width:23%;
+	height:25px;
+    background-color: #F0F8FF;
+	font: normal 12px tahoma, arial, helvetica, sans-serif;
+    text-align: left;
+    word-wrap: break-word;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+    padding-right:10px !important;
+    border:#BCD2EE 1px solid !important;
+}
+.FieldInput {
+	width:27%;
+	height:25px;
+    background-color: #FFFFFF;
+	font: normal 12px tahoma, arial, helvetica, sans-serif;
+    text-align: left;
+    word-wrap: break-word;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+    border:#BCD2EE 1px solid !important;  
+}
+.FieldLabel2 {
+	width:23%;
+	height:25px;
+    background-color: #F0F8FF;
+	font: normal 12px tahoma, arial, helvetica, sans-serif;
+    text-align: left;
+    word-wrap: break-word;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+    padding-right:10px !important;
+    border:#BCD2EE 1px solid !important;  
+}
+.FieldInput2 {
+	width:77%;
+	height:25px;
+    background-color: #FFFFFF;
+	font: normal 12px tahoma, arial, helvetica, sans-serif;
+    text-align: left;
+    word-wrap: break-word;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+    border:#BCD2EE 1px solid !important;  
+}
+.FieldLabel1 {
+	width:35%;
+	height:25px;
+    background-color: #F0F8FF;
+	font: normal 12px tahoma, arial, helvetica, sans-serif;
+    text-align: left;
+    word-wrap: break-word;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+    padding-right:10px !important;
+    border:#BCD2EE 1px solid !important;  
+}
+.FieldInput1 {
+	width:64%;
+	height:25px;
+    background-color: #FFFFFF;
+	font: normal 12px tahoma, arial, helvetica, sans-serif;
+    text-align: left;
+    word-wrap: break-word;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+    border:#BCD2EE 1px solid !important;  
+}
+.FieldLabel3{
+	width:23%;
+	height:90px !important;
+    background-color: #F0F8FF;
+	font: normal 12px tahoma, arial, helvetica, sans-serif;
+    text-align: left;
+    word-wrap: break-word;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+    padding-right:10px !important;
+    border:#BCD2EE 1px solid !important;  
+}
+.FieldInput3 {
+	width:27%;
+	height:90px !important;
+    background-color: #FFFFFF;
+	font: normal 12px tahoma, arial, helvetica, sans-serif;
+    text-align: left;
+    word-wrap: break-word;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+    border:#BCD2EE 1px solid !important;  
+}
+.FieldLabel4{
+	width:14%;
+	height:30px !important;
+    background-color: #F0F8FF;
+	font: normal 12px tahoma, arial, helvetica, sans-serif;
+    text-align: left;
+    word-wrap: break-word;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+    padding-right:10px !important;
+    border:#BCD2EE 1px solid !important;  
+}
+.FieldInput4 {
+	width:14%;
+	height:30px !important;
+    background-color: #FFFFFF;
+	font: normal 12px tahoma, arial, helvetica, sans-serif;
+    text-align: left;
+    word-wrap: break-word;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+    border:#BCD2EE 1px solid !important;  
+}
+/******td样式重写end*******/
+
+
+/*******输入框样式重写start**********/
+input{
+	margin-left:5px !important;
+	border:#C4C4C4 1px solid !important;
+	width:200px !important;
+}
+textarea{
+	margin:3 0 3 5 !important;
+	border:#C4C4C4 1px solid !important;
+	width:500px !important;
+	
+}
+
+/*******输入框样式重写end**********/
+
+/*******Work Order附件上传样式 start********/
+.wotable{
+	border-left:#BCD2EE 1px solid !important; 
+	border-bottom:#BCD2EE 1px solid !important;   
+}
+.wotablefile{
+	border:#BCD2EE 1px solid !important; 
+}
+/*******Work Order附件上传样式 end********/
+
+/*****二级选项卡下的按钮样式 start*****/
+.l-toolbar{
+	margin-top:2px;
+	margin-left:30px;
+	background:#FFFFFF;
+	border-width:0 !important;
+}
+/*****二级选项卡下的按钮样式 end*****/
+
+/******二级选项卡样式 start*********/
+#center ul.l-tab-strip-top{
+	background:none;
+}
+#center .l-tab-panel-header{
+	background:#FFFFFF;
+}
+#center .l-tab-panel-header{
+	height:25px;
+	padding-top:0px !important;
+	padding-left:40px;
+}
+/******二级选项卡样式 end*********/
+
+
+#history .l-panel-header{
+	border:0px;
+	background:none;
+	background-color:#D5DDE9;
+	margin:5px 30px 0px 30px;
+}
+
+#urgePanel .l-panel-header{
+	border:0px;
+	background:none;
+	background-color:#D5DDE9;
+	margin:5px 30px 0px 30px;
+}
+
+.TTtitle{
+	text-align:center;
+	line-height:20px;
+	font-size:12px;
+	border-top:#BCD2EE 1px solid !important; 
+	border-right:#BCD2EE 1px solid !important; 
+}
+
+/**********实现联想功能***********/
+
+.mouseover {
+/*  类选择符“.”，通过直接引用元素中类属性的值（即CLASS属性的值）而产生效果，可以份配任何数量的元素。例：obj.className="mouseover"  */
+	color:#ffffff;                            /*黑色#000000；白色#FFFFFF；红色#FF0000；绿色#00FF00；蓝色#0000FF;*/
+	background-color:highlight;
+	width:100%;
+	cursor:default;                                                                                      /*  cursor :光标  */
+	font-size:12px;
+}
+.mouseout {
+	color:#000000;
+	width:100%;
+	background-color:#ffffff;
+	cursor:default;
+	font-size:12px;
+}
+.modifyAuditorClass{
+	readonly:expression(this.readOnly=true);
+	border:0px !important;
+	background:none !important;
+}
+.modifyAuditorBottonClass{
+	color:#FFFFFF;
+	background:url(/eoms/skins/images/default/button/back-top-bottom.png) repeat-x 0px -2px !important;
+}
+.removeAuditorClass{
+	display:none !important;
+}
+
+
+/*0801 工单审批*/
+.y-ggsp{background-color: #eee;padding-top:0px;}
+.y-ggsp .filebox input{ border:1px solid #fff !important;}
+.y-ggsp-now {
+    padding: 0 20px;
+    background: #fff;
+}
+
+.y-ggsp-now textarea {
+    color: #666;
+    font-family: "微软雅黑"
+}
+
+.y-table-layout td {
+    padding: 5px;
+    font-size: 12px;
+    color: #666;
+}
+
+.y-must-star {
+    color: #f0a73b;
+}
+
+.y-shadow-input {
+    height: 23px;
+    line-height: 23px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    width: 400px;
+    padding: 0 5px;
+    color: #333;
+}
+
+.y-ggsp-spjl {
+    background: #eeeeee;
+    overflow-y: hidden;
+    margin-top: 10px; 
+}
+
+.y-ggsp-spjl .title {
+    overflow: hidden;
+}
+
+.y-ggsp-spjl .title .text {
+    float: left;
+    padding-right: 10px;
+    font-size: 14px;
+    color: #005b9a;
+    line-height: 3;
+}
+
+.y-ggsp-spjl .title hr {
+    margin: 1.5em 0;
+}
+.y-ggsp-spjl .title-text{color: #333;font-size:14px;display:inline-block; padding-right: 50px; line-height: 30px;}
+.y-ggsp-spjl .accordion .accordion-header{ background: #f7f7f7 ; overflow: hidden; position: static;}
+
+.y-ggsp-spjl  .easyui-accordion{ border:1px solid #ddd; margin-bottom: 10px;position: relative;}
+.y-ggsp-spjl  .y-wotable { border-bottom:1px solid #ddd;  border-left:1px solid #ddd; }
+.y-ggsp-spjl  .y-wotable td,.y-ggsp-spjl  .y-wotable td{ border-top:1px solid #ddd;  border-right:1px solid #ddd; padding:5px; }
+.y-ggsp-spjl .accordion-collapse {
+    background: url('images/accordion_arrows2.png') no-repeat 0 0;
+}
+.y-ggsp-spjl .accordion-expand {
+    background: url('images/accordion_arrows2.png') no-repeat -16px 0;
+}
+.y-ggsp-spjl  .panel-tool{ right:10px; top:20px; }
+
+.FieldLabelGd {
+	width:23%;
+	height:25px;
+	font: normal 12px tahoma, arial, helvetica, sans-serif;
+    text-align: left;
+    word-wrap: break-word;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+    padding-right:10px !important;
+    border:#ddd 1px solid !important;
+}
+.FieldInputGd {
+	width:27%;
+	height:25px;
+	font: normal 12px tahoma, arial, helvetica, sans-serif;
+    text-align: left;
+    word-wrap: break-word;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+    border:#ddd 1px solid !important;  
+}
+
+.y-ggsp-now .title {
+    border-bottom: 1px solid #b5b5b5;
+    margin-bottom: 10px;
+}
+
+.y-ggsp-now .title .y-text {
+    font-size: 14px;
+    color: #005b9a;
+    line-height: 3;
+}
+
+.y-ggsp-now .y-btn {
+    float: right;
+     margin-top: 10px;
+}
+
+/**工单审批 --基本信息新样式 20160906 */
+.TicketTitle2{
+	text-align:center;
+	border-bottom:#ddd 1px solid;
+	height:50px;
+}
+.Titlefont2{
+	text-align:center;
+	font-size:20px;
+	color:rgb(13, 93, 158);
+	font-family:"微软雅黑, tahoma, arial, helvetica, sans-serif";
+}
+.FieldLabel5 {
+	width:23%;
+	height:30px;
+    background-color: #F9F9F9;
+	font: normal 12px 微软雅黑,tahoma, arial, helvetica, sans-serif;
+    text-align: left;
+    word-wrap: break-word;
+    border:#ddd 1px solid !important;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+    padding-right:10px !important;
+    padding-left:5px !important;
+}
+.FieldInput5 {
+	width:27%;
+	height:25px;
+    background-color: #FFFFFF;
+	font: normal 12px 微软雅黑,tahoma, arial, helvetica, sans-serif;
+    text-align: left;
+    border:#ddd 1px solid !important;  
+    word-wrap: break-word;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+}
+.FieldInput51 {
+	width:77%;
+	height:25px;
+    background-color: #FFFFFF;
+	font: normal 12px 微软雅黑,tahoma, arial, helvetica, sans-serif;
+    text-align: left;
+    word-wrap: break-word;
+    border:#ddd 1px solid !important;  
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+    
+}
+.FieldLabel6 {
+	width:23%;
+	height:30px;
+    background-color: #F9F9F9;
+	font: normal 12px 微软雅黑,tahoma, arial, helvetica, sans-serif;
+    text-align: left;
+    word-wrap: break-word;
+    border:#ddd 1px solid !important;
+    border-top:0px !important;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+    padding-right:10px !important;
+    padding-left:5px !important;
+}
+.FieldInput6 {
+	width:77%;
+	height:25px;
+    background-color: #FFFFFF;
+	font: normal 12px 微软雅黑,tahoma, arial, helvetica, sans-serif;
+    text-align: left;
+    word-wrap: break-word;
+    border:#ddd 1px solid !important;  
+    border-top:0px !important;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+}

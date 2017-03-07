@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1476023914 source:e:\workspace\cworkspace\mooc\cmooc\main.c
+	<stdio.h>
+	<stdlib.h>
+

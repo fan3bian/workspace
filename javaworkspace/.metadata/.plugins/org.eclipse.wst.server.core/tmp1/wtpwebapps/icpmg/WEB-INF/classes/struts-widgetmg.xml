@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 权限管理 -->
+	<package name="widget" namespace="/widget" extends="struts-default">
+		<interceptors>
+			<!-- 定义系统的登录控制拦截器 -->
+			<interceptor name="nosessInterceptor"
+				class="com.inspur.icpmg.interceptor.LoginInterceptor"></interceptor>
+			<!-- 定义系统日志拦截器 -->
+			<interceptor name="sysLogInterceptor"
+				class="com.inspur.icpmg.interceptor.SysLogInterceptor"></interceptor>
+			<interceptor-stack name="uuStack">
+				<interceptor-ref name="paramsPrepareParamsStack">
+					<param name="prepare.alwaysInvokePrepare">false</param>
+				</interceptor-ref>
+				<!-- <interceptor-ref name="defaultStack"></interceptor-ref> -->
+				<!-- 引用登录控制拦截器 -->
+				<interceptor-ref name="nosessInterceptor"></interceptor-ref>
+				<!-- 引用系统日志拦截器 -->
+				<interceptor-ref name="sysLogInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 将自定义的拦截器uuStack定义成默认的拦截器栈 -->
+		<default-interceptor-ref name="uuStack"></default-interceptor-ref>
+		<global-results>
+			<result name="noSession">/login.jsp</result>
+			<result name="null">/login.jsp</result>
+			<result name="login">/login.jsp</result>
+		</global-results>
+		<action name="widgetStyle" class="com.inspur.icpmg.widgetmg.web.WidgetMgAction"
+			method="addWidGet"></action>
+		<action name="getWidgetList" class="com.inspur.icpmg.widgetmg.web.WidgetMgAction"
+			method="getWidgetList"></action>
+		<action name="getChartSer" class="com.inspur.icpmg.widgetmg.web.WidgetMgAction"
+			method="getChartSer"></action>
+		<action name="getChartOptionConfig"
+			class="com.inspur.icpmg.widgetmg.web.WidgetChartOptionAction" method="getChartOptionConfig"></action>
+		<action name="getWidgetItem" class="com.inspur.icpmg.widgetmg.web.WidgetMgAction"
+			method="getWidgetItem"></action>
+	</package>
+
+
+	<!-- Create by liuenqi -->
+	<package name="hostkpioverview" namespace="/hostkpioverview"
+		extends="struts-default">
+		<interceptors>
+			<!-- 定义系统的登录控制拦截器 -->
+			<interceptor name="nosessInterceptor"
+				class="com.inspur.icpmg.interceptor.LoginInterceptor"></interceptor>
+			<!-- 定义系统日志拦截器 -->
+			<interceptor name="sysLogInterceptor"
+				class="com.inspur.icpmg.interceptor.SysLogInterceptor"></interceptor>
+			<interceptor-stack name="uuStack">
+				<interceptor-ref name="paramsPrepareParamsStack">
+					<param name="prepare.alwaysInvokePrepare">false</param>
+				</interceptor-ref>
+				<!-- 引用登录控制拦截器 -->
+				<interceptor-ref name="nosessInterceptor"></interceptor-ref>
+				<!-- 引用系统日志拦截器 -->
+				<interceptor-ref name="sysLogInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 将自定义的拦截器uuStack定义成默认的拦截器栈 -->
+		<default-interceptor-ref name="uuStack"></default-interceptor-ref>
+		<global-results>
+			<result name="noSession">/login.jsp</result>
+			<result name="null">/login.jsp</result>
+		</global-results>
+		<!-- 设备列表查询 -->
+		<action name="queryDeviceList" class="com.inspur.icpmg.widgetmg.web.hostKpiQueryAction"
+			method="queryDeviceList"></action>
+		<!-- 指标列表查询 -->
+		<action name="queryKpiList" class="com.inspur.icpmg.widgetmg.web.hostKpiQueryAction"
+			method="queryKpiList"></action>
+		<!-- 是否有下级组件查询 -->
+		<action name="isParent" class="com.inspur.icpmg.widgetmg.web.hostKpiQueryAction"
+			method="isParent"></action>
+	</package>
+
+	<package name="saveLayout" namespace="/saveLayout" extends="struts-default">
+		<interceptors>
+			<!-- 定义系统的登录控制拦截器 -->
+			<interceptor name="nosessInterceptor"
+				class="com.inspur.icpmg.interceptor.LoginInterceptor"></interceptor>
+			<!-- 定义系统日志拦截器 -->
+			<interceptor name="sysLogInterceptor"
+				class="com.inspur.icpmg.interceptor.SysLogInterceptor"></interceptor>
+			<interceptor-stack name="uuStack">
+				<interceptor-ref name="paramsPrepareParamsStack">
+					<param name="prepare.alwaysInvokePrepare">false</param>
+				</interceptor-ref>
+				<!-- 引用登录控制拦截器 -->
+				<interceptor-ref name="nosessInterceptor"></interceptor-ref>
+				<!-- 引用系统日志拦截器 -->
+				<interceptor-ref name="sysLogInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 将自定义的拦截器uuStack定义成默认的拦截器栈 -->
+		<default-interceptor-ref name="uuStack"></default-interceptor-ref>
+		<global-results>
+			<result name="noSession">/login.jsp</result>
+			<result name="null">/login.jsp</result>
+		</global-results>
+		<!-- 保存布局 -->
+		<action name="saveLayout" class="com.inspur.icpmg.widgetmg.web.WidgetSaveAction"
+			method="saveLayout"></action>
+		<!-- 获取widget详情 -->
+		<action name="getWidgetInfo"
+			class="com.inspur.icpmg.widgetmg.web.GetWidgetInfoAction" method="getWidgetInfo"></action>
+		<!-- 删除widget -->
+		<action name="deleteWidget" class="com.inspur.icpmg.widgetmg.web.DeleteWidgetAction"
+			method="deleteWidget"></action>
+		<!-- 获取设备类型 -->
+		<action name="getDeviceType"
+			class="com.inspur.icpmg.widgetmg.web.DeviceTypeQueryAction" method="getDeviceTypeAction"></action>
+		<!-- 保存位置 -->
+		<action name="savePosition" class="com.inspur.icpmg.widgetmg.web.WidgetSaveAction"
+			method="savePosition"></action>
+	</package>
+	<package name="getComponent" namespace="/getComponent" extends="struts-default">
+		<interceptors>
+			<!-- 定义系统的登录控制拦截器 -->
+			<interceptor name="nosessInterceptor"
+				class="com.inspur.icpmg.interceptor.LoginInterceptor"></interceptor>
+			<!-- 定义系统日志拦截器 -->
+			<interceptor name="sysLogInterceptor"
+				class="com.inspur.icpmg.interceptor.SysLogInterceptor"></interceptor>
+			<interceptor-stack name="uuStack">
+				<interceptor-ref name="paramsPrepareParamsStack">
+					<param name="prepare.alwaysInvokePrepare">false</param>
+				</interceptor-ref>
+				<!-- 引用登录控制拦截器 -->
+				<interceptor-ref name="nosessInterceptor"></interceptor-ref>
+				<!-- 引用系统日志拦截器 -->
+				<interceptor-ref name="sysLogInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 将自定义的拦截器uuStack定义成默认的拦截器栈 -->
+		<default-interceptor-ref name="uuStack"></default-interceptor-ref>
+		<global-results>
+			<result name="noSession">/login.jsp</result>
+			<result name="null">/login.jsp</result>
+		</global-results>
+		<!-- 保存布局 -->
+		<action name="getAllChildNetype" class="com.inspur.icpmg.widgetmg.web.NETypeUtilAction"
+			method="getAllChildNetype"></action>
+		<action name="getAllParentNetype" class="com.inspur.icpmg.widgetmg.web.NETypeUtilAction"
+			method="getAllParentNetype"></action>
+		<action name="getAllChildNeList" class="com.inspur.icpmg.widgetmg.web.NETypeUtilAction"
+			method="getAllChildNeList"></action>
+
+	</package>
+</struts>

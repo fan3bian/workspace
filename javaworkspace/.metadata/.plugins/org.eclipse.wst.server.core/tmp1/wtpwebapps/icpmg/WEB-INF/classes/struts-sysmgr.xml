@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 权限管理 -->
+	<package name="authmgrfuyd" namespace="/authMgr" extends="struts-default">
+		<interceptors>
+			<!-- 定义系统的登录控制拦截器 -->
+			<interceptor name="nosessInterceptor" class="com.inspur.icpmg.interceptor.LoginInterceptor"></interceptor>
+			<!-- 定义系统日志拦截器 -->
+			<interceptor name="sysLogInterceptor" class="com.inspur.icpmg.interceptor.SysLogInterceptor"></interceptor>
+			<interceptor-stack name="uuStack">
+				<interceptor-ref name="paramsPrepareParamsStack">
+            		<param name="prepare.alwaysInvokePrepare">false</param>
+        		</interceptor-ref>
+        		<!-- <interceptor-ref name="defaultStack"></interceptor-ref> -->
+				<!-- 引用登录控制拦截器 -->
+				<interceptor-ref name="nosessInterceptor"></interceptor-ref>
+				<!-- 引用系统日志拦截器 -->
+		       	<interceptor-ref name="sysLogInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 将自定义的拦截器uuStack定义成默认的拦截器栈 -->
+		<default-interceptor-ref name="uuStack"></default-interceptor-ref>
+		<global-results>
+			<result name="noSession">/login.jsp</result>
+			<result name="null">/login.jsp</result>
+			<result name="login">/login.jsp</result>
+		</global-results>
+		
+		<action name="getRoles" class="com.inspur.icpmg.systemMg.action.RoleMgrAction" method="getRoleGrid"></action>
+		<action name="addRole" class="com.inspur.icpmg.systemMg.action.RoleMgrAction" method="addRoleDataGrid"></action>
+		<action name="editRole" class="com.inspur.icpmg.systemMg.action.RoleMgrAction" method="editRoleDataGrid"></action>
+		<action name="deleteRole" class="com.inspur.icpmg.systemMg.action.RoleMgrAction" method="deleteRoleDataGrid"></action>
+		<action name="getRolesByUser" class="com.inspur.icpmg.systemMg.action.RoleMgrAction" method="getRolesByUser"></action>
+		<action name="getAllRoles" class="com.inspur.icpmg.systemMg.action.RoleMgrAction" method="getAllRoles"></action>
+		<action name="saveUserRoleGrand" class="com.inspur.icpmg.systemMg.action.RoleMgrAction" method="saveUserRoleGrand"></action>
+		<action name="getRoleAllOperaLog" class="com.inspur.icpmg.systemMg.action.RoleMgrAction" method="getRoleAllOperaLog"></action>
+		<action name="getUsers" class="com.inspur.icpmg.systemMg.action.UserMgrAction" method="getUsersGrid"></action>
+		<action name="addUser" class="com.inspur.icpmg.systemMg.action.UserMgrAction" method="addUserDataGrid"></action>
+		<!-- <action name="addGovmtUser" class="com.inspur.icpmg.systemMg.action.UserMgrAction" method="addGovmtUser"></action>
+		<action name="addCorpUser" class="com.inspur.icpmg.systemMg.action.UserMgrAction" method="addCorpUser"></action> -->
+		<action name="editUser" class="com.inspur.icpmg.systemMg.action.UserMgrAction" method="editUserDataGrid"></action>
+		<action name="deleteUser" class="com.inspur.icpmg.systemMg.action.UserMgrAction" method="deleteUserDataGrid"></action>
+		<action name="resetUser" class="com.inspur.icpmg.systemMg.action.UserMgrAction" method="resetUser"></action><action name="getUsersByRole" class="com.inspur.icpmg.systemMg.action.UserMgrAction" method="getUsersByRole"></action>
+		<action name="getUserAllOperaLog" class="com.inspur.icpmg.systemMg.action.UserMgrAction" method="getUserAllOperaLog"></action>
+		<action name="changePasswd" class="com.inspur.icpmg.systemMg.action.PasswdChangeAction" method="changePasswd"></action>
+		<action name="queryUserBscinfo" class ="com.inspur.icpmg.systemMg.action.UserMgrAction" method="queryUserBscinfo"></action>
+	</package>
+	
+	<!-- 权限管理(功能权限) -->
+	<package name="authmgr" namespace="/authMgr" extends="struts-default">
+		<interceptors>
+			<!-- 定义系统的登录控制拦截器 -->
+			<interceptor name="nosessInterceptor" class="com.inspur.icpmg.interceptor.LoginInterceptor"></interceptor>
+			<interceptor-stack name="uuStack">
+				<interceptor-ref name="paramsPrepareParamsStack">
+            		<param name="prepare.alwaysInvokePrepare">false</param>
+        		</interceptor-ref>
+        		<interceptor-ref name="defaultStack"></interceptor-ref>
+				<!-- 引用登录控制拦截器 -->
+				<interceptor-ref name="nosessInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 将自定义的拦截器uuStack定义成默认的拦截器栈 -->
+		<default-interceptor-ref name="uuStack"></default-interceptor-ref>
+		<global-results>
+			<result name="noSession">/login.jsp</result>
+			<result name="null">/login.jsp</result>
+			<result name="login">/login.jsp</result>
+			<!-- <result name="noSession" type="redirectAction">
+				<param name="actionName">nosess</param>
+			</result> -->
+		</global-results>
+		<action name="getshowBaseFuntion" class="com.inspur.icpmg.systemMg.action.FunctionMgrAction" method="getshowBaseFuntion"></action>
+		<action name="getRootMenu" class="com.inspur.icpmg.systemMg.action.FunctionMgrAction" method="getRootMenu"></action>
+		<action name="getAllFunction" class="com.inspur.icpmg.systemMg.action.FunctionMgrAction" method="getAllFunction"></action>
+		<action name="addorupdateFunction" class="com.inspur.icpmg.systemMg.action.FunctionMgrAction" method="addorupdateFunction"></action>
+		<action name="delFunction" class="com.inspur.icpmg.systemMg.action.FunctionMgrAction" method="delFunction"></action>
+		<action name="getAllRole" class="com.inspur.icpmg.systemMg.action.PermssionAuthAction" method="getAllRole"></action>
+		<action name="getEntityRole" class="com.inspur.icpmg.systemMg.action.PermssionAuthAction" method="getEntityRole"></action>
+		<action name="saveInitRole" class="com.inspur.icpmg.systemMg.action.PermssionAuthAction" method="saveInitRole"></action>
+		<action name="getCheckedFunction" class="com.inspur.icpmg.systemMg.action.PermssionAuthAction" method="getCheckedFunction"></action>
+		<action name="getComboFunction" class="com.inspur.icpmg.systemMg.action.PermssionAuthAction" method="getComboFunction"></action>
+		<action name="addorupdateFuncAuth" class="com.inspur.icpmg.systemMg.action.PermssionAuthAction" method="addorupdateFuncAuth"></action>
+		<action name="delFuncAuth" class="com.inspur.icpmg.systemMg.action.PermssionAuthAction" method="delFuncAuth"></action>
+		<action name="updateRoleDataAuth" class="com.inspur.icpmg.systemMg.action.PermssionAuthAction" method="updateRoleDataAuth"></action>
+		<action name="getAllAuthUser" class="com.inspur.icpmg.systemMg.action.UserDataAuthAction" method="getAllAuthUser"></action>
+		<action name="getUserDataAuth" class="com.inspur.icpmg.systemMg.action.UserDataAuthAction" method="getUserDataAuth"></action>
+		<action name="getCondiByCondi" class="com.inspur.icpmg.systemMg.action.UserDataAuthAction" method="getCondiByCondi"></action>
+		<action name="addorupdateAuthData" class="com.inspur.icpmg.systemMg.action.UserDataAuthAction" method="addorupdateAuthData"></action>
+	</package>
+	
+	<!-- 登录注册以及验证-->
+	<package name="lgnregmgr" namespace="/userMgr" extends="struts-default">
+		<interceptors>
+			<!-- 定义系统日志拦截器 -->
+			<!-- <interceptor name="sysLogInterceptor" class="com.inspur.icpmg.interceptor.SysLogInterceptor"></interceptor> -->
+		    <interceptor-stack name="userMgrStack">
+		        <interceptor-ref name="paramsPrepareParamsStack">
+		            <param name="prepare.alwaysInvokePrepare">false</param>
+		        </interceptor-ref>
+		        <!-- 引用系统日志拦截器 -->
+		        <!-- <interceptor-ref name="sysLogInterceptor"></interceptor-ref> -->
+		    </interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="userMgrStack"></default-interceptor-ref>
+	    <action name="validate" class="com.inspur.icpmg.systemMg.action.ValidateAction" method="validate"></action>
+		<action name="validEmail" class="com.inspur.icpmg.systemMg.action.ValidateAction" method="validEmail"></action>
+		<action name="validAlias" class="com.inspur.icpmg.systemMg.action.ValidateAction" method="validAlias"></action>   
+		<action name="validUAlias" class="com.inspur.icpmg.systemMg.action.ValidateAction" method="validUAlias"></action>   
+		<action name="validatePEmail" class="com.inspur.icpmg.systemMg.action.ValidateAction" method="validatePEmail"></action>
+		<action name="validatecod" class="com.inspur.icpmg.systemMg.action.ValidateAction" method="validatecod"></action>
+		<action name="provcity" class="com.inspur.icpmg.systemMg.action.ProvCityAction"></action>
+		<action name="trade" class="com.inspur.icpmg.systemMg.action.TradeAction"></action>
+		
+		<action name="inputAccountInfo" class="com.inspur.icpmg.systemMg.action.AddUserBasicInfoAction" method="inputAccountInfo"></action>
+		<!-- 保存企业客户信息 -->
+		<action name="saveCorpInfo" class="com.inspur.icpmg.systemMg.action.AddUserCorpInfoAction" method="saveCorpInfo"></action>
+		<!-- 保存政府信息 -->
+		<action name="saveGovmtInfo" class="com.inspur.icpmg.systemMg.action.AddUserGovmtInfoAction" method="saveGovmtInfo"></action>
+		<action name="updateGovmtInfo" class="com.inspur.icpmg.systemMg.action.UpdateUserGovmtInfoAction" method="updateGovmtInfo"></action>
+		<action name="updateCorpInfo" class="com.inspur.icpmg.systemMg.action.UpdateUserCorpInfoAction" method="updateCorpInfo"></action>
+		<action name="getCorpGovmntVo" class="com.inspur.icpmg.systemMg.action.CorpGovmntAction" method="getCorpGovmntVo"></action>
+		
+		<!-- 登录登出 -->
+		<action name="LoginTransfer" class="com.inspur.icpmg.systemMg.action.LoginAction" method="userLoginIn"></action>
+		<action name="userLogin" class="com.inspur.icpmg.systemMg.action.LoginAction" method="userLogin"></action>
+		<action name="logout" class="com.inspur.icpmg.systemMg.action.LoginAction" method="userLoginOut">
+			<result name="success">/web/Frames/authBase.jsp</result>
+		</action>
+		
+		<!-- 测试ip,地理位置 -->
+		<!-- <action name="getRemoteIP" class="com.inspur.icpmg.sysLog.action.TestRemoteIP" method="getRemoteIP">
+			<result name="result">/testhaha.jsp</result>
+		</action>
+		<action name="getUploadFile" class="com.inspur.icpmg.sysLog.action.TestRemoteIP" method="getUploadFile"></action>
+		 -->
+	</package>
+	
+	<!-- 登录后记录用户点击一级二级菜单的日志 -->
+	<package name="menuLog" namespace="/menuLog" extends="struts-default">
+		<interceptors>
+			<!-- 定义系统的登录控制拦截器 -->
+			<interceptor name="nosessInterceptor" class="com.inspur.icpmg.interceptor.LoginInterceptor"></interceptor>
+			<interceptor-stack name="uuStack">
+        		<interceptor-ref name="defaultStack"></interceptor-ref>
+				<!-- 引用登录控制拦截器 -->
+				<interceptor-ref name="nosessInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 将自定义的拦截器uuStack定义成默认的拦截器栈 -->
+		<default-interceptor-ref name="uuStack"></default-interceptor-ref>
+		<global-results>
+			<result name="noSession">/login.jsp</result>
+			<result name="null">/login.jsp</result>
+			<result name="login">/login.jsp</result>
+		</global-results>
+		
+		<action name="firstMenuLog" class="com.inspur.icpmg.sysLog.action.MenuLogAction" method="firstMenuLog"></action>
+		<action name="secondMenuLog" class="com.inspur.icpmg.sysLog.action.MenuLogAction" method="secondMenuLog"></action>
+	</package>
+	
+	<!-- 查询登录登出日志 -->
+	<package name="logStat" namespace="/logStat" extends="struts-default">
+		<interceptors>
+			<!-- 定义系统的登录控制拦截器 -->
+			<interceptor name="nosessInterceptor" class="com.inspur.icpmg.interceptor.LoginInterceptor"></interceptor>
+			<interceptor-stack name="uuStack">
+	     		<interceptor-ref name="defaultStack"></interceptor-ref>
+				<!-- 引用登录控制拦截器 -->
+				<interceptor-ref name="nosessInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 将自定义的拦截器uuStack定义成默认的拦截器栈 -->
+		<default-interceptor-ref name="uuStack"></default-interceptor-ref>
+		<global-results>
+			<result name="noSession">/login.jsp</result>
+			<result name="null">/login.jsp</result>
+			<result name="login">/login.jsp</result>
+		</global-results>
+		
+		<action name="getLogIOStat" class="com.inspur.icpmg.sysLog.action.LogIOStatAction" method="getLogIOStat"></action>
+		<action name="getOperaLogStat" class="com.inspur.icpmg.sysLog.action.OperaLogStatAction" method="getOperaLogStat"></action>
+	</package>
+</struts>

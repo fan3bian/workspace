@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<!-- 运维监控 物理机单台运行状态 LuYue -->
+	<package name="cephMonitor" namespace="/cephMonitor"
+		extends="struts-default">
+		<interceptors>
+			<!-- 定义系统的登录控制拦截器 -->
+			<interceptor name="nosessInterceptor"
+				class="com.inspur.icpmg.interceptor.LoginInterceptor"></interceptor>
+			<!-- 定义系统日志拦截器 -->
+			<interceptor name="sysLogInterceptor"
+				class="com.inspur.icpmg.interceptor.SysLogInterceptor"></interceptor>
+			<interceptor-stack name="uuStack">
+				<interceptor-ref name="paramsPrepareParamsStack">
+					<param name="prepare.alwaysInvokePrepare">false</param>
+				</interceptor-ref>
+				<!-- 引用登录控制拦截器 -->
+				<interceptor-ref name="nosessInterceptor"></interceptor-ref>
+				<!-- 引用系统日志拦截器 -->
+				<interceptor-ref name="sysLogInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 将自定义的拦截器uuStack定义成默认的拦截器栈 -->
+		<default-interceptor-ref name="uuStack"></default-interceptor-ref>
+		<global-results>
+			<result name="noSession">/login.jsp</result>
+			<result name="null">/login.jsp</result>
+		</global-results>
+		<!-- 获取运行状态 计费状态等基本状态信息 -->
+		<action name="getCephOverView"
+			class="com.inspur.icpmg.cephMonitor.action.CephMonitorAction"
+			method="getCephOverView"></action>
+			
+		<!-- 获取ceph集群的名称 -->	
+	 <action name="getCephName"
+			class="com.inspur.icpmg.cephMonitor.action.CephMonitorAction"
+			method="getCephName"></action>	
+			
+		<!-- 获取运行状态 计费状态等基本状态信息 -->
+		<action name="getServersInfo"
+				class="com.inspur.icpmg.cephMonitor.action.CephMonitorAction"
+				method="getServersInfo"></action>
+
+		<action name="getPoolInfo"
+				class="com.inspur.icpmg.cephMonitor.action.CephMonitorAction"
+				method="getPoolInfo"></action>
+		<action name="getImageInfo"
+				class="com.inspur.icpmg.cephMonitor.action.CephMonitorAction"
+				method="getImageInfo"></action>
+
+
+
+		<action name="getKpisInfo"
+				class="com.inspur.icpmg.cephMonitor.action.CephMonitorAction"
+				method="getKpisInfo"></action>
+		<action name="getMonInfo"
+				class="com.inspur.icpmg.cephMonitor.action.CephMonitorAction"
+				method="getMonInfo"></action>
+
+
+	</package>
+
+
+</struts>

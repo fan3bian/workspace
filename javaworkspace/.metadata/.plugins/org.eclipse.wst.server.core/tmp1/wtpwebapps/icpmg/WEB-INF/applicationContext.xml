@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:tool="http://www.springframework.org/schema/tool" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:websocket="http://www.springframework.org/schema/websocket"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd  
+	http://www.springframework.org/schema/tx  
+	http://www.springframework.org/schema/tx/spring-tx-4.0.xsd  
+	http://www.springframework.org/schema/aop  
+	http://www.springframework.org/schema/aop/spring-aop-4.0.xsd  
+	http://www.springframework.org/schema/jee  
+	http://www.springframework.org/schema/jee/spring-jee-4.0.xsd  
+	http://www.springframework.org/schema/context  
+	http://www.springframework.org/schema/context/spring-context-4.0.xsd  
+	http://www.springframework.org/schema/util  
+	http://www.springframework.org/schema/util/spring-util-4.0.xsd  
+	http://www.springframework.org/schema/tool  
+	http://www.springframework.org/schema/tool/spring-tool-4.0.xsd
+	http://www.springframework.org/schema/task 
+	http://www.springframework.org/schema/task/spring-task-4.0.xsd
+	http://www.springframework.org/schema/websocket 
+	http://www.springframework.org/schema/websocket/spring-websocket-4.0.xsd
+	http://www.springframework.org/schema/mvc 
+	http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
+	
+	<context:annotation-config />
+	
+ <websocket:handlers >
+		<websocket:mapping path="/echo" handler="websocketEndPoint" />
+		<websocket:mapping path="/alarm" handler="alarmEndPoint" />
+	</websocket:handlers>
+	<websocket:handlers >
+		<websocket:mapping path="/echo" handler="websocketEndPoint" />
+		<websocket:mapping path="/alarm" handler="alarmEndPoint" />
+		<websocket:sockjs />
+	</websocket:handlers>
+	<bean id="websocketEndPoint" class="org.springframework.samples.websocket.echo.SystemWebSocketHandler"/>
+	<bean id="alarmEndPoint" class="org.springframework.samples.websocket.echo.AlarmWebSocketHandler"/>
+	<bean id="echoService" class="org.springframework.samples.websocket.echo.DefaultEchoService"></bean>
+	</beans>
+	
+	 
+	
+	

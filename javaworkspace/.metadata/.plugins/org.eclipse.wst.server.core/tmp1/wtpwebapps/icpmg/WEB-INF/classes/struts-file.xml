@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 信息发布 -->
+	<package name="infopublish" namespace="/infopublish" extends="struts-default">
+		<interceptors>
+			<!-- 定义系统的登录控制拦截器 -->
+			<interceptor name="nosessInterceptor" class="com.inspur.icpmg.interceptor.LoginInterceptor"></interceptor>
+			<interceptor-stack name="uuStack">
+				<interceptor-ref name="paramsPrepareParamsStack">
+            		<param name="prepare.alwaysInvokePrepare">false</param>
+        		</interceptor-ref>
+				<!-- 引用登录控制拦截器 -->
+				<interceptor-ref name="nosessInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 将自定义的拦截器uuStack定义成默认的拦截器栈 -->
+		<default-interceptor-ref name="uuStack"></default-interceptor-ref>
+		<global-results>
+			<result name="noSession">/login.html</result>
+			<result name="null">/login.html</result>
+		</global-results>
+		
+		<!-- 消息查询 -->
+		<action name="messageList" class="com.inspur.icpmg.infopublish.action.InfoPublishAction" method="messageList"></action>
+		<action name="messageLists" class="com.inspur.icpmg.infopublish.action.InfoPublishAction" method="messageLists"></action>
+		<action name="delMessage" class="com.inspur.icpmg.infopublish.action.InfoPublishAction" method="delMessage"></action>
+		
+		<!-- 消息发布 -->
+		<action name="messageAdd" class="com.inspur.icpmg.infopublish.action.InfoPublishAction" method="messageAdd"></action>
+		<action name="getDeparts" class="com.inspur.icpmg.infopublish.action.InfoPublishAction" method="getDeparts"></action>
+		
+		<!-- 文档查询 -->
+		<!-- 文件 -->
+		<action name="fileList" class="com.inspur.icpmg.documentMg.action.FileQueryAction" method="fileList"></action>
+		<!-- 查询所有单位 -->
+		<action name="getDepartsAll" class="com.inspur.icpmg.infopublish.action.InfoPublishAction" method="getDepartsAll"></action>
+		<!-- 查询所有厅局单位 -->
+		<action name="getDepartsTJ" class="com.inspur.icpmg.infopublish.action.InfoPublishAction" method="getDepartsTJ"></action>
+	</package>
+	
+	<!-- 文档管理 -->
+	<package name="documentMg" namespace="/documentMg" extends="struts-default">
+		<interceptors>
+			<!-- 定义系统的登录控制拦截器 -->
+			<interceptor name="nosessInterceptor" class="com.inspur.icpmg.interceptor.LoginInterceptor"></interceptor>
+			<interceptor-stack name="uuStack">
+				<interceptor-ref name="paramsPrepareParamsStack">
+            		<param name="prepare.alwaysInvokePrepare">false</param>
+        		</interceptor-ref>
+				<!-- 引用登录控制拦截器 -->
+				<interceptor-ref name="nosessInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 将自定义的拦截器uuStack定义成默认的拦截器栈 -->
+		<default-interceptor-ref name="uuStack"></default-interceptor-ref>
+		<global-results>
+			<result name="noSession">/login.jsp</result>
+			<result name="null">/login.jsp</result>
+		</global-results>
+		<!-- 我的文档 -->
+		
+		<action name="checkFunction" class="com.inspur.icpmg.documentMg.action.FolderQueryAction" method="checkFunction"></action>
+		<action name="queryInput" class="com.inspur.icpmg.documentMg.action.FolderQueryAction" method="queryInput"></action>
+		
+		<action name="filesList" class="com.inspur.icpmg.documentMg.action.FolderQueryAction" method="filesList"></action>
+		<action name="uploadFile" class="com.inspur.icpmg.documentMg.action.FolderQueryAction" method="uploadFile"></action>
+		<action name="shareFile" class="com.inspur.icpmg.documentMg.action.FolderQueryAction" method="shareFile"></action>
+		<action name="createDir" class="com.inspur.icpmg.documentMg.action.FolderQueryAction" method="createDir"></action>
+		<action name="deleteFile" class="com.inspur.icpmg.documentMg.action.FolderQueryAction" method="deleteFile"></action>
+		<action name="loadFile" class="com.inspur.icpmg.documentMg.action.FolderQueryAction" method="loadFile"></action>
+		<action name="updateName" class="com.inspur.icpmg.documentMg.action.FolderQueryAction" method="updateName"></action>
+		<!-- 项目文档 -->
+		<action name="projectList" class="com.inspur.icpmg.documentMg.action.ProjectFileAction" method="projectList"></action>
+		<!-- 共享文档 -->
+		<action name="shareFileList" class="com.inspur.icpmg.documentMg.action.ShareFileAction" method="shareFileList"></action>
+		<action name="downSharefile" class="com.inspur.icpmg.documentMg.action.ShareFileAction" method="downSharefile"></action>
+		<!-- 所有项目文档 -->
+		<action name="projectFileList" class="com.inspur.icpmg.documentMg.action.AllProjectFileAction" method="projectFileList"></action>
+		<!-- 其他文档 -->
+		<action name="otherFileList" class="com.inspur.icpmg.documentMg.action.AllProjectFileAction" method="otherFileList"></action>
+		
+		<!-- 分享文档 -->
+		<action name="myShareList" class="com.inspur.icpmg.documentMg.action.MyShareFileAction" method="myShareList"></action>
+		<action name="cancelShare" class="com.inspur.icpmg.documentMg.action.MyShareFileAction" method="cancelShare"></action>
+		<!-- 回收站 -->
+		<action name="recycleList" class="com.inspur.icpmg.documentMg.action.RecycleAction" method="recycleList"></action>
+		<action name="restoreFile" class="com.inspur.icpmg.documentMg.action.RecycleAction" method="restoreFile"></action>
+		<action name="deleteRecyFile" class="com.inspur.icpmg.documentMg.action.RecycleAction" method="deleteRecyFile"></action>
+	</package>
+</struts>    

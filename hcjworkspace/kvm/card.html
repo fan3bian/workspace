@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <div class="card" onclick="tranferEnvironMg('${vo.environid}','${vo.environname}')">
+        <div class="name">${vo.environname}</div>
+        <div class="host-info">
+            <div class="item">主机数</div>
+            <div class="value"><b>${vo.hostnum}</b> 台</div>
+            <div class="item">控制节点</div>
+            <div class="value"><b>${vo.controlnum}</b> 台</div>
+            <div class="item">计算节点</div>
+            <div class="value"><b>${vo.computenum}</b> 台</div>
+            <div class="item">存储节点</div>
+            <div class="value"><b>${vo.storagenum}</b> 台</div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="scoreinfoMg" location="10,10" size="460,70">
+    <action name="scoresubmit" location="15,23" size="150,40" />
+    <action name="scoresubmit" location="15,23" size="150,40" />
+    <action name="scoreList" location="0,0" size="0,0" />
+  </package>
+</Struts2Diagram>
+

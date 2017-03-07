@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+	<!-- 评分管理  -->
+	<package name="scoreinfoMg" namespace="/scoreinfoMg" extends="struts-default">
+		<interceptors>
+			<!-- 定义系统的登录控制拦截器 -->
+			<interceptor name="nosessInterceptor" class="com.inspur.icpmg.interceptor.LoginInterceptor"></interceptor>
+			<!-- 定义系统日志拦截器 -->
+			<interceptor name="sysLogInterceptor" class="com.inspur.icpmg.interceptor.SysLogInterceptor"></interceptor>
+			<interceptor-stack name="uuStack">
+				<interceptor-ref name="paramsPrepareParamsStack">
+            		<param name="prepare.alwaysInvokePrepare">false</param>
+        		</interceptor-ref>
+				<!-- 引用登录控制拦截器 -->
+				<interceptor-ref name="nosessInterceptor"></interceptor-ref>
+				<!-- 引用系统日志拦截器 -->
+		      	<interceptor-ref name="sysLogInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 将自定义的拦截器uuStack定义成默认的拦截器栈 -->
+		<default-interceptor-ref name="uuStack"></default-interceptor-ref>
+		<global-results>
+			<result name="noSession">/login.jsp</result>
+			<result name="null">/login.jsp</result>
+		</global-results>
+		
+	    <!--<action name="scoresubmit" class="com.inspur.icpmg.scoreinfoMg.action.scoreinfodetailAction" method="scoresubmit"></action>
+	    -->
+	    <action name="scoresubmit" class="com.inspur.icpmg.scoreinfoMg.action.ScoreinfoAction" method="scoresubmit"></action>
+	    <action name="scoreList" class="com.inspur.icpmg.scoreinfoMg.action.ScoreinfoAction" method="scoreList"></action>
+	    
+	    <action name="reportedit" class="com.inspur.icpmg.reportMg.action.ReportAction" method="reportedit"></action>
+	    <action name="reportQuery" class="com.inspur.icpmg.reportMg.action.ReportAction" method="reportQuery"></action>
+	    <action name="reportDel" class="com.inspur.icpmg.reportMg.action.ReportAction" method="reportDel"></action>
+	    
+	    <action name="orgStructureedit" class="com.inspur.icpmg.orgStructureMg.action.OrgStructureAction" method="orgStructureedit"></action>
+	    <action name="orgStructureQuery" class="com.inspur.icpmg.orgStructureMg.action.OrgStructureAction" method="orgStructureQuery"></action>
+	    <action name="orgStructureDel" class="com.inspur.icpmg.orgStructureMg.action.OrgStructureAction" method="orgStructureDel"></action>
+	    
+	    <action name="getProvname" class="com.inspur.icpmg.orgStructureMg.action.OrgStructureAction" method="getProvname"></action>
+	    <action name="getCityname" class="com.inspur.icpmg.orgStructureMg.action.OrgStructureAction" method="getCityname"></action>
+	    <action name="getGroupname" class="com.inspur.icpmg.orgStructureMg.action.OrgStructureAction" method="getGroupname"></action>
+	    <!-- 月度费用 -->
+	    <action name="feeList" class="com.inspur.icpmg.feeinfoMg.action.FeeinfoAction" method="feeList"></action>
+	    <action name="feedetailList" class="com.inspur.icpmg.feeinfoMg.action.FeeinfoAction" method="feedetailList"></action>
+	    <!-- 年度费用 -->
+	    <action name="feeyearList" class="com.inspur.icpmg.feeinfoMg.action.FeeinfoAction" method="feeyearList"></action>
+	    <action name="feeyeardetailList" class="com.inspur.icpmg.feeinfoMg.action.FeeinfoAction" method="feeyeardetailList"></action>
+	    
+	    
+	</package>
+	
+	
+	
+</struts>    

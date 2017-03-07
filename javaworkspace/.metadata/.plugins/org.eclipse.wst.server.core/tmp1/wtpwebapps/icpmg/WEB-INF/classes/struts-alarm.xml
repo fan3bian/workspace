@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 云数据库 -->
+	<package name="alarm" namespace="/alarm" extends="struts-default">
+		<interceptors>
+			<!-- 定义系统的登录控制拦截器 -->
+			<interceptor name="nosessInterceptor" class="com.inspur.icpmg.interceptor.LoginInterceptor"></interceptor>
+			<!-- 定义系统日志拦截器 -->
+			<interceptor name="sysLogInterceptor" class="com.inspur.icpmg.interceptor.SysLogInterceptor"></interceptor>
+			<interceptor-stack name="uuStack">
+				<interceptor-ref name="paramsPrepareParamsStack">
+            		<param name="prepare.alwaysInvokePrepare">false</param>
+        		</interceptor-ref>
+				<!-- 引用登录控制拦截器 -->
+				<interceptor-ref name="nosessInterceptor"></interceptor-ref>
+				<!-- 引用系统日志拦截器 -->
+		      	<interceptor-ref name="sysLogInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 将自定义的拦截器uuStack定义成默认的拦截器栈 -->
+		<default-interceptor-ref name="uuStack"></default-interceptor-ref>
+		<global-results>
+			<result name="noSession">/login.jsp</result>
+			<result name="null">/login.jsp</result>
+		</global-results>
+		
+	       <action name="queryEvent" class="com.inspur.icpmg.alarmMg.action.EventQueryAction" method="queryEvent"></action>
+	       <action name="queryInhostEvent" class="com.inspur.icpmg.alarmMg.action.EventQueryAction" method="queryInhostEvent"></action>
+	    <action name="getVendorids" class="com.inspur.icpmg.alarmMg.action.EventQueryAction" method="getVendorids"></action>
+	    <action name="getCompany" class="com.inspur.icpmg.alarmMg.action.EventQueryAction" method="getCompany"></action>
+	     <action name="getPlatfrom" class="com.inspur.icpmg.alarmMg.action.EventQueryAction" method="getPlatfrom"></action>
+	    <action name="getEventDetail" class="com.inspur.icpmg.alarmMg.action.EventQueryAction" method="getEventDetail"></action>
+	    <action name="clearEvent" class="com.inspur.icpmg.alarmMg.action.EventClearAction" method="clearEvent"></action>
+	    <action name="confirmEvent" class="com.inspur.icpmg.alarmMg.action.EventConfirmAction" method="confirmEvent"></action>
+	     <action name="countNum" class="com.inspur.icpmg.alarmMg.action.EventCountNumAction" method="countNum"></action>
+	     <action name="exportExcel" class="com.inspur.icpmg.alarmMg.action.EventExportAction" method="exportExcel">
+	     	<result name="downLoadExcelFile" type="stream">
+              <param name="contentType">application/vnd.ms-excel</param>  
+               <param name="contentDisposition">attachment;fileName="alarm.xls"</param>  
+               <param name="inputName">excelStream</param>  
+              <param name="bufferSize">1024</param>  
+           </result> 
+           </action>
+           <!-- 告警监控查询 -->
+		<action name="queryAlarmConfig" class="com.inspur.icpmg.alarmMg.action.EventConfigAction" method="queryAlarmConfig"></action>
+		<!--获取设备类型 -->
+		<action name="getType" class="com.inspur.icpmg.alarmMg.action.EventConfigAction" method="getType"></action>
+		<!--按照设备类型获取指标 -->
+		<action name="getSonType" class="com.inspur.icpmg.alarmMg.action.EventConfigAction" method="getSonType"></action>
+		<!--增加配置 -->
+		<action name="addAlarmConfig" class="com.inspur.icpmg.alarmMg.action.EventConfigAction" method="addAlarmConfig"></action>
+		<!--修改配置 -->
+		<action name="updateAlarmConfig" class="com.inspur.icpmg.alarmMg.action.EventConfigAction" method="updateAlarmConfig"></action>
+		<!--删除配置 -->
+		<action name="deleteAlarmConfig" class="com.inspur.icpmg.alarmMg.action.EventConfigAction" method="deleteAlarmConfig"></action>
+		<!--获取告警配置详情 -->
+		<action name="getPmcKpiAlarmVo" class="com.inspur.icpmg.alarmMg.action.EventConfigAction" method="getPmcKpiAlarmVo"></action>
+		<!--启用、停用监控指标 -->
+		<action name="dokpistatus" class="com.inspur.icpmg.alarmMg.action.EventConfigAction" method="dokpistatus"></action>
+	     
+	</package>
+
+	
+	
+	<!-- 告警配置 LuYue -->
+		<package name="pingconfig" namespace="/pingconfig" extends="struts-default">
+		<interceptors>
+			<!-- 定义系统的登录控制拦截器 -->
+			<interceptor name="nosessInterceptor" class="com.inspur.icpmg.interceptor.LoginInterceptor"></interceptor>
+			<!-- 定义系统日志拦截器 -->
+			<interceptor name="sysLogInterceptor" class="com.inspur.icpmg.interceptor.SysLogInterceptor"></interceptor>
+			<interceptor-stack name="uuStack">
+				<interceptor-ref name="paramsPrepareParamsStack">
+            		<param name="prepare.alwaysInvokePrepare">false</param>
+        		</interceptor-ref>
+				<!-- 引用登录控制拦截器 -->
+				<interceptor-ref name="nosessInterceptor"></interceptor-ref>
+				<!-- 引用系统日志拦截器 -->
+		      	<interceptor-ref name="sysLogInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 将自定义的拦截器uuStack定义成默认的拦截器栈 -->
+		<default-interceptor-ref name="uuStack"></default-interceptor-ref>
+		<global-results>
+			<result name="noSession">/login.jsp</result>
+			<result name="null">/login.jsp</result>
+		</global-results>
+		
+	    <action name="queryPingConfig" class="com.inspur.icpmg.alarmMg.action.alarmConfigAction.PingConfigAction" method="getPingConfigs"></action>
+	    <!-- 查询 -->
+	    <action name="queryPingConfigByIP" class="com.inspur.icpmg.alarmMg.action.alarmConfigAction.PingConfigAction" method="getConfigByIP"></action>
+	    <!-- 删除 -->
+	    <action name="deletePingConfig" class="com.inspur.icpmg.alarmMg.action.alarmConfigAction.PingConfigAction" method="deleteConfig"></action>
+	    
+	    <!-- 添加 -->
+	    <action name="listNeTypeName" class="com.inspur.icpmg.alarmMg.action.alarmConfigAction.PingConfigAction" method="listNeTypeName"></action>
+	    <action name="listNeName" class="com.inspur.icpmg.alarmMg.action.alarmConfigAction.PingConfigAction" method="listNeName"></action>
+	    <action name="listNeip" class="com.inspur.icpmg.alarmMg.action.alarmConfigAction.PingConfigAction" method="listNeip"></action>
+	    
+	    <action name="addPingConfig" class="com.inspur.icpmg.alarmMg.action.alarmConfigAction.PingConfigAction" method="addPingAlarmConfig"></action>
+	</package>
+	
+	<package name="urlconfig" namespace="/urlconfig" extends="struts-default">
+		<interceptors>
+			<!-- 定义系统的登录控制拦截器 -->
+			<interceptor name="nosessInterceptor" class="com.inspur.icpmg.interceptor.LoginInterceptor"></interceptor>
+			<!-- 定义系统日志拦截器 -->
+			<interceptor name="sysLogInterceptor" class="com.inspur.icpmg.interceptor.SysLogInterceptor"></interceptor>
+			<interceptor-stack name="uuStack">
+				<interceptor-ref name="paramsPrepareParamsStack">
+            		<param name="prepare.alwaysInvokePrepare">false</param>
+        		</interceptor-ref>
+				<!-- 引用登录控制拦截器 -->
+				<interceptor-ref name="nosessInterceptor"></interceptor-ref>
+				<!-- 引用系统日志拦截器 -->
+		      	<interceptor-ref name="sysLogInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 将自定义的拦截器uuStack定义成默认的拦截器栈 -->
+		<default-interceptor-ref name="uuStack"></default-interceptor-ref>
+		<global-results>
+			<result name="noSession">/login.jsp</result>
+			<result name="null">/login.jsp</result>
+		</global-results>
+		
+	    <action name="queryURLConfig" class="com.inspur.icpmg.alarmMg.action.alarmConfigAction.URLConfigAction" method="getURLConfigs"></action>
+	    
+	    <!-- 查询 -->
+	    <action name="queryURLConfigByURL" class="com.inspur.icpmg.alarmMg.action.alarmConfigAction.URLConfigAction" method="getConfigByURL"></action>
+	    <!-- 删除 -->
+	    <action name="deleteURLConfig" class="com.inspur.icpmg.alarmMg.action.alarmConfigAction.URLConfigAction" method="deleteConfig"></action>
+	    <!-- 添加 -->
+	    <action name="addURLConfig" class="com.inspur.icpmg.alarmMg.action.alarmConfigAction.URLConfigAction" method="addURLAlarmConfig"></action>
+	    
+	</package>	
+	<!--邮件接收人  by quao  -->
+	<package name="alarmemail" namespace="/alarmemail" extends="struts-default">
+		<interceptors>
+			<!-- 定义系统的登录控制拦截器 -->
+			<interceptor name="nosessInterceptor" class="com.inspur.icpmg.interceptor.LoginInterceptor"></interceptor>
+			<!-- 定义系统日志拦截器 -->
+			<interceptor name="sysLogInterceptor" class="com.inspur.icpmg.interceptor.SysLogInterceptor"></interceptor>
+			<interceptor-stack name="uuStack">
+				<interceptor-ref name="paramsPrepareParamsStack">
+            		<param name="prepare.alwaysInvokePrepare">false</param>
+        		</interceptor-ref>
+				<!-- 引用登录控制拦截器 -->
+				<interceptor-ref name="nosessInterceptor"></interceptor-ref>
+				<!-- 引用系统日志拦截器 -->
+		      	<interceptor-ref name="sysLogInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 将自定义的拦截器uuStack定义成默认的拦截器栈 -->
+		<default-interceptor-ref name="uuStack"></default-interceptor-ref>
+		<global-results>
+			<result name="noSession">/login.jsp</result>
+			<result name="null">/login.jsp</result>
+		</global-results>
+		
+	    <action name="queryRecevient" class="com.inspur.icpmg.alarmMg.action.RecevientAction" method="getRecevients"></action>
+	    
+	    <!-- 按姓名查询 -->
+	    <action name="queryRecevientByName" class="com.inspur.icpmg.alarmMg.action.RecevientAction" method="getRecevientByName"></action>
+	    <!-- 按邮箱删除 -->
+	    <action name="deleteRecevient" class="com.inspur.icpmg.alarmMg.action.RecevientAction" method="deleteRecevient"></action>
+	    <!-- 添加 -->
+	    <action name="addRecevient" class="com.inspur.icpmg.alarmMg.action.RecevientAction" method="addRecevient"></action>
+	    <!-- 按邮箱修改-->
+	     <action name="updateRecevientByEmail" class="com.inspur.icpmg.alarmMg.action.RecevientAction" method="updateRecevientByEmail"></action>
+	    
+	</package>	
+</struts>    

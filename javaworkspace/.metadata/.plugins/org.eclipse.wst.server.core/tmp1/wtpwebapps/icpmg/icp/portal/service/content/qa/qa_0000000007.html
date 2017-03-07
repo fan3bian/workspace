@@ -1,0 +1,118 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+             <meta name="description" content="" />
+             <meta name="keywords" content="" />
+            <title>为什么我的 windows 主机远程桌面连接不上？</title>
+             <link href="/icpmg/icp/portal/styles/web.css" rel="stylesheet"
+			type="text/css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/icpmg/icp/portal/styles/util.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/icpmg/icp/portal/styles/gather.css" />
+	<script type="text/javascript" src="/icpmg/icp/portal/scripts/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="/icpmg/icp/portal/scripts/slide.js"></script>
+	<script type="text/javascript" src="/icpmg/icp/portal/scripts/TweenMax.min.js"></script>
+	<script type="text/javascript" src="/icpmg/icp/portal/scripts/myScroll.js"></script>
+	<script type="text/javascript" src="/icpmg/icp/portal/scripts/util.js"></script>
+	<script type="text/javascript" src="/icpmg/icp/portal/scripts/gather.js"></script>
+</head>
+<body>
+	<div class="top-bg">
+			<div class="main">
+				<a href="/icpmg/icp/portal/home.html"><img class="logo"
+						src="/icpmg/icp/portal/images/logo/logo.png" /> </a>
+				<div class="menu">
+					<a href="/icpmg/icp/portal/product/00.html"
+						class="sub-menu"> 产品服务 </a>
+					<a href="/icpmg/icp/portal/notice/lst/notice/notice_1.html"
+						class="sub-menu"> 通知公告 </a>
+					<a href="/icpmg/icp/portal/news/lst/website_1.html"
+						class="sub-menu"> 新闻动态 </a>
+					<a href="/icpmg/icp/portal/case/lst/government_1.html"
+						class="sub-menu"> 解决方案 </a>
+					<a href="/icpmg/icp/portal/service/lst/lession/lession_1.html" class="sub-menu"> 服务社区 </a>
+
+					<div class="clear"></div>
+				</div>
+				<div class="top-right-wear">
+					<div class="top-right">
+						<a class="console" href="javascript:toHomeJsp();"> <i
+							class="icon-console"></i> 控制台 </a>
+						<div class="nologin">
+							<span class="user-name En" id="logoutDiv"></span>
+							<button
+								onclick="window.location.href=getRootPath()+'/userMgr/logout.do'"
+								class="button logout">
+								退出
+							</button>
+					
+						</div>
+
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+	<div class="container-wrap">
+		<div class="container">
+
+			<!-- 左侧 -->
+			<div class="container-left">
+				<div class="inside-menu">
+					<ul>
+						<li><a href="../../lst/lession/lession_1.html">新手课堂</a></li>
+						<li><a class='active' href="../../lst/qa/qa_1.html">技术问答</a></li>
+						<li><a href="../../lst/api/api_1.html">API文档</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- 左侧 end -->
+			
+			<!-- 右侧  -->
+			<div class="container-right">
+				
+				<!-- 面包屑 -->
+				<div class="container-guid">
+					<div>
+						<span><img src="../../../images/n-06.jpg" alt=""></span>
+						<a href="../../../home.html">首页</a>
+						<a href="../../lst/lession/lession_1.html">服务社区</a>
+						<b>技术问答</b>
+					</div>
+				</div>
+
+				<div class="container-cell">
+					
+					<div class="service-detail">
+						<h2>为什么我的 windows 主机远程桌面连接不上？</h2>
+						 <p style="color:#555555;text-indent:0px;">
+	首先， 在 Windows 主机里打开RDP服务：
+</p>
+<ol class="arabic simple" style="color:#555555;text-indent:0px;">
+	<li>
+		使用“虚拟终端”登录 Windows 主机，“虚拟终端”就是主机 ID 旁边的 显示器形状的小图标，点击即可以弹出 Windows 桌面;
+	</li>
+	<li>
+		右键点击“我的电脑” -&gt; “属性” -&gt; “远程” -&gt; 选择”启用这台机器上的远程桌面”。
+	</li>
+</ol>
+<p style="color:#555555;text-indent:0px;">
+	然后您需要在你的控制台的“安全”-》“防火墙”中手动为主机的防火墙添加一条 接受 tcp 3389 端口 的下行规则， 点击 更新规则 使其应用到主机。
+</p>
+						
+					</div>
+
+				</div>
+
+			</div>
+			<!-- 右侧 end -->
+			<div class="clear"></div>
+
+		</div>
+	</div>
+
+	 <div class="page-footer-copyright">
+			<span> <small>技术支持：浪潮云服务信息科技有限公司</small> </span>&nbsp;&nbsp;&nbsp;&nbsp;
+			<span><small>©浪潮集团版权所有</small> </span>
+			<span><small>ICP备案号：鲁ICP备05019369号</small> </span>
+		</div></body>

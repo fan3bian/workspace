@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	
+	<package name="ordermg" namespace="/ordermg" extends="struts-default">
+		<interceptors>
+			<!-- 定义系统的登录控制拦截器 -->
+			<interceptor name="nosessInterceptor" class="com.inspur.icpmg.interceptor.LoginInterceptor"></interceptor>
+			<!-- 定义系统日志拦截器 -->
+			<interceptor name="sysLogInterceptor" class="com.inspur.icpmg.interceptor.SysLogInterceptor"></interceptor>
+			<interceptor-stack name="uuStack">
+				<interceptor-ref name="paramsPrepareParamsStack">
+            		<param name="prepare.alwaysInvokePrepare">false</param>
+        		</interceptor-ref>
+				<!-- 引用登录控制拦截器 -->
+				<interceptor-ref name="nosessInterceptor"></interceptor-ref>
+				<!-- 引用系统日志拦截器 -->
+		      	<interceptor-ref name="sysLogInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 将自定义的拦截器uuStack定义成默认的拦截器栈 -->
+		<default-interceptor-ref name="uuStack"></default-interceptor-ref>
+		<global-results>
+			<result name="noSession">/login.jsp</result>
+			<result name="null">/login.jsp</result>
+		</global-results>
+		 
+		<action name="getServiceType" class="com.inspur.icpmg.ordersMg.action.ServiceTypeAction" method="getServiceType">
+		    <result name="serviceType">/web/ordersMg/startOrders.jsp</result>
+		</action>
+	 	<action name="getOrders" class="com.inspur.icpmg.ordersMg.action.UpdOrderAction" method="getOrders"></action>
+	 	<action name="saveOrders" class="com.inspur.icpmg.ordersMg.action.UpdOrderAction" method="saveOrders"></action>
+	 	
+	 	<action name="getPrintLists" class="com.inspur.icpmg.ordersMg.action.PrintListsAction" method="getPrintLists"></action>
+	 	<action name="getProSiteParamValue" class="com.inspur.icpmg.ordersMg.action.ApplyFormPrintAction" method="getProSiteParamValue"></action>
+	    <action name="getApplyForm" class="com.inspur.icpmg.ordersMg.action.ApplyFormPrintAction" method="getApplyForm"></action>
+	    <action name="getapps" class="com.inspur.icpmg.ordersMg.action.ApplicationAction" method="getApps"></action>
+	 	<action name="addapp" class="com.inspur.icpmg.ordersMg.action.ApplicationAction" method="addApp"></action>
+	    <action name="getAppsById" class="com.inspur.icpmg.ordersMg.action.ApplicationAction" method="getAppsById"></action>
+	    <action name="getDataConfig" class="com.inspur.icpmg.ordersMg.action.UpdOrderAction" method="getDataConfig"></action>
+		<action name="getOrderDetailByOrderId" class="com.inspur.icpmg.ordersMg.action.UpdOrderAction" method="getOrderDetailByOrderId"></action>
+		<action name="isShenpi" class="com.inspur.icpmg.ordersMg.action.UpdOrderAction" method="isShenpi"></action>
+		<action name="cancleOrder" class="com.inspur.icpmg.ordersMg.action.UpdOrderAction" method="cancleOrder"></action>
+		<action name="fzjhImplement" class="com.inspur.icpmg.ordersMg.action.UpdOrderAction" method="fzjhImplement"></action>
+		<!-- 工单拆分 -->
+		<action name="getUserListByRoleId" class="com.inspur.icpmg.ordersMg.action.UpdOrderAction" method="getUserListByRoleId"></action>
+		<action name="gdcfFenpei" class="com.inspur.icpmg.ordersMg.action.UpdOrderAction" method="gdcfFenpei"></action>
+	</package>
+	
+	
+</struts>    

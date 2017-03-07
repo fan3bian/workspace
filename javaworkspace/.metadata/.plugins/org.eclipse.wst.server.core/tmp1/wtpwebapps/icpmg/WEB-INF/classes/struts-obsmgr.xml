@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 对象存储 -->
+	<package name="obsMgr" namespace="/obsMgr" extends="struts-default">
+		<interceptors>
+			<!-- 定义系统的登录控制拦截器 -->
+			<interceptor name="nosessInterceptor" class="com.inspur.icpmg.interceptor.LoginInterceptor"></interceptor>
+			<!-- 定义系统日志拦截器 -->
+			<interceptor name="sysLogInterceptor" class="com.inspur.icpmg.interceptor.SysLogInterceptor"></interceptor>
+			<interceptor-stack name="uuStack">
+				<interceptor-ref name="paramsPrepareParamsStack">
+            		<param name="prepare.alwaysInvokePrepare">false</param>
+        		</interceptor-ref>
+				<!-- 引用登录控制拦截器 -->
+				<interceptor-ref name="nosessInterceptor"></interceptor-ref>
+				<!-- 引用系统日志拦截器 -->
+		      	<interceptor-ref name="sysLogInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 将自定义的拦截器uuStack定义成默认的拦截器栈 -->
+		<default-interceptor-ref name="uuStack"></default-interceptor-ref>
+		<global-results>
+			<result name="noSession">/login.jsp</result>
+			<result name="null">/login.jsp</result>
+		</global-results>
+		
+		<action name="checkObsUser" class="com.inspur.icpmg.obsMgr.action.ObsUserAction" method="checkObsUser"></action>
+		<action name="createBucket" class="com.inspur.icpmg.obsMgr.action.ObsBucketAction" method="createBucket"></action>
+		<action name="lstBucket" class="com.inspur.icpmg.obsMgr.action.ObsBucketAction" method="lstBucket"></action>
+		<action name="lstBucketName" class="com.inspur.icpmg.obsMgr.action.ObsBucketAction" method="lstBucketName"></action>
+		<action name="deleteBucket" class="com.inspur.icpmg.obsMgr.action.ObsBucketAction" method="deleteBucket"></action>
+		<action name="queryBucket" class="com.inspur.icpmg.obsMgr.action.ObsBucketAction" method="queryBucket">
+			<result name="queryBucket">/web/obsMgr/BucketMgr.jsp</result>
+		</action>
+		<action name="togglepermission" class="com.inspur.icpmg.obsMgr.action.ObsBucketAction" method="togglepermission"></action>
+		<action name="lstBucketFile" class="com.inspur.icpmg.obsMgr.action.ObsFileAction" method="lstBucketFile"></action>
+		<action name="uploadBucketFile" class="com.inspur.icpmg.obsMgr.action.ObsFileAction" method="uploadBucketFile"></action>
+		<action name="deleteBucketFile" class="com.inspur.icpmg.obsMgr.action.ObsFileAction" method="deleteBucketFile"></action>
+		<action name="downloadBucketFile" class="com.inspur.icpmg.obsMgr.action.ObsFileAction" method="downloadBucketFile"></action>
+		<action name="renamefile" class="com.inspur.icpmg.obsMgr.action.ObsFileAction" method="renamefile"></action>
+		<action name="generateUrl" class="com.inspur.icpmg.obsMgr.action.ObsFileAction" method="generateUrl"></action>
+		<action name="lstDate" class="com.inspur.icpmg.obsMgr.action.ObsStatisticsAction" method="lstDate"></action>
+		<action name="lstStatisticsByDay" class="com.inspur.icpmg.obsMgr.action.ObsStatisticsAction" method="lstStatisticsByDay"></action>
+		<action name="lstStatisticsByDayPaging" class="com.inspur.icpmg.obsMgr.action.ObsStatisticsAction" method="lstStatisticsByDayPaging"></action>
+		<action name="lstProportion" class="com.inspur.icpmg.obsMgr.action.ObsStatisticsAction" method="lstProportion"></action>
+		<action name="downloadSdkTool" class="com.inspur.icpmg.obsMgr.action.ObsToolSdkAction" method="downloadSdkTool"></action>
+		<action name="querySecretKey" class="com.inspur.icpmg.obsMgr.action.ObsToolSdkAction" method="querySecretKey"></action>
+		<action name="queryLogList" class="com.inspur.icpmg.obsMgr.action.ObsLogAction" method="queryLogList"></action>
+		<action name="querySysLogList" class="com.inspur.icpmg.obsMgr.action.ObsLogAction" method="querySysLogList"></action>
+		<action name="checkfilename" class="com.inspur.icpmg.obsMgr.action.ObsFileAction" method="checkfilename"></action>
+		
+	</package>
+
+</struts>

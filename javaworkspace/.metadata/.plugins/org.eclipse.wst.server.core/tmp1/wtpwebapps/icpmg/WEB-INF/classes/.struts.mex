@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="default" location="15,325" size="170,70" />
+  <package name="authmgr" location="10,10" size="460,210">
+    <action name="getRoles" location="15,23" size="150,40" />
+    <action name="addRole" location="260,23" size="150,40" />
+    <action name="editRole" location="15,163" size="150,40" />
+    <action name="deleteRole" location="260,163" size="150,40" />
+    <action name="createServerItem" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="ServerForm.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="ServerForm.jsp" path="/web/businessMg/workOrderMg/ServerForm.jsp" location="0,0" size="0,0" />
+</Struts2Diagram>
+

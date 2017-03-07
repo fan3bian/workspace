@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	
+	<package name="trust" namespace="/trust" extends="struts-default">
+		<interceptors>
+			<!-- 定义系统的登录控制拦截器 -->
+			<interceptor name="nosessInterceptor" class="com.inspur.icpmg.interceptor.LoginInterceptor"></interceptor>
+			<!-- 定义系统日志拦截器 -->
+			<interceptor name="sysLogInterceptor" class="com.inspur.icpmg.interceptor.SysLogInterceptor"></interceptor>
+			<interceptor-stack name="uuStack">
+				<interceptor-ref name="paramsPrepareParamsStack">
+            		<param name="prepare.alwaysInvokePrepare">false</param>
+        		</interceptor-ref>
+				<!-- 引用登录控制拦截器 -->
+				<interceptor-ref name="nosessInterceptor"></interceptor-ref>
+				<!-- 引用系统日志拦截器 -->
+		      	<interceptor-ref name="sysLogInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 将自定义的拦截器uuStack定义成默认的拦截器栈 -->
+		<default-interceptor-ref name="uuStack"></default-interceptor-ref>
+		<global-results>
+			<result name="noSession">/login.jsp</result>
+			<result name="null">/login.jsp</result>
+		</global-results>
+		<!-- 设备列表 -->
+		<action name="getDeviceLists" class="com.inspur.icpmg.gov2.web.TrustDeviceAction" method="getDeviceLists"></action>
+		<!-- 详情 -->
+		<action name="getEquipInfo" class="com.inspur.icpmg.gov2.web.TrustDeviceAction" method="getEquipInfo"></action>
+		<!-- 下架 -->
+		<action name="dropEquip" class="com.inspur.icpmg.gov2.web.TrustDeviceAction" method="dropEquip"></action>
+		<!-- 上架 -->
+		<action name="addEquip" class="com.inspur.icpmg.gov2.web.TrustDeviceAction" method="addEquip"></action>
+		<action name="getSomeInfo" class="com.inspur.icpmg.gov2.web.TrustDeviceAction" method="getSomeInfo"></action>
+		<action name="getFlowid" class="com.inspur.icpmg.gov2.web.TrustDeviceAction" method="getFlowid"></action>
+		<!-- 变更 -->
+		<action name="updateEquip" class="com.inspur.icpmg.gov2.web.TrustDeviceAction" method="updateEquip"></action>
+	</package>
+</struts>    

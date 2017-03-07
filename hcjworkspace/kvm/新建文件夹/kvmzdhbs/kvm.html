@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>订单管理</title>
+</head>
+
+<body>
+    <link rel="stylesheet" href="css/gproducts.css">
+    <div class="easyui-layout" data-options="fit:true,border:false" style="padding:10px 20px 50px 20px;margin:10px 20px 30px 20px;">
+        <div data-options="region:'north',border:false" style="height:290px;overflow:hidden;background-color: #eee">
+            <div class="kvm-left">
+                <div class="title">
+                    <h4 class="heading">政务云</h4><span class="cjdate">创建于：2016-07-08</span>
+                </div>
+                <ul class="body">
+                    <li>控制 <em>3</em></li>
+                    <li>计算 <em>10</em></li>
+                    <li>存储 <em>6</em></li>
+                </ul>
+            </div>
+            <div class="kvm-right">
+                <ul class="step" id="stepTab">
+                    <li class="active"><span class="quan">1</span>资源选择</li>
+                    <li><span class="quan">2</span>安装前配置检查</li>
+                    <li><span class="quan">3</span>执行安装</li>
+                    <li><span class="quan">4</span>资源配置</li>
+                </ul>
+                <div class="j-main">
+                    <div class="body" id="step1">
+                        <div class="title">请点击以下节点进行资源选择：</div>
+                        <div class="content">
+                            <button class="kvm-btn  kvm-verm">计算节点</button>
+                            <button class="kvm-btn  kvm-verm">控制节点</button>
+                            <button class="kvm-btn  kvm-verm">存储节点</button>
+                        </div>
+                        <div class="kvm-footer">
+                            <a href="#" class="easyui-linkbutton" onclick="goto(2)">下一步 &gt;</a>
+                        </div>
+                    </div>
+                    <div class="body" id="step2" style="display: none">
+                        <div class="title">安装前检查一下配置：</div>
+                        <div class="content">
+                            <ol class="kvm-set">
+                                <li>网络配置</li>
+                                <li>服务配置</li>
+                            </ol>
+                        </div>
+                        <div class="kvm-footer">
+                            <span class="hsdate">本操作耗时约  <em>5</em> 分钟</span>
+                            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-objopen'" onclick="startKvm()">开始</a>
+                            <a href="#" class="easyui-linkbutton" onclick="goto(1)">&lt;上一步 </a>
+                            <a href="#" class="easyui-linkbutton" onclick="goto(3)">下一步 &gt;</a>
+                        </div>
+                    </div>
+                    <div class="body" id="step3" style="display: none">
+                        <div class="title">请点击以下节点进行资源选择</div>
+                        <div class="content">
+                            <ol class="kvm-set">
+                                <li>计算节点
+                                    <br/>
+                                    <p>1.1XXXXXXXXXXX </p>
+                                    <p>1.2XXXXXXXXXXX</p>
+                                </li>
+                                <li>服务配置
+                                    <br/>
+                                    <p>1.1XXXXXXXXXXX</p>
+                                    <p>1.2XXXXXXXXXXX</p>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="kvm-footer">
+                            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-objopen'" onclick="startKvm2()">安装</a>
+                            <a href="#" class="easyui-linkbutton" onclick="goto(2)">&lt;上一步 </a>
+                            <a href="#" class="easyui-linkbutton" onclick="goto(4)">下一步 &gt;</a>
+                        </div>
+                    </div>
+                    <div class="body" id="step4" style="display: none">
+                        <div class="title">请点击以下节点进行资源选择</div>
+                        <div class="content">
+                        </div>
+                        <div class="kvm-footer">
+                            <a href="#" class="easyui-linkbutton" onclick="goto(3)">&lt;上一步 </a>
+                            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-ok'">完成</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-options="region:'center',border:false">
+            <div class="kvm-t-wrap">
+                <div class="title">操作信息</div>
+                <table width="100%">
+                    <tr>
+                        <th>时间</th>
+                        <th>主机名称</th>
+                        <th>事件</th>
+                        <th>结果</th>
+                    </tr>
+                    <tr>
+                        <td>2016-07-09</td>
+                        <td></td>
+                        <td></td>
+                        <td>ok</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    function goto(step) {
+        $('#step' + step).show().siblings().hide();
+        index = step - 1;
+        $('#stepTab li').eq(index).addClass('active').siblings().removeClass('active');
+
+
+    }
+    // 检查
+    function startKvm() {
+        $('#step2 ol li .kvm-ok').remove();
+        $('#step2 ol li').append('<img src="images/kwm-loading.gif" alt="">');
+        setTimeout(function() {
+
+            $('#step2 ol li img').remove();
+            $('#step2 ol li').append('<span class="kvm-ok"></span>')
+
+        }, 1000)
+
+    }
+    //安装
+    function startKvm2() {
+        $('#step3 ol li p .kvm-ok').remove();
+        $('#step3 ol li p').append('<img src="images/kwm-loading.gif" alt="">');
+        setTimeout(function() {
+
+            $('#step3 ol li p img').remove();
+            $('#step3 ol li p').append('<span class="kvm-ok"></span>')
+
+        }, 1000)
+
+    }
+    </script>
+</body>
+
+</html>

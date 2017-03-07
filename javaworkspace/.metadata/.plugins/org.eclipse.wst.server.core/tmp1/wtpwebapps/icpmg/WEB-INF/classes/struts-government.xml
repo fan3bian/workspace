@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 云数据库 -->
+	<package name="gov" namespace="/gov" extends="struts-default">
+		<interceptors>
+			<!-- 定义系统的登录控制拦截器 -->
+			<interceptor name="nosessInterceptor" class="com.inspur.icpmg.interceptor.LoginInterceptor"></interceptor>
+			<!-- 定义系统日志拦截器 -->
+			<interceptor name="sysLogInterceptor" class="com.inspur.icpmg.interceptor.SysLogInterceptor"></interceptor>
+			<interceptor-stack name="uuStack">
+				<interceptor-ref name="paramsPrepareParamsStack">
+            		<param name="prepare.alwaysInvokePrepare">false</param>
+        		</interceptor-ref>
+				<!-- 引用登录控制拦截器 -->
+				<interceptor-ref name="nosessInterceptor"></interceptor-ref>
+				<!-- 引用系统日志拦截器 -->
+		      	<interceptor-ref name="sysLogInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 将自定义的拦截器uuStack定义成默认的拦截器栈 -->
+		<default-interceptor-ref name="uuStack"></default-interceptor-ref>
+		<global-results>
+			<result name="noSession">/login.jsp</result>
+			<result name="null">/login.jsp</result>
+		</global-results>
+		<!-- 获取政府机构 -->
+		<action name="queryGovernment" class="com.inspur.icpmg.governmentMg.action.QueryGovernmentAction" method="queryGovernment"></action>
+		<!-- 获取一级个数 -->
+		<action name="getFirstGovernmentNum" class="com.inspur.icpmg.governmentMg.action.QueryGovernmentAction" method="getFirstGovernmentNum"></action>
+		<!-- 获取二级个数 -->
+		<action name="getSecondGovernmentNum" class="com.inspur.icpmg.governmentMg.action.QueryGovernmentAction" method="getSecondGovernmentNum"></action>
+		<!-- 查询二级单位 -->
+		<action name="queryUnit" class="com.inspur.icpmg.governmentMg.action.QueryGovernmentAction" method="queryUnit"></action>
+		<!-- 获取一级组织结构 -->
+		<action name="getFirstGovernment" class="com.inspur.icpmg.governmentMg.action.OprateGovernmentAction" method="getFirstGovernment"></action>
+		<!-- 获取二级组织结构 -->
+		<action name="getSecondGovernment" class="com.inspur.icpmg.governmentMg.action.OprateGovernmentAction" method="getSecondGovernment"></action>
+		<!-- 增加一级组织结构 -->
+		<action name="addFirstGovernment" class="com.inspur.icpmg.governmentMg.action.OprateGovernmentAction" method="addFirstGovernment"></action>
+		<!-- 增加二级组织结构 -->
+		<action name="addSecondGovernment" class="com.inspur.icpmg.governmentMg.action.OprateGovernmentAction" method="addSecondGovernment"></action>
+		<!-- 删除一级组织结构 -->
+		<action name="delFirstGovernment" class="com.inspur.icpmg.governmentMg.action.OprateGovernmentAction" method="delFirstGovernment"></action>
+		<!-- 删除二级组织结构 -->
+		<action name="delSecondGovernment" class="com.inspur.icpmg.governmentMg.action.OprateGovernmentAction" method="delSecondGovernment"></action>
+		<!-- 修改一级组织结构 -->
+		<action name="updateFirstGovernment" class="com.inspur.icpmg.governmentMg.action.OprateGovernmentAction" method="updateFirstGovernment"></action>
+		<!-- 修改二级组织结构 -->
+		<action name="updateSecondGovernment" class="com.inspur.icpmg.governmentMg.action.OprateGovernmentAction" method="updateSecondGovernment"></action>
+		<!-- 获取归属地区 -->
+		<action name="getGovernmentRegion" class="com.inspur.icpmg.governmentMg.action.OprateGovernmentAction" method="getGovernmentRegion"></action>
+		</package>
+	</struts>  

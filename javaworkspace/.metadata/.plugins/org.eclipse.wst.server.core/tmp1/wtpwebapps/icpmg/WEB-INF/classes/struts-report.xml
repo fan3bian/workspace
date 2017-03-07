@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	
+	<package name="report" namespace="/report" extends="struts-default">
+		<interceptors>
+			<!-- 定义系统的登录控制拦截器 -->
+			<interceptor name="nosessInterceptor" class="com.inspur.icpmg.interceptor.LoginInterceptor"></interceptor>
+			<!-- 定义系统日志拦截器 -->
+			<interceptor name="sysLogInterceptor" class="com.inspur.icpmg.interceptor.SysLogInterceptor"></interceptor>
+			<interceptor-stack name="uuStack">
+				<interceptor-ref name="paramsPrepareParamsStack">
+            		<param name="prepare.alwaysInvokePrepare">false</param>
+        		</interceptor-ref>
+				<!-- 引用登录控制拦截器 -->
+				<interceptor-ref name="nosessInterceptor"></interceptor-ref>
+				<!-- 引用系统日志拦截器 -->
+		      	<interceptor-ref name="sysLogInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 将自定义的拦截器uuStack定义成默认的拦截器栈 -->
+		<default-interceptor-ref name="uuStack"></default-interceptor-ref>
+		<global-results>
+			<result name="noSession">/login.jsp</result>
+			<result name="null">/login.jsp</result>
+		</global-results>
+		<!-- 应用系统统计 -->
+		<action name="queryAppLists" class="com.inspur.icpmg.reportForm.action.AppSystemAction" method="queryAppLists"></action>
+        <action name="exportExcel1" class="com.inspur.icpmg.reportForm.action.AppSystemAction" method="exportExcel">
+			<result name="downLoadExcelFile" type="stream">
+	              <param name="contentType">application/vnd.ms-excel</param>  
+	              <param name="contentDisposition">attachment;fileName="appsystem.xls"</param>  
+	              <param name="inputName">excelStream</param>  
+	              <param name="bufferSize">1024</param>  
+	        </result> 
+         </action>
+         <!-- 资源费用统计 -->
+         <action name="queryVmFeeLists" class="com.inspur.icpmg.reportForm.action.VmFeeAction" method="queryVmFeeLists"></action>
+		 <action name="exportExcel" class="com.inspur.icpmg.reportForm.action.VmFeeAction" method="exportExcel">
+			 <result name="downLoadExcelFile" type="stream">
+	              <param name="contentType">application/vnd.ms-excel</param>  
+	              <param name="contentDisposition">attachment;fileName="resourcefee.xls"</param>  
+	              <param name="inputName">excelStream</param>  
+	              <param name="bufferSize">1024</param>  
+	         </result> 
+         </action>
+         <!-- 资源使用统计 -->
+		 <action name="queryVmUseLists" class="com.inspur.icpmg.reportForm.action.VmUseAction" method="queryVmUseLists"></action>
+	     <action name="exportExcel2" class="com.inspur.icpmg.reportForm.action.VmUseAction" method="exportExcel">
+		 	 <result name="downLoadExcelFile" type="stream">
+	             <param name="contentType">application/vnd.ms-excel</param>  
+	             <param name="contentDisposition">attachment;fileName="resourceuse.xls"</param>  
+	             <param name="inputName">excelStream</param>  
+	             <param name="bufferSize">1024</param>  
+             </result> 
+         </action>
+         <!-- 云服务器配置 -->
+         <action name="queryVmConfigLists" class="com.inspur.icpmg.reportForm.action.VmConfigAction" method="queryVmConfigLists"></action>
+         <action name="exportExcelConfig" class="com.inspur.icpmg.reportForm.action.VmConfigAction" method="exportExcelConfig">
+		 	 <result name="downLoadExcelFile" type="stream">
+	             <param name="contentType">application/vnd.ms-excel</param>  
+	             <param name="contentDisposition">attachment;fileName="resourceconfig.xls"</param>  
+	             <param name="inputName">excelStream</param>  
+	             <param name="bufferSize">1024</param>  
+             </result> 
+         </action>
+         <!-- 云服务器利用率 -->
+         <action name="queryVmRateLists" class="com.inspur.icpmg.reportForm.action.VmRateAction" method="queryVmRateLists"></action>
+         <action name="exportExcelRate" class="com.inspur.icpmg.reportForm.action.VmRateAction" method="exportExcelRate">
+		 	 <result name="downLoadExcelFile" type="stream">
+	             <param name="contentType">application/vnd.ms-excel</param>  
+	             <param name="contentDisposition">attachment;fileName="resourcerate.xls"</param>  
+	             <param name="inputName">excelStream</param>  
+	             <param name="bufferSize">1024</param>  
+             </result> 
+         </action>
+	</package>
+	
+	
+</struts>    
