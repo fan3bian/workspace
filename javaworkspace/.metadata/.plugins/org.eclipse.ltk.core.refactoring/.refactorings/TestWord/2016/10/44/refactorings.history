@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Copy source folder &apos;freemarker.jar&apos; to &apos;word&apos;&#x0D;&#x0A;- Original project: &apos;TestWord&apos;&#x0D;&#x0A;- Destination element: &apos;word&apos;&#x0D;&#x0A;- Original element: &apos;TestWord/WebContent/WEB-INF/lib/freemarker.jar&apos;" description="Copy source folder" destination="=word" element1="/WebContent\/WEB-INF\/lib\/freemarker.jar" flags="6" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyRoots" roots="1" stamp="1477384444892" version="1.0"/>
-</session>
